@@ -1,10 +1,16 @@
 # Coding Problems
 
-100 classic coding problems. Each file contains the full challenge as a header
-comment — statement, constraints, worked examples, edge cases, and the naive vs.
-target complexity — followed by an empty stub for you to fill in.
+163 classic coding problems across 22 topics. Each file contains the full
+challenge as a header comment — statement, constraints, worked examples, edge cases,
+and the naive vs. target complexity — followed by an empty stub for you to fill in.
 
-**29 Easy · 60 Medium · 11 Hard** across 15 topics
+## By difficulty
+
+| Level | Count | Index |
+|-------|-------|-------|
+| Easy | 41 | [EASY.md](EASY.md) |
+| Medium | 106 | [MEDIUM.md](MEDIUM.md) |
+| Hard | 16 | [HARD.md](HARD.md) |
 
 ## How to practice
 
@@ -14,14 +20,19 @@ cd coding-problems
 ```
 
 Open any file, read the header, and replace `// TODO` with your solution.
-Problems are ordered by difficulty within each topic folder, so working top to
-bottom through a folder builds up naturally.
 
-Each header ends with a **Naive** and a **Target** line. The naive approach is
-usually the one you will reach for first — read why it is insufficient before you
-start, and aim for the target complexity instead.
+Two ways through the set:
 
-## Problems
+- **By difficulty** — work [EASY.md](EASY.md), then [MEDIUM.md](MEDIUM.md), then [HARD.md](HARD.md). Best if you are
+  building general fluency.
+- **By topic** — pick a folder below and go top to bottom; problems are ordered by
+  difficulty within each one. Best if you are drilling a specific weakness.
+
+Each header ends with a **Naive** and a **Target** line. The naive approach is usually
+the one you will reach for first — read why it is insufficient before you start, and
+aim for the target complexity instead.
+
+## By topic
 
 ### Arrays & Hashing
 
@@ -36,6 +47,9 @@ start, and aim for the target complexity instead.
 | 051 | [Valid Anagram](problems/01-arrays-hashing/051-valid-anagram.js) | Easy |
 | 052 | [Longest Consecutive Sequence](problems/01-arrays-hashing/052-longest-consecutive-sequence.js) | Medium |
 | 053 | [Subarray Sum Equals K](problems/01-arrays-hashing/053-subarray-sum-equals-k.js) | Medium |
+| 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Easy |
+| 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Easy |
+| 103 | [Rotate Array](problems/01-arrays-hashing/103-rotate-array.js) | Medium |
 
 ### Two Pointers
 
@@ -70,6 +84,9 @@ start, and aim for the target complexity instead.
 | 060 | [Next Greater Element I](problems/04-stack/060-next-greater-element-i.js) | Easy |
 | 061 | [Evaluate Reverse Polish Notation](problems/04-stack/061-evaluate-reverse-polish-notation.js) | Medium |
 | 062 | [Daily Temperatures](problems/04-stack/062-daily-temperatures.js) | Medium |
+| 104 | [Decode String](problems/04-stack/104-decode-string.js) | Medium |
+| 105 | [Asteroid Collision](problems/04-stack/105-asteroid-collision.js) | Medium |
+| 106 | [Car Fleet](problems/04-stack/106-car-fleet.js) | Medium |
 
 ### Binary Search
 
@@ -81,6 +98,9 @@ start, and aim for the target complexity instead.
 | 063 | [First Bad Version](problems/05-binary-search/063-first-bad-version.js) | Easy |
 | 064 | [Find Minimum in Rotated Sorted Array](problems/05-binary-search/064-find-minimum-in-rotated-sorted-array.js) | Medium |
 | 065 | [Koko Eating Bananas](problems/05-binary-search/065-koko-eating-bananas.js) | Medium |
+| 107 | [Find Peak Element](problems/05-binary-search/107-find-peak-element.js) | Medium |
+| 108 | [Time Based Key-Value Store](problems/05-binary-search/108-time-based-key-value-store.js) | Medium |
+| 109 | [Split Array Largest Sum](problems/05-binary-search/109-split-array-largest-sum.js) | Hard |
 
 ### Linked List
 
@@ -93,6 +113,9 @@ start, and aim for the target complexity instead.
 | 066 | [Remove Nth Node From End of List](problems/06-linked-list/066-remove-nth-node-from-end-of-list.js) | Medium |
 | 067 | [Add Two Numbers](problems/06-linked-list/067-add-two-numbers.js) | Medium |
 | 068 | [Merge k Sorted Lists](problems/06-linked-list/068-merge-k-sorted-lists.js) | Hard |
+| 110 | [Palindrome Linked List](problems/06-linked-list/110-palindrome-linked-list.js) | Easy |
+| 111 | [Intersection of Two Linked Lists](problems/06-linked-list/111-intersection-of-two-linked-lists.js) | Easy |
+| 112 | [Copy List with Random Pointer](problems/06-linked-list/112-copy-list-with-random-pointer.js) | Medium |
 
 ### Trees
 
@@ -107,6 +130,10 @@ start, and aim for the target complexity instead.
 | 070 | [Balanced Binary Tree](problems/07-trees/070-balanced-binary-tree.js) | Easy |
 | 071 | [Diameter of Binary Tree](problems/07-trees/071-diameter-of-binary-tree.js) | Easy |
 | 072 | [Binary Tree Maximum Path Sum](problems/07-trees/072-binary-tree-maximum-path-sum.js) | Hard |
+| 113 | [Kth Smallest Element in a BST](problems/07-trees/113-kth-smallest-element-in-a-bst.js) | Medium |
+| 114 | [Binary Tree Right Side View](problems/07-trees/114-binary-tree-right-side-view.js) | Medium |
+| 115 | [Construct Binary Tree from Preorder and Inorder Traversal](problems/07-trees/115-construct-binary-tree-from-preorder-and-inorder-traversal.js) | Medium |
+| 116 | [Serialize and Deserialize Binary Tree](problems/07-trees/116-serialize-and-deserialize-binary-tree.js) | Hard |
 
 ### Graphs
 
@@ -118,6 +145,8 @@ start, and aim for the target complexity instead.
 | 073 | [Max Area of Island](problems/08-graphs/073-max-area-of-island.js) | Medium |
 | 074 | [Rotting Oranges](problems/08-graphs/074-rotting-oranges.js) | Medium |
 | 075 | [Pacific Atlantic Water Flow](problems/08-graphs/075-pacific-atlantic-water-flow.js) | Medium |
+| 117 | [Surrounded Regions](problems/08-graphs/117-surrounded-regions.js) | Medium |
+| 118 | [Word Ladder](problems/08-graphs/118-word-ladder.js) | Hard |
 
 ### Dynamic Programming
 
@@ -136,6 +165,11 @@ start, and aim for the target complexity instead.
 | 078 | [Decode Ways](problems/09-dynamic-programming/078-decode-ways.js) | Medium |
 | 079 | [Maximum Product Subarray](problems/09-dynamic-programming/079-maximum-product-subarray.js) | Medium |
 | 080 | [Longest Palindromic Substring](problems/09-dynamic-programming/080-longest-palindromic-substring.js) | Medium |
+| 119 | [House Robber II](problems/09-dynamic-programming/119-house-robber-ii.js) | Medium |
+| 120 | [Coin Change II](problems/09-dynamic-programming/120-coin-change-ii.js) | Medium |
+| 121 | [Partition Equal Subset Sum](problems/09-dynamic-programming/121-partition-equal-subset-sum.js) | Medium |
+| 122 | [Target Sum](problems/09-dynamic-programming/122-target-sum.js) | Medium |
+| 123 | [Burst Balloons](problems/09-dynamic-programming/123-burst-balloons.js) | Hard |
 
 ### Backtracking
 
@@ -148,6 +182,9 @@ start, and aim for the target complexity instead.
 | 082 | [Combination Sum](problems/10-backtracking/082-combination-sum.js) | Medium |
 | 083 | [Word Search](problems/10-backtracking/083-word-search.js) | Medium |
 | 084 | [Letter Combinations of a Phone Number](problems/10-backtracking/084-letter-combinations-of-a-phone-number.js) | Medium |
+| 124 | [Subsets II](problems/10-backtracking/124-subsets-ii.js) | Medium |
+| 125 | [Combination Sum II](problems/10-backtracking/125-combination-sum-ii.js) | Medium |
+| 126 | [Palindrome Partitioning](problems/10-backtracking/126-palindrome-partitioning.js) | Medium |
 
 ### Intervals & Greedy
 
@@ -172,6 +209,8 @@ start, and aim for the target complexity instead.
 | 088 | [Number of 1 Bits](problems/12-math-bits/088-number-of-1-bits.js) | Easy |
 | 089 | [Missing Number](problems/12-math-bits/089-missing-number.js) | Easy |
 | 090 | [Plus One](problems/12-math-bits/090-plus-one.js) | Easy |
+| 127 | [Reverse Bits](problems/12-math-bits/127-reverse-bits.js) | Easy |
+| 128 | [Sum of Two Integers](problems/12-math-bits/128-sum-of-two-integers.js) | Medium |
 
 ### Heap / Priority Queue
 
@@ -181,6 +220,7 @@ start, and aim for the target complexity instead.
 | 092 | [Kth Largest Element in an Array](problems/13-heap-priority-queue/092-kth-largest-element-in-an-array.js) | Medium |
 | 093 | [K Closest Points to Origin](problems/13-heap-priority-queue/093-k-closest-points-to-origin.js) | Medium |
 | 094 | [Find Median from Data Stream](problems/13-heap-priority-queue/094-find-median-from-data-stream.js) | Hard |
+| 129 | [Task Scheduler](problems/13-heap-priority-queue/129-task-scheduler.js) | Medium |
 
 ### Tries
 
@@ -197,25 +237,101 @@ start, and aim for the target complexity instead.
 | 098 | [Longest Common Prefix](problems/15-strings/098-longest-common-prefix.js) | Easy |
 | 099 | [Roman to Integer](problems/15-strings/099-roman-to-integer.js) | Easy |
 | 100 | [String to Integer (atoi)](problems/15-strings/100-string-to-integer-atoi.js) | Medium |
+| 130 | [Reverse Words in a String](problems/15-strings/130-reverse-words-in-a-string.js) | Medium |
+| 131 | [Zigzag Conversion](problems/15-strings/131-zigzag-conversion.js) | Medium |
+| 132 | [Multiply Strings](problems/15-strings/132-multiply-strings.js) | Medium |
+
+### Matrix
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 133 | [Spiral Matrix](problems/16-matrix/133-spiral-matrix.js) | Medium |
+| 134 | [Set Matrix Zeroes](problems/16-matrix/134-set-matrix-zeroes.js) | Medium |
+| 135 | [Search a 2D Matrix](problems/16-matrix/135-search-a-2d-matrix.js) | Medium |
+| 136 | [Valid Sudoku](problems/16-matrix/136-valid-sudoku.js) | Medium |
+| 137 | [Game of Life](problems/16-matrix/137-game-of-life.js) | Medium |
+
+### Queues & Design
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 138 | [Implement Queue using Stacks](problems/17-queues-and-design/138-implement-queue-using-stacks.js) | Easy |
+| 139 | [Design HashMap](problems/17-queues-and-design/139-design-hashmap.js) | Easy |
+| 140 | [Design Circular Queue](problems/17-queues-and-design/140-design-circular-queue.js) | Medium |
+| 141 | [Flatten Nested List Iterator](problems/17-queues-and-design/141-flatten-nested-list-iterator.js) | Medium |
+| 142 | [Design Twitter](problems/17-queues-and-design/142-design-twitter.js) | Medium |
+
+### Union-Find
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 143 | [Number of Connected Components in an Undirected Graph](problems/18-union-find/143-number-of-connected-components-in-an-undirected-graph.js) | Medium |
+| 144 | [Graph Valid Tree](problems/18-union-find/144-graph-valid-tree.js) | Medium |
+| 145 | [Redundant Connection](problems/18-union-find/145-redundant-connection.js) | Medium |
+| 146 | [Accounts Merge](problems/18-union-find/146-accounts-merge.js) | Medium |
+
+### Advanced Graphs
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 147 | [Course Schedule II](problems/19-advanced-graphs/147-course-schedule-ii.js) | Medium |
+| 148 | [Network Delay Time](problems/19-advanced-graphs/148-network-delay-time.js) | Medium |
+| 149 | [Min Cost to Connect All Points](problems/19-advanced-graphs/149-min-cost-to-connect-all-points.js) | Medium |
+| 150 | [Cheapest Flights Within K Stops](problems/19-advanced-graphs/150-cheapest-flights-within-k-stops.js) | Medium |
+| 151 | [Reconstruct Itinerary](problems/19-advanced-graphs/151-reconstruct-itinerary.js) | Hard |
+
+### Sorting
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 152 | [Merge Sorted Array](problems/20-sorting/152-merge-sorted-array.js) | Easy |
+| 153 | [Sort an Array](problems/20-sorting/153-sort-an-array.js) | Medium |
+| 154 | [Insertion Sort List](problems/20-sorting/154-insertion-sort-list.js) | Medium |
+| 155 | [Largest Number](problems/20-sorting/155-largest-number.js) | Medium |
+
+### Prefix Sum
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 156 | [Find Pivot Index](problems/21-prefix-sum/156-find-pivot-index.js) | Easy |
+| 157 | [Range Sum Query - Immutable](problems/21-prefix-sum/157-range-sum-query-immutable.js) | Easy |
+| 158 | [Range Sum Query 2D - Immutable](problems/21-prefix-sum/158-range-sum-query-2d-immutable.js) | Medium |
+| 159 | [Continuous Subarray Sum](problems/21-prefix-sum/159-continuous-subarray-sum.js) | Medium |
+
+### Number Theory
+
+| # | Problem | Difficulty |
+|---|---------|------------|
+| 160 | [Happy Number](problems/22-number-theory/160-happy-number.js) | Easy |
+| 161 | [Sqrt(x)](problems/22-number-theory/161-sqrtx.js) | Easy |
+| 162 | [Count Primes](problems/22-number-theory/162-count-primes.js) | Medium |
+| 163 | [Ugly Number II](problems/22-number-theory/163-ugly-number-ii.js) | Medium |
 
 ## Layout
 
 ```
 problems/
-  01-arrays-hashing/       # 9 problems
+  01-arrays-hashing/       # 12 problems
   02-two-pointers/         # 7 problems
   03-sliding-window/       # 6 problems
-  04-stack/                # 6 problems
-  05-binary-search/        # 6 problems
-  06-linked-list/          # 7 problems
-  07-trees/                # 9 problems
-  08-graphs/               # 6 problems
-  09-dynamic-programming/  # 13 problems
-  10-backtracking/         # 7 problems
+  04-stack/                # 9 problems
+  05-binary-search/        # 9 problems
+  06-linked-list/          # 10 problems
+  07-trees/                # 13 problems
+  08-graphs/               # 8 problems
+  09-dynamic-programming/  # 18 problems
+  10-backtracking/         # 10 problems
   11-intervals-greedy/     # 6 problems
-  12-math-bits/            # 8 problems
-  13-heap-priority-queue/  # 4 problems
+  12-math-bits/            # 10 problems
+  13-heap-priority-queue/  # 5 problems
   14-tries/                # 3 problems
-  15-strings/              # 3 problems
+  15-strings/              # 6 problems
+  16-matrix/               # 5 problems
+  17-queues-and-design/    # 5 problems
+  18-union-find/           # 4 problems
+  19-advanced-graphs/      # 5 problems
+  20-sorting/              # 4 problems
+  21-prefix-sum/           # 4 problems
+  22-number-theory/        # 4 problems
 ```
 

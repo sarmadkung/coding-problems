@@ -1,0 +1,33 @@
+/**
+ * 134 — Set Matrix Zeroes
+ * Difficulty: Medium   ·   Topic: Matrix
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Given an m x n matrix, if an element is 0 set its entire row and column to 0.
+ *   You must do it IN PLACE.
+ *
+ * CONSTRAINTS
+ *   m == matrix.length, n == matrix[0].length
+ *   1 <= m, n <= 200
+ *   -2^31 <= matrix[i][j] <= 2^31 - 1
+ *
+ * EXAMPLES
+ *   setZeroes([[1,1,1],[1,0,1],[1,1,1]])  ->  [[1,0,1],[0,0,0],[1,0,1]]
+ *   setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])  ->  [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+ *
+ * EDGE CASES
+ *   - Zeroing as you scan cascades incorrectly — you must record first, write second.
+ *   - A zero in the first row or column needs separate handling in the O(1) solution.
+ *   - A matrix that is already all zeroes.
+ *
+ * COMPLEXITY
+ *   Naive:  O(m * n) extra space — a full copy of the matrix, or O(m + n) with row and column sets.
+ *   Target: O(m * n) time, O(1) space — use the first row and column themselves as the marker storage, with two flags for whether they originally held a zero.
+ * ----------------------------------------------------------------------
+ */
+
+function setZeroes(matrix) {
+  // TODO: your solution here
+}
+
+module.exports = { setZeroes };
