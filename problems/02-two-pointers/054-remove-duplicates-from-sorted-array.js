@@ -1,0 +1,35 @@
+/**
+ * 054 — Remove Duplicates from Sorted Array
+ * Difficulty: Easy   ·   Topic: Two Pointers
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Given a sorted array `nums`, remove the duplicates IN PLACE so each unique element
+ *   appears once, keeping the relative order. Return `k`, the number of unique elements;
+ *   the first k slots of nums must hold them. What is left beyond k does not matter.
+ *
+ * CONSTRAINTS
+ *   1 <= nums.length <= 3 * 10^4
+ *   -100 <= nums[i] <= 100
+ *   nums is sorted in non-decreasing order.
+ *
+ * EXAMPLES
+ *   removeDuplicates([1, 1, 2])           ->  2, nums starts [1, 2, _]
+ *   removeDuplicates([0,0,1,1,1,2,2,3,3,4]) ->  5, nums starts [0,1,2,3,4]
+ *   removeDuplicates([1])                 ->  1
+ *
+ * EDGE CASES
+ *   - A single element.
+ *   - All elements identical — the answer is 1.
+ *   - Returning a new array does not satisfy the in-place requirement.
+ *
+ * COMPLEXITY
+ *   Naive:  O(n) time, O(n) space — build a fresh array of uniques, which the constraint forbids.
+ *   Target: O(n) time, O(1) space — a slow write pointer and a fast read pointer; write only when the value differs from the last written one.
+ * ----------------------------------------------------------------------
+ */
+
+function removeDuplicates(nums) {
+  // TODO: your solution here
+}
+
+module.exports = { removeDuplicates };

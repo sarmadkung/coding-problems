@@ -1,0 +1,35 @@
+/**
+ * 068 — Merge k Sorted Lists
+ * Difficulty: Hard   ·   Topic: Linked List
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   You are given an array of `k` linked lists, each sorted ascending.
+ *   Merge them into one sorted linked list and return its head.
+ *
+ * CONSTRAINTS
+ *   0 <= k <= 10^4
+ *   0 <= lists[i].length <= 500
+ *   -10^4 <= Node.val <= 10^4
+ *   The total node count will not exceed 10^4.
+ *
+ * EXAMPLES
+ *   mergeKLists([1 -> 4 -> 5, 1 -> 3 -> 4, 2 -> 6])  ->  1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
+ *   mergeKLists([])                                   ->  null
+ *   mergeKLists([null])                               ->  null
+ *
+ * EDGE CASES
+ *   - An empty array of lists, or lists that are themselves empty.
+ *   - A single list is returned as-is.
+ *   - Merging one list at a time into an accumulator is O(kN) — too slow when k is large.
+ *
+ * COMPLEXITY
+ *   Naive:  O(k * N) time — repeatedly merge the next list into a running result, rescanning the accumulator each time.
+ *   Target: O(N log k) time — merge pairs of lists divide-and-conquer style, or pull from a size-k min-heap of list heads.
+ * ----------------------------------------------------------------------
+ */
+
+function mergeKLists(lists) {
+  // TODO: your solution here
+}
+
+module.exports = { mergeKLists };
