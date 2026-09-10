@@ -1,0 +1,33 @@
+/**
+ * 070 — Balanced Binary Tree
+ * Difficulty: Easy   ·   Topic: Trees
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Given the root of a binary tree, determine whether it is height-balanced: every node's
+ *   two subtrees differ in height by at most 1.
+ *
+ * CONSTRAINTS
+ *   The tree holds 0 to 5000 nodes.
+ *   -10^4 <= Node.val <= 10^4
+ *
+ * EXAMPLES
+ *   isBalanced([3, 9, 20, null, null, 15, 7])           ->  true
+ *   isBalanced([1, 2, 2, 3, 3, null, null, 4, 4])       ->  false
+ *   isBalanced(null)                                    ->  true
+ *
+ * EDGE CASES
+ *   - An empty tree is balanced.
+ *   - EVERY node must satisfy the condition, not just the root.
+ *   - A skewed tree of 5000 nodes stresses the recursion depth.
+ *
+ * COMPLEXITY
+ *   Naive:  O(n^2) time — compute the height of both subtrees at every node independently.
+ *   Target: O(n) time, O(h) space — one bottom-up pass returning a height, propagating a sentinel (-1) the moment imbalance is found.
+ * ----------------------------------------------------------------------
+ */
+
+function isBalanced(root) {
+  // TODO: your solution here
+}
+
+module.exports = { isBalanced };
