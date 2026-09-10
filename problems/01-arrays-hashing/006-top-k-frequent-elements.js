@@ -1,0 +1,33 @@
+/**
+ * 006 — Top K Frequent Elements
+ * Difficulty: Medium   ·   Topic: Arrays & Hashing
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Given an integer array `nums` and an integer `k`, return the `k` most frequent
+ *   elements. The answer may be returned in any order.
+ *
+ * CONSTRAINTS
+ *   1 <= nums.length <= 10^5
+ *   k is in the range [1, number of distinct elements]
+ *   The answer is guaranteed to be unique.
+ *
+ * EXAMPLES
+ *   topKFrequent([1, 1, 1, 2, 2, 3], 2)  ->  [1, 2]
+ *   topKFrequent([1], 1)                 ->  [1]
+ *
+ * EDGE CASES
+ *   - k equals the number of distinct elements — return them all.
+ *   - All elements identical.
+ *   - Negative values are valid keys.
+ *
+ * COMPLEXITY
+ *   Naive:  O(n log n) time — count, then sort every distinct value by frequency.
+ *   Target: O(n) time — bucket sort by frequency (a frequency can never exceed n), or a size-k heap for O(n log k).
+ * ----------------------------------------------------------------------
+ */
+
+function topKFrequent(nums, k) {
+  // TODO: your solution here
+}
+
+module.exports = { topKFrequent };
