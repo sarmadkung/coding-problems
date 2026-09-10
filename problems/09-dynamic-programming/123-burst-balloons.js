@@ -1,0 +1,34 @@
+/**
+ * 123 — Burst Balloons
+ * Difficulty: Hard   ·   Topic: Dynamic Programming
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Balloons hold coins in `nums`. Bursting balloon i earns nums[i-1] * nums[i] * nums[i+1]
+ *   coins, where out-of-range neighbours count as 1, and its neighbours then become adjacent.
+ *   Return the maximum coins obtainable by bursting all balloons.
+ *
+ * CONSTRAINTS
+ *   n == nums.length, 1 <= n <= 300
+ *   0 <= nums[i] <= 100
+ *
+ * EXAMPLES
+ *   maxCoins([3, 1, 5, 8])  ->  167
+ *   maxCoins([1, 5])        ->  10
+ *   maxCoins([5])           ->  5
+ *
+ * EDGE CASES
+ *   - Pad the array with 1s at both ends to remove the boundary special case.
+ *   - Think about which balloon is burst LAST in a range, not first — that is what makes the subproblems independent.
+ *   - A single balloon earns 1 * nums[0] * 1.
+ *
+ * COMPLEXITY
+ *   Naive:  O(n!) time — try every bursting order.
+ *   Target: O(n^3) time, O(n^2) space — interval DP over (left, right) ranges, choosing the last balloon burst inside each range.
+ * ----------------------------------------------------------------------
+ */
+
+function maxCoins(nums) {
+  // TODO: your solution here
+}
+
+module.exports = { maxCoins };

@@ -1,0 +1,35 @@
+/**
+ * 111 — Intersection of Two Linked Lists
+ * Difficulty: Easy   ·   Topic: Linked List
+ * ----------------------------------------------------------------------
+ * PROBLEM
+ *   Given the heads of two singly linked lists, return the node where they intersect,
+ *   or null if they never do. Intersection is by NODE IDENTITY, not value.
+ *   Aim for O(1) extra space.
+ *
+ * CONSTRAINTS
+ *   The lists hold 1 to 3 * 10^4 nodes each.
+ *   1 <= Node.val <= 10^5
+ *   The lists retain their original structure.
+ *
+ * EXAMPLES
+ *   listA = 4 -> 1 -> 8 -> 4 -> 5, listB = 5 -> 6 -> 1 -> 8 -> 4 -> 5
+ *     getIntersectionNode(listA, listB)  ->  the node holding 8
+ *   Two entirely separate lists  ->  null
+ *
+ * EDGE CASES
+ *   - Lists of different lengths — the classic difficulty.
+ *   - Equal values do not imply intersection; compare node references.
+ *   - No intersection must return null, not a value.
+ *
+ * COMPLEXITY
+ *   Naive:  O(m * n) time — compare every node of A against every node of B. O(n) space if you use a visited Set.
+ *   Target: O(m + n) time, O(1) space — walk both lists, and on reaching the end switch to the other list's head; the pointers meet at the intersection (or both hit null).
+ * ----------------------------------------------------------------------
+ */
+
+function getIntersectionNode(headA, headB) {
+  // TODO: your solution here
+}
+
+module.exports = { getIntersectionNode };
