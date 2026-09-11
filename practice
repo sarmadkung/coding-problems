@@ -1,0 +1,423 @@
+#!/usr/bin/env node
+/**
+ * practice — run your solutions against the test cases for each problem.
+ *
+ *   ./practice c 001    run one problem
+ *   ./practice c 01     run every problem in a topic folder
+ *   ./practice c        run everything you have attempted
+ *   ./practice c --all  include problems you have not started
+ *
+ *   ./practice list             show all problems and their state
+ *   ./practice list --easy      filter by difficulty (--easy/--medium/--hard)
+ *   ./practice list --todo      only problems not yet attempted
+ *   ./practice status           one-line progress summary
+ *
+ * Exit code is 0 when nothing failed, 1 otherwise — so CI can call it.
+ */
+
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+const { execFileSync } = require('child_process');
+
+const ROOT = __dirname;
+const PROBLEMS = path.join(ROOT, 'problems');
+const TESTS = path.join(ROOT, 'tests');
+const STUB = '// TODO: your solution here';
+
+// ---------------------------------------------------------------- colour
+const useColour = process.stdout.isTTY && !process.env.NO_COLOR;
+const c = (code) => (s) => (useColour ? `[${code}m${s}[0m` : String(s));
+const dim = c('2');
+const bold = c('1');
+const green = c('32');
+const red = c('31');
+const yellow = c('33');
+const cyan = c('36');
+
+// ---------------------------------------------------------------- discovery
+function listProblems() {
+  const out = [];
+  for (const folder of fs.readdirSync(PROBLEMS).sort()) {
+    const dir = path.join(PROBLEMS, folder);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    for (const file of fs.readdirSync(dir).sort()) {
+      if (!file.endsWith('.js')) continue;
+      const full = path.join(dir, file);
+      const src = fs.readFileSync(full, 'utf8');
+      const head = src.split('\n', 3);
+      const m1 = /^ \* (\d+) — (.+)$/.exec(head[1] || '');
+      const m2 = /^ \* Difficulty: (\w+)\s+·\s+Topic: (.+)$/.exec(head[2] || '');
+      if (!m1) continue;
+      out.push({
+        id: m1[1],
+        num: parseInt(m1[1], 10),
+        title: m1[2].trim(),
+        difficulty: m2 ? m2[1] : '?',
+        topic: m2 ? m2[2].trim() : '?',
+        folder,
+        file: full,
+        rel: path.relative(ROOT, full),
+        attempted: !src.includes(STUB),
+      });
+    }
+  }
+  return out.sort((a, b) => a.num - b.num);
+}
+
+function loadTest(id) {
+  if (!fs.existsSync(TESTS)) return null;
+  const hit = fs.readdirSync(TESTS).find((f) => f.startsWith(id + '-') && f.endsWith('.json'));
+  if (!hit) return null;
+  return JSON.parse(fs.readFileSync(path.join(TESTS, hit), 'utf8'));
+}
+
+// ---------------------------------------------------------------- comparison
+function deepEqual(a, b) {
+  if (a === b) return true;
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a === b || (Number.isNaN(a) && Number.isNaN(b));
+  }
+  if (Array.isArray(a) && Array.isArray(b)) {
+    return a.length === b.length && a.every((x, i) => deepEqual(x, b[i]));
+  }
+  if (a && b && typeof a === 'object' && typeof b === 'object') {
+    const ka = Object.keys(a).sort();
+    const kb = Object.keys(b).sort();
+    return deepEqual(ka, kb) && ka.every((k) => deepEqual(a[k], b[k]));
+  }
+  return false;
+}
+
+const byJson = (x, y) => (JSON.stringify(x) < JSON.stringify(y) ? -1 : 1);
+
+/**
+ * Comparison modes, so a correct answer in a different order still passes:
+ *   exact       strict deep equality (the default)
+ *   unordered   top-level array order does not matter    (topKFrequent)
+ *   setOfSets   neither outer nor inner order matters     (groupAnagrams, threeSum)
+ *   approx      floating point within 1e-6                (medians, averages)
+ */
+function matches(actual, expected, mode) {
+  switch (mode) {
+    case 'unordered':
+      if (!Array.isArray(actual) || !Array.isArray(expected)) return false;
+      return deepEqual([...actual].sort(byJson), [...expected].sort(byJson));
+    case 'setOfSets': {
+      if (!Array.isArray(actual) || !Array.isArray(expected)) return false;
+      const norm = (g) => g.map((x) => (Array.isArray(x) ? [...x].sort(byJson) : x)).sort(byJson);
+      return deepEqual(norm(actual), norm(expected));
+    }
+    case 'approx':
+      return typeof actual === 'number' && Math.abs(actual - expected) < 1e-6;
+    default:
+      return deepEqual(actual, expected);
+  }
+}
+
+// ---------------------------------------------------------------- display
+function show(v, max = 44) {
+  let s;
+  try {
+    s = JSON.stringify(v);
+  } catch {
+    s = String(v);
+  }
+  if (s === undefined) s = 'undefined';
+  return s.length > max ? s.slice(0, max - 1) + '…' : s;
+}
+
+const callLabel = (fn, args) => `${fn}(${args.map((a) => show(a, 20)).join(', ')})`;
+
+// ---------------------------------------------------------------- running
+function runCases(problem, spec) {
+  const results = [];
+  let mod;
+  try {
+    mod = require(problem.file);
+  } catch (err) {
+    return [{ ok: false, label: 'loading the file', error: err.message }];
+  }
+
+  // Class-based problems: drive a sequence of operations.
+  if (spec.type === 'class') {
+    const Cls = mod[spec.cls];
+    if (typeof Cls !== 'function') {
+      return [{ ok: false, label: spec.cls, error: `${spec.cls} is not exported` }];
+    }
+    for (const tc of spec.cases) {
+      try {
+        const inst = new Cls(...(tc.ctor || []));
+        const got = tc.ops.map((op, i) => {
+          const r = inst[op](...(tc.args[i] || []));
+          return r === undefined ? null : r;
+        });
+        const ok = matches(got, tc.out, spec.compare);
+        results.push({ ok, label: tc.ops.join(' → '), actual: got, expected: tc.out });
+      } catch (err) {
+        results.push({ ok: false, label: tc.ops.join(' → '), error: err.message });
+      }
+    }
+    return results;
+  }
+
+  const fn = mod[spec.fn];
+  if (typeof fn !== 'function') {
+    return [{ ok: false, label: spec.fn, error: `${spec.fn} is not exported from the file` }];
+  }
+
+  for (const tc of spec.cases) {
+    const args = JSON.parse(JSON.stringify(tc.in)); // fresh copy: in-place solutions mutate
+    try {
+      let got = fn(...args);
+      // Problems that mutate an argument instead of returning ("result": "arg0")
+      if (spec.result && /^arg(\d+)$/.test(spec.result)) {
+        got = args[parseInt(spec.result.slice(3), 10)];
+      }
+      const ok = matches(got, tc.out, spec.compare);
+      results.push({ ok, label: callLabel(spec.fn, tc.in), actual: got, expected: tc.out });
+    } catch (err) {
+      results.push({ ok: false, label: callLabel(spec.fn, tc.in), error: err.message });
+    }
+  }
+  return results;
+}
+
+/**
+ * The perf case runs in a CHILD PROCESS with a hard kill timeout. A quadratic
+ * solution on a 200k input would otherwise hang the terminal for minutes; this
+ * way it is killed and reported as a failure against the complexity target.
+ */
+function runPerf(problem, spec) {
+  const perfFile = path.join(TESTS, '_perf.js');
+  if (!fs.existsSync(perfFile)) return null;
+  const table = require(perfFile);
+  const entry = table[problem.num];
+  if (!entry) return null;
+
+  const budget = entry.maxMs || 1000;
+  const kill = Math.max(budget * 3, 4000);
+  try {
+    const raw = execFileSync(
+      process.execPath,
+      [path.join(TESTS, '_runperf.js'), problem.file, spec.fn || spec.cls, String(problem.num)],
+      { timeout: kill, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }
+    );
+    const out = JSON.parse(raw.trim().split('\n').pop());
+    if (out.error) return { ok: false, label: entry.label, error: out.error, budget };
+    if (!out.valid) return { ok: false, label: entry.label, ms: out.ms, budget, wrong: true };
+    return { ok: out.ms <= budget, label: entry.label, ms: out.ms, budget };
+  } catch (err) {
+    if (err.killed || err.signal) return { ok: false, label: entry.label, timeout: true, budget, kill };
+    return { ok: false, label: entry.label, error: (err.stderr || err.message || '').trim().split('\n')[0], budget };
+  }
+}
+
+// ---------------------------------------------------------------- report
+function checkOne(problem, { quiet = false } = {}) {
+  const spec = loadTest(problem.id);
+  if (!spec) {
+    if (!quiet) {
+      console.log('');
+      console.log(`  ${bold(problem.id)}  ${bold(problem.title)}   ${dim(problem.difficulty + ' · ' + problem.topic)}`);
+      console.log(`  ${dim('No test cases written for this problem yet.')}`);
+      console.log('');
+    }
+    return { state: 'no-tests' };
+  }
+  if (!problem.attempted) {
+    if (!quiet) {
+      console.log('');
+      console.log(`  ${bold(problem.id)}  ${bold(problem.title)}   ${dim(problem.difficulty + ' · ' + problem.topic)}`);
+      console.log('');
+      console.log(`  ${yellow('Not started.')} Open ${cyan(problem.rel)} and replace the TODO,`);
+      console.log(`  then run ${cyan('./practice c ' + problem.id)} again.`);
+      console.log('');
+    }
+    return { state: 'not-started' };
+  }
+
+  const results = runCases(problem, spec);
+  const perf = runPerf(problem, spec);
+  const passed = results.filter((r) => r.ok).length;
+  const failed = results.length - passed;
+  const ok = failed === 0 && (!perf || perf.ok);
+
+  if (!quiet) {
+    console.log('');
+    console.log(
+      `  ${bold(problem.id)}  ${bold(problem.title)}   ${dim(problem.difficulty + ' · ' + problem.topic)}`
+    );
+    console.log('');
+    for (const r of results) {
+      if (r.ok) {
+        console.log(`    ${green('✓')}  ${r.label}  ${dim('→')}  ${show(r.actual)}`);
+      } else if (r.error) {
+        console.log(`    ${red('✗')}  ${r.label}`);
+        console.log(`         ${red('threw')}  ${r.error}`);
+      } else {
+        console.log(`    ${red('✗')}  ${r.label}`);
+        console.log(`         ${dim('expected')}  ${show(r.expected)}`);
+        console.log(`         ${dim('actual  ')}  ${red(show(r.actual))}`);
+      }
+    }
+    if (perf) {
+      const tag = `perf · ${perf.label}`;
+      if (perf.ok) {
+        console.log(`    ${green('✓')}  ${tag}  ${dim('→')}  ${perf.ms.toFixed(0)}ms ${dim(`(budget ${perf.budget}ms)`)}`);
+      } else if (perf.timeout) {
+        console.log(`    ${red('✗')}  ${tag}  ${dim('→')}  ${red('KILLED')} ${dim(`after ${perf.kill}ms (budget ${perf.budget}ms)`)}`);
+        console.log(`         ${yellow('Too slow for the input size — check the Target line in the file header.')}`);
+      } else if (perf.wrong) {
+        console.log(`    ${red('✗')}  ${tag}  ${dim('→')}  ${red('wrong answer on the large input')}`);
+      } else if (perf.error) {
+        console.log(`    ${red('✗')}  ${tag}  ${dim('→')}  ${red('threw')} ${perf.error}`);
+      } else {
+        console.log(`    ${red('✗')}  ${tag}  ${dim('→')}  ${red(perf.ms.toFixed(0) + 'ms')} ${dim(`(budget ${perf.budget}ms)`)}`);
+        console.log(`         ${yellow('Correct, but over the time budget — aim for the target complexity.')}`);
+      }
+    }
+    console.log('');
+    const verdict = ok ? green(bold('PASS')) : red(bold('FAIL'));
+    const perfNote = perf ? (perf.ok ? ' · complexity target met' : ' · complexity target MISSED') : '';
+    console.log(`    ${verdict}  ${passed}/${results.length} cases${perfNote}`);
+  }
+
+  return { state: ok ? 'pass' : 'fail', passed, total: results.length, perf };
+}
+
+function cmdCheck(args) {
+  const all = args.includes('--all');
+  const target = args.find((a) => !a.startsWith('--'));
+  let problems = listProblems();
+
+  if (target) {
+    // A 3-digit argument is a problem id ("001"); anything else prefers a topic
+    // folder ("01", "graphs") before falling back to an id or a slug match.
+    const byId = problems.filter((p) => p.num === parseInt(target, 10));
+    const byFolder = problems.filter((p) => p.folder.startsWith(target) || p.folder.includes(target));
+    const bySlug = problems.filter((p) => p.rel.includes(target));
+    problems = /^\d{3}$/.test(target)
+      ? byId
+      : byFolder.length
+        ? byFolder
+        : byId.length
+          ? byId
+          : bySlug;
+    if (!problems.length) {
+      console.error(red(`No problem matching "${target}".`));
+      process.exit(1);
+    }
+  }
+
+  const single = problems.length === 1;
+  const tally = { pass: 0, fail: 0, 'not-started': 0, 'no-tests': 0 };
+  const rows = [];
+
+  for (const p of problems) {
+    const res = checkOne(p, { quiet: !single });
+    tally[res.state]++;
+    rows.push([p, res]);
+  }
+
+  if (!single) {
+    console.log('');
+    for (const [p, res] of rows) {
+      let status;
+      if (res.state === 'pass') status = green('PASS') + dim(`  ${res.passed}/${res.total}`);
+      else if (res.state === 'fail') status = red('FAIL') + dim(`  ${res.passed}/${res.total}`);
+      else if (res.state === 'not-started') status = dim('—     not started');
+      else status = dim('·     no tests yet');
+      if (res.state === 'not-started' && !all) continue;
+      if (res.state === 'no-tests' && !all) continue;
+      console.log(`  ${bold(p.id)}  ${p.title.padEnd(46).slice(0, 46)}  ${status}`);
+    }
+    console.log('');
+    const bits = [
+      `${tally.pass + tally.fail} attempted`,
+      tally.pass ? green(`${tally.pass} passing`) : `${tally.pass} passing`,
+      tally.fail ? red(`${tally.fail} failing`) : `${tally.fail} failing`,
+      dim(`${tally['not-started']} not started`),
+    ];
+    if (tally['no-tests']) bits.push(dim(`${tally['no-tests']} without tests`));
+    console.log('  ' + bits.join(' · '));
+  }
+
+  console.log('');
+  process.exit(tally.fail > 0 ? 1 : 0);
+}
+
+function cmdList(args) {
+  const want = ['easy', 'medium', 'hard'].find((d) => args.includes('--' + d));
+  const todo = args.includes('--todo');
+  const done = args.includes('--done');
+  let problems = listProblems();
+  if (want) problems = problems.filter((p) => p.difficulty.toLowerCase() === want);
+  if (todo) problems = problems.filter((p) => !p.attempted);
+  if (done) problems = problems.filter((p) => p.attempted);
+
+  console.log('');
+  let topic = null;
+  for (const p of problems) {
+    if (p.topic !== topic) {
+      topic = p.topic;
+      console.log(`  ${bold(cyan(topic))}`);
+    }
+    const mark = p.attempted ? green('●') : dim('○');
+    const tests = loadTest(p.id) ? '' : dim('  (no tests yet)');
+    console.log(`    ${mark} ${p.id}  ${p.title.padEnd(48).slice(0, 48)} ${dim(p.difficulty)}${tests}`);
+  }
+  console.log('');
+  console.log(`  ${problems.length} problems  ${dim('● attempted   ○ not started')}`);
+  console.log('');
+}
+
+function cmdStatus() {
+  const problems = listProblems();
+  const withTests = problems.filter((p) => loadTest(p.id));
+  const attempted = problems.filter((p) => p.attempted);
+  const byDiff = {};
+  for (const p of problems) {
+    byDiff[p.difficulty] = byDiff[p.difficulty] || { total: 0, done: 0 };
+    byDiff[p.difficulty].total++;
+    if (p.attempted) byDiff[p.difficulty].done++;
+  }
+  console.log('');
+  console.log(`  ${bold('Progress')}`);
+  console.log('');
+  for (const d of ['Easy', 'Medium', 'Hard']) {
+    const s = byDiff[d];
+    if (!s) continue;
+    const width = 24;
+    const filled = Math.round((s.done / s.total) * width);
+    const bar = green('█'.repeat(filled)) + dim('░'.repeat(width - filled));
+    console.log(`    ${d.padEnd(8)} ${bar}  ${s.done}/${s.total}`);
+  }
+  console.log('');
+  console.log(`  ${attempted.length} of ${problems.length} attempted · ${withTests.length} problems have tests`);
+  console.log('');
+}
+
+function usage() {
+  console.log(`
+  ${bold('practice')} — run your solutions against each problem's test cases
+
+    ${cyan('./practice c 001')}       run one problem
+    ${cyan('./practice c 01')}        run a whole topic folder
+    ${cyan('./practice c')}           run everything you have attempted
+    ${cyan('./practice c --all')}     include problems you have not started
+
+    ${cyan('./practice list')}            every problem and whether you have started it
+    ${cyan('./practice list --easy')}     filter by difficulty (--easy/--medium/--hard)
+    ${cyan('./practice list --todo')}     only what you have not attempted yet
+
+    ${cyan('./practice status')}          progress summary
+`);
+}
+
+const [cmd, ...rest] = process.argv.slice(2);
+if (cmd === 'c' || cmd === 'check') cmdCheck(rest);
+else if (cmd === 'list') cmdList(rest);
+else if (cmd === 'status') cmdStatus();
+else usage();
