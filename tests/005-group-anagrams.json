@@ -1,0 +1,13 @@
+{
+  "fn": "groupAnagrams",
+  "compare": "setOfSets",
+  "cases": [
+    {
+      "in": [["eat", "tea", "tan", "ate", "nat", "bat"]],
+      "out": [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+    },
+    { "in": [[""]], "out": [[""]] },
+    { "in": [["a"]], "out": [["a"]] },
+    { "in": [["abc", "cba", "xyz"]], "out": [["abc", "cba"], ["xyz"]] }
+  ]
+}

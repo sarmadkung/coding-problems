@@ -28,6 +28,48 @@ Two ways through the set:
 - **By topic** — pick a folder below and go top to bottom; problems are ordered by
   difficulty within each one. Best if you are drilling a specific weakness.
 
+## Checking your work
+
+Run your solution against the problem's test cases:
+
+```bash
+./practice c 001        # one problem
+./practice c 01         # a whole topic folder
+./practice c            # everything you have attempted
+./practice status       # progress bars by difficulty
+./practice list --todo  # what you have not started
+```
+
+```
+  001  Two Sum   Easy · Arrays & Hashing
+
+    ✓  twoSum([2,7,11,15], 9)  →  [0,1]
+    ✓  twoSum([3,2,4], 6)  →  [1,2]
+    ✓  twoSum([3,3], 6)  →  [0,1]
+    ✓  perf · 200k elements  →  13ms (budget 1000ms)
+
+    PASS  4/4 cases · complexity target met
+```
+
+The last line is the important one. Every problem has a **perf case** on a large
+input with a time budget, because correctness alone will not tell you whether you
+wrote the solution the header asked for — the naive version usually passes all the
+small examples too. Write Two Sum with nested loops and you get this instead:
+
+```
+    ✓  twoSum([2,7,11,15], 9)  →  [0,1]     ← all examples still pass
+    ✗  perf · 200k elements  →  KILLED after 4000ms (budget 1000ms)
+         Too slow for the input size — check the Target line in the file header.
+
+    FAIL  4/4 cases · complexity target MISSED
+```
+
+The perf case runs in a separate process and is killed at three times its budget,
+so a slow solution reports a failure instead of hanging your terminal.
+
+Test cases live in `tests/NNN-*.json` as plain data, and the large-input cases in
+`tests/_perf.js`. `./practice` exits non-zero on failure, so CI can run it.
+
 Each header ends with a **Naive** and a **Target** line. The naive approach is usually
 the one you will reach for first — read why it is insufficient before you start, and
 aim for the target complexity instead.

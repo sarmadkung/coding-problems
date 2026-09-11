@@ -1,0 +1,11 @@
+{
+  "fn": "isAnagram",
+  "compare": "exact",
+  "cases": [
+    { "in": ["anagram", "nagaram"], "out": true },
+    { "in": ["rat", "car"], "out": false },
+    { "in": ["a", "ab"], "out": false },
+    { "in": ["aacc", "ccac"], "out": false },
+    { "in": ["ab", "ba"], "out": true }
+  ]
+}
