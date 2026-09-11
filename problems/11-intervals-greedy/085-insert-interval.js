@@ -21,9 +21,12 @@
  *   - The new interval may go before all, after all, or swallow several.
  *   - Touching endpoints ([1,2] and [2,3]) merge.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n log n) time — append the interval, re-sort, and run a full merge pass.
- *   Target: O(n) time — the input is already sorted, so emit everything ending before the new start, merge the overlapping run, then emit the rest.
+ *   Target: O(n) time — the input is already sorted, so emit everything ending before the new
+ *           start, merge the overlapping run, then emit the rest.
  * ----------------------------------------------------------------------
  */
 

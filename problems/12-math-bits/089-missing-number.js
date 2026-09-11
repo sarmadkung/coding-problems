@@ -19,12 +19,19 @@
  *
  * EDGE CASES
  *   - The missing value may be 0 or n, at either end of the range.
+ *
+ * FOLLOW-UP
  *   - A Set solution is O(n) space and misses the target.
- *   - Sorting is O(n log n).
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Sorting is O(n log n).
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — sort and find the first index-value mismatch.
- *   Target: O(n) time, O(1) space — either XOR all indices with all values, or subtract the array sum from n(n+1)/2.
+ *   Target: O(n) time, O(1) space — either XOR all indices with all values, or subtract the array
+ *           sum from n(n+1)/2.
  * ----------------------------------------------------------------------
  */
 

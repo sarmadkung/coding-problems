@@ -11,25 +11,29 @@
  *   2 <= numbers.length <= 3 * 10^4
  *   -1000 <= numbers[i] <= 1000
  *   Exactly one solution exists; numbers is sorted ascending.
+ *   You must use only constant extra space.
  *
  * EXAMPLES
- *   twoSumII([2, 7, 11, 15], 9)  ->  [1, 2]   // 1-INDEXED
- *   twoSumII([2, 3, 4], 6)       ->  [1, 3]
- *   twoSumII([-1, 0], -1)        ->  [1, 2]
+ *   twoSum([2, 7, 11, 15], 9)  ->  [1, 2]   // 1-INDEXED
+ *   twoSum([2, 3, 4], 6)       ->  [1, 3]
+ *   twoSum([-1, 0], -1)        ->  [1, 2]
  *
  * EDGE CASES
  *   - The answer is 1-indexed — a classic off-by-one trap.
  *   - Negative values.
- *   - A hash map is O(n) space and breaks the constraint.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
- *   Naive:  O(n) time, O(n) space — the hash map from Two Sum, which violates the O(1) space rule.
- *   Target: O(n) time, O(1) space — two pointers at the ends; move left in when the sum is too small, right in when too large.
+ *   Naive:  O(n) time, O(n) space — the hash map from Two Sum, which violates the O(1) space
+ *           rule.
+ *   Target: O(n) time, O(1) space — two pointers at the ends; move left in when the sum is too
+ *           small, right in when too large.
  * ----------------------------------------------------------------------
  */
 
-function twoSumII(numbers, target) {
+function twoSum(numbers, target) {
   // TODO: your solution here
 }
 
-module.exports = { twoSumII };
+module.exports = { twoSum };

@@ -21,9 +21,12 @@
  *   - One letter spanning the whole string forces a single part.
  *   - The sizes must sum to s.length.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — for each candidate cut, verify no letter straddles it.
- *   Target: O(n) time, O(26) space — record each letter's LAST index, then sweep, closing a part when the cursor reaches the running maximum last-index.
+ *   Target: O(n) time, O(26) space — record each letter's LAST index, then sweep, closing a part
+ *           when the cursor reaches the running maximum last-index.
  * ----------------------------------------------------------------------
  */
 

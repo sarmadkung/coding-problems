@@ -20,9 +20,12 @@
  *   - A leading 0 with length > 1 is immediately stuck.
  *   - Jumps may be shorter than the maximum.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse over every possible jump length from each index.
- *   Target: O(n) time, O(1) space — greedily track the furthest reachable index; fail the moment i exceeds it.
+ *   Target: O(n) time, O(1) space — greedily track the furthest reachable index; fail the moment
+ *           i exceeds it.
  * ----------------------------------------------------------------------
  */
 

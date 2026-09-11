@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - Unhappy numbers always fall into a CYCLE — you must detect it or loop forever.
  *   - 1 is happy by definition.
- *   - The digit-square sum shrinks quickly, so the values stay small.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The digit-square sum shrinks quickly, so the values stay small.
  *
  * COMPLEXITY
  *   Naive:  Looping without cycle detection never terminates for an unhappy number.
- *   Target: O(log n) time, O(1) space — Floyd's cycle detection with a slow and a fast digit-square-sum pointer. A visited Set is simpler but O(log n) space.
+ *   Target: O(log n) time, O(1) space — Floyd's cycle detection with a slow and a fast digit-
+ *           square-sum pointer. A visited Set is simpler but O(log n) space.
  * ----------------------------------------------------------------------
  */
 

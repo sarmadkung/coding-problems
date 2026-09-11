@@ -18,7 +18,11 @@
  * EDGE CASES
  *   - A single element yields one permutation.
  *   - There are exactly n! results.
- *   - Undo your choice (backtrack) after each recursive call.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Undo your choice (backtrack) after each recursive call.
  *
  * COMPLEXITY
  *   Naive:  Generating candidates randomly until all n! are found is unbounded.

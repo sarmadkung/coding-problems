@@ -21,9 +21,12 @@
  *   - k equal to the array length gives a single value.
  *   - The result has exactly n - k + 1 entries.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n * k) time — rescan each window for its maximum. With n = 10^5 this times out.
- *   Target: O(n) time, O(k) space — a monotonically decreasing deque of indices; the front is always the current window's maximum.
+ *   Target: O(n) time, O(k) space — a monotonically decreasing deque of indices; the front is
+ *           always the current window's maximum.
  * ----------------------------------------------------------------------
  */
 

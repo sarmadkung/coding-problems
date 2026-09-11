@@ -21,9 +21,13 @@
  *   - Operand order matters: the second pop is the left operand for - and /.
  *   - Negative number tokens are valid input, not operators.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  There is no meaningfully worse approach — a single stack pass is the natural solution.
- *   Target: O(n) time, O(n) space — push numbers, and on an operator pop two, apply, and push the result.
+ *   Naive:  There is no meaningfully worse approach — a single stack pass is the natural
+ *           solution.
+ *   Target: O(n) time, O(n) space — push numbers, and on an operator pop two, apply, and push the
+ *           result.
  * ----------------------------------------------------------------------
  */
 

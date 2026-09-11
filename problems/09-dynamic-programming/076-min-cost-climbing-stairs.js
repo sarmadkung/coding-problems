@@ -21,9 +21,12 @@
  *   - The goal is PAST the last step, not the last step itself.
  *   - The final step's cost is not always paid.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse over every sequence of 1- and 2-step moves.
- *   Target: O(n) time, O(1) space — dp[i] = cost[i] + min(dp[i-1], dp[i-2]), carried in two rolling variables.
+ *   Target: O(n) time, O(1) space — dp[i] = cost[i] + min(dp[i-1], dp[i-2]), carried in two
+ *           rolling variables.
  * ----------------------------------------------------------------------
  */
 

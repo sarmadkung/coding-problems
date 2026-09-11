@@ -5,12 +5,19 @@
  * PROBLEM
  *   Implement a FIFO queue using only two stacks. Support push(x), pop(), peek() and
  *   empty(). You may only use standard stack operations.
- *   Each operation should be O(1) AMORTISED.
+ *   Each operation should be O(1) AMORTIZED.
  *
  * CONSTRAINTS
  *   1 <= x <= 9
  *   At most 100 calls are made.
  *   pop and peek are only called on a non-empty queue.
+ *
+ * API
+ *   new MyQueue()              initialize an empty queue
+ *   push(x)        -> void     push x to the back of the queue
+ *   pop()          -> number   remove and return the element at the front
+ *   peek()         -> number   return the element at the front without removing it
+ *   empty()        -> boolean  return true if the queue is empty
  *
  * EXAMPLES
  *   const q = new MyQueue();
@@ -20,13 +27,19 @@
  *   q.empty()  ->  false
  *
  * EDGE CASES
- *   - Moving every element on each operation gives O(n), not amortised O(1).
- *   - Only transfer from the input stack to the output stack when the output stack is EMPTY.
- *   - Each element is moved at most once, which is what makes it amortised O(1).
+ *   - All calls are guaranteed valid, so pop and peek are never called on an empty queue.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Moving every element on each operation gives O(n), not amortized O(1).
+ *   2. Only transfer from the input stack to the output stack when the output stack is EMPTY.
+ *   3. Each element is moved at most once, which is what makes it amortized O(1).
  *
  * COMPLEXITY
  *   Naive:  O(n) per operation — shuttle all elements between the stacks on every push or pop.
- *   Target: O(1) amortised — an input stack for pushes and an output stack for pops, refilled only when it runs empty.
+ *   Target: O(1) amortized — an input stack for pushes and an output stack for pops, refilled
+ *           only when it runs empty.
  * ----------------------------------------------------------------------
  */
 

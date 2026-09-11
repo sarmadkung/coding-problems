@@ -21,9 +21,12 @@
  *   - 'Warmer' is strict — an equal temperature does not count.
  *   - The answer is a day COUNT, not an index.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — scan forward from each day. With n = 10^5 this times out.
- *   Target: O(n) time, O(n) space — a monotonically decreasing stack of indices; on each warmer day, pop and record the index difference.
+ *   Target: O(n) time, O(n) space — a monotonically decreasing stack of indices; on each warmer
+ *           day, pop and record the index difference.
  * ----------------------------------------------------------------------
  */
 

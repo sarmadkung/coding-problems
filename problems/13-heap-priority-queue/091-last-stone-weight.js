@@ -21,6 +21,8 @@
  *   - All stones may cancel out, giving 0.
  *   - The difference stone re-enters the pool and may be smashed again.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2 log n) time — re-sort the array after every smash.
  *   Target: O(n log n) time — a max-heap: pop two, push back the difference when non-zero.

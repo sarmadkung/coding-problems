@@ -17,13 +17,18 @@
  *   decodeString("2[abc]3[cd]ef") ->  "abcabccdcdcdef"
  *
  * EDGE CASES
- *   - Nesting requires a stack, not a single counter.
  *   - Multi-digit repeat counts (12[a]) must be parsed as one number.
  *   - Plain text may appear outside any bracket.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Nesting requires a stack, not a single counter.
+ *
  * COMPLEXITY
  *   Naive:  Repeated regex passes on the innermost bracket work but rescan the string each time.
- *   Target: O(n * k) time — push the string and count built so far when '[' is seen, and pop and expand on ']'.
+ *   Target: O(n * k) time — push the string and count built so far when '[' is seen, and pop and
+ *           expand on ']'.
  * ----------------------------------------------------------------------
  */
 

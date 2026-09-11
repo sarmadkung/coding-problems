@@ -20,9 +20,12 @@
  *   - Mixed case.
  *   - Digits count as alphanumeric.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n) time, O(n) space — build a cleaned string, then compare it to its reverse.
- *   Target: O(n) time, O(1) space — two pointers walking inward, skipping non-alphanumeric characters in place.
+ *   Target: O(n) time, O(1) space — two pointers walking inward, skipping non-alphanumeric
+ *           characters in place.
  * ----------------------------------------------------------------------
  */
 

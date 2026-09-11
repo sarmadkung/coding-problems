@@ -17,12 +17,17 @@
  *
  * EDGE CASES
  *   - Single characters are palindromes.
- *   - Both odd centres (aba) and even centres (abba) must be handled.
  *   - No palindrome longer than 1 means returning any single character.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Both odd centers (aba) and even centers (abba) must be handled.
  *
  * COMPLEXITY
  *   Naive:  O(n^3) time — check every substring for palindromicity.
- *   Target: O(n^2) time, O(1) space — expand around each of the 2n - 1 possible centres. (Manacher's algorithm reaches O(n).)
+ *   Target: O(n^2) time, O(1) space — expand around each of the 2n - 1 possible centers.
+ *           (Manacher's algorithm reaches O(n).)
  * ----------------------------------------------------------------------
  */
 

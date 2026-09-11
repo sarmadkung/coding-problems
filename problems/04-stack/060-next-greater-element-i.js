@@ -21,9 +21,12 @@
  *   - A strictly decreasing nums2 yields all -1.
  *   - 'Greater' is strict — an equal value does not count.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n * m) time — for each value, locate it in nums2 and scan rightwards.
- *   Target: O(n + m) time — one monotonically decreasing stack pass over nums2, recording each value's next greater in a map.
+ *   Target: O(n + m) time — one monotonically decreasing stack pass over nums2, recording each
+ *           value's next greater in a map.
  * ----------------------------------------------------------------------
  */
 

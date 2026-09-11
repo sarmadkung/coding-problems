@@ -1,0 +1,12 @@
+{
+  "fn": "reverseList",
+  "inTypes": ["list"],
+  "outType": "list",
+  "compare": "exact",
+  "cases": [
+    { "in": [[1, 2, 3, 4, 5]], "out": [5, 4, 3, 2, 1] },
+    { "in": [[1, 2]], "out": [2, 1] },
+    { "in": [[]], "out": [] },
+    { "in": [[7]], "out": [7] }
+  ]
+}

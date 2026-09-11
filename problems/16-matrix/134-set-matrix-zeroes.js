@@ -16,13 +16,22 @@
  *   setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])  ->  [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
  *
  * EDGE CASES
- *   - Zeroing as you scan cascades incorrectly — you must record first, write second.
- *   - A zero in the first row or column needs separate handling in the O(1) solution.
  *   - A matrix that is already all zeroes.
  *
+ * FOLLOW-UP
+ *   - Could you devise a constant O(1) space solution?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Zeroing as you scan cascades incorrectly — you must record first, write second.
+ *   2. A zero in the first row or column needs separate handling in the O(1) solution.
+ *
  * COMPLEXITY
- *   Naive:  O(m * n) extra space — a full copy of the matrix, or O(m + n) with row and column sets.
- *   Target: O(m * n) time, O(1) space — use the first row and column themselves as the marker storage, with two flags for whether they originally held a zero.
+ *   Naive:  O(m * n) extra space — a full copy of the matrix, or O(m + n) with row and column
+ *           sets.
+ *   Target: O(m * n) time, O(1) space — use the first row and column themselves as the marker
+ *           storage, with two flags for whether they originally held a zero.
  * ----------------------------------------------------------------------
  */
 

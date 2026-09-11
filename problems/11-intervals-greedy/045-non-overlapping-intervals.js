@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - Intervals that only touch at an endpoint do not overlap.
  *   - Identical duplicate intervals.
- *   - Sorting by START rather than END gives the wrong greedy answer.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Sorting by START rather than END gives the wrong greedy answer.
  *
  * COMPLEXITY
  *   Naive:  O(2^n) time — try every subset and keep the largest compatible one.
- *   Target: O(n log n) time — sort by END, then greedily keep every interval starting at or after the last kept end.
+ *   Target: O(n log n) time — sort by END, then greedily keep every interval starting at or after
+ *           the last kept end.
  * ----------------------------------------------------------------------
  */
 

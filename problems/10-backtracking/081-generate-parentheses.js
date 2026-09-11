@@ -14,12 +14,17 @@
  *
  * EDGE CASES
  *   - Every result has exactly 2n characters.
- *   - Add ')' only while the closing count is below the opening count.
  *   - The count of results is the nth Catalan number.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Add ')' only while the closing count is below the opening count.
  *
  * COMPLEXITY
  *   Naive:  O(2^(2n) * n) time — generate every string of brackets and filter the valid ones.
- *   Target: O(4^n / sqrt(n)) time — backtrack, only ever adding '(' while open < n and ')' while close < open, so invalid branches are never built.
+ *   Target: O(4^n / sqrt(n)) time — backtrack, only ever adding '(' while open < n and ')' while
+ *           close < open, so invalid branches are never built.
  * ----------------------------------------------------------------------
  */
 

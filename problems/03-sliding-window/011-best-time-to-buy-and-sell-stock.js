@@ -20,9 +20,12 @@
  *   - Single day.
  *   - You must buy before you sell.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — try every buy/sell pair.
- *   Target: O(n) time, O(1) space — one pass tracking the minimum price seen so far and the best profit against it.
+ *   Target: O(n) time, O(1) space — one pass tracking the minimum price seen so far and the best
+ *           profit against it.
  * ----------------------------------------------------------------------
  */
 

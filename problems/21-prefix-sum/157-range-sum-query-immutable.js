@@ -13,6 +13,10 @@
  *   0 <= left <= right < nums.length
  *   At most 10^4 calls to sumRange.
  *
+ * API
+ *   new NumArray(nums)                initialize the object with the integer array nums
+ *   sumRange(left, right)  -> number  return the sum of nums[left..right] inclusive
+ *
  * EXAMPLES
  *   const na = new NumArray([-2, 0, 3, -5, 2, -1]);
  *   na.sumRange(0, 2)  ->  1
@@ -21,12 +25,18 @@
  *
  * EDGE CASES
  *   - left may equal right, giving a single element.
- *   - The array never changes, so preprocessing pays off across many queries.
- *   - Prefix sums need an extra leading zero to avoid a special case at left = 0.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The array never changes, so preprocessing pays off across many queries.
+ *   2. Prefix sums need an extra leading zero to avoid a special case at left = 0.
  *
  * COMPLEXITY
- *   Naive:  O(n) per query — sum the range each time. With 10^4 queries on 10^4 elements this is 10^8 operations.
- *   Target: O(n) preprocessing, O(1) per query — a prefix-sum array where sumRange(l, r) = prefix[r + 1] - prefix[l].
+ *   Naive:  O(n) per query — sum the range each time. With 10^4 queries on 10^4 elements this is
+ *           10^8 operations.
+ *   Target: O(n) preprocessing, O(1) per query — a prefix-sum array where sumRange(l, r) =
+ *           prefix[r + 1] - prefix[l].
  * ----------------------------------------------------------------------
  */
 

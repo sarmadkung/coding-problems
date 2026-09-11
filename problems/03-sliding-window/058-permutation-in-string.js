@@ -20,9 +20,12 @@
  *   - The match must be contiguous in s2.
  *   - Character counts must match exactly, including duplicates.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n * m log m) time — sort every window of s2 and compare against sorted s1.
- *   Target: O(n) time, O(26) space — a fixed-size sliding window of length s1.length, updated incrementally and compared against s1's counts.
+ *   Target: O(n) time, O(26) space — a fixed-size sliding window of length s1.length, updated
+ *           incrementally and compared against s1's counts.
  * ----------------------------------------------------------------------
  */
 

@@ -11,20 +11,43 @@
  *   1 <= n <= number of nodes
  *   -100 <= Node.val <= 100
  *
+ * INPUT FORMAT
+ *   `head` is a ListNode object, not an array. The arrays in EXAMPLES list the node values in
+ *   order; the test runner links them into real nodes before calling your function.
+ *
  * EXAMPLES
  *   removeNthFromEnd(1 -> 2 -> 3 -> 4 -> 5, n = 2)  ->  1 -> 2 -> 3 -> 5
  *   removeNthFromEnd(1, n = 1)                      ->  null
  *   removeNthFromEnd(1 -> 2, n = 2)                 ->  2  // removes the head
  *
  * EDGE CASES
- *   - Removing the head itself — a dummy node before the head avoids a special case.
+ *   - Removing the head itself.
  *   - A single-node list becomes empty.
  *   - n counts from the END, not the start.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. A dummy node placed before the head removes the special case of deleting the head.
+ *
  * COMPLEXITY
  *   Naive:  O(n) time, two passes — measure the length, then walk to position (length - n).
- *   Target: O(n) time, O(1) space, one pass — advance a lead pointer n steps, then move both until the lead hits the end.
+ *   Target: O(n) time, O(1) space, one pass — advance a lead pointer n steps, then move both
+ *           until the lead hits the end.
  * ----------------------------------------------------------------------
+ */
+
+const { ListNode } = require('../_lib/structures');
+
+/**
+ * Definition for a singly linked list node — available here exactly as a platform provides it:
+ *
+ *   class ListNode {
+ *     constructor(val = 0, next = null) {
+ *       this.val = val;
+ *       this.next = next;
+ *     }
+ *   }
  */
 
 function removeNthFromEnd(head, n) {

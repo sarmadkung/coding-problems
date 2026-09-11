@@ -19,9 +19,12 @@
  *   - A single bar.
  *   - The rectangle's height is the minimum bar it spans.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — for each bar expand left and right while bars stay at least as tall.
- *   Target: O(n) time, O(n) space — a monotonically increasing stack of indices; on each pop the popped bar's full width is known.
+ *   Target: O(n) time, O(n) space — a monotonically increasing stack of indices; on each pop the
+ *           popped bar's full width is known.
  * ----------------------------------------------------------------------
  */
 

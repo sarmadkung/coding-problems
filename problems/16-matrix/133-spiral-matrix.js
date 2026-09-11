@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - A single row or single column must not be traversed twice.
  *   - Non-square matrices.
- *   - Re-check the boundaries before the bottom and left passes.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Re-check the boundaries before the bottom and left passes.
  *
  * COMPLEXITY
  *   Naive:  Marking visited cells in a parallel grid works but costs O(m * n) extra space.
- *   Target: O(m * n) time, O(1) extra space — four boundary pointers (top, bottom, left, right) contracted after each pass.
+ *   Target: O(m * n) time, O(1) extra space — four boundary pointers (top, bottom, left, right)
+ *           contracted after each pass.
  * ----------------------------------------------------------------------
  */
 

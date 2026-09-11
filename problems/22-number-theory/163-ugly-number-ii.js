@@ -17,11 +17,16 @@
  * EDGE CASES
  *   - 1 counts as the first ugly number.
  *   - Duplicates must be skipped: 6 arises as both 2*3 and 3*2.
- *   - Testing every integer for ugliness is far too slow as n grows.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Testing every integer for ugliness is far too slow as n grows.
  *
  * COMPLEXITY
  *   Naive:  O(n * k) time — check each integer in turn by dividing out 2s, 3s and 5s.
- *   Target: O(n) time, O(n) space — three pointers into the growing sequence, taking the minimum of (2*a, 3*b, 5*c) each step and advancing EVERY pointer that produced it.
+ *   Target: O(n) time, O(n) space — three pointers into the growing sequence, taking the minimum
+ *           of (2*a, 3*b, 5*c) each step and advancing EVERY pointer that produced it.
  * ----------------------------------------------------------------------
  */
 

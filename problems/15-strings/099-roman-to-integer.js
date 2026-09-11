@@ -20,11 +20,16 @@
  * EDGE CASES
  *   - Only six subtractive pairs exist: IV, IX, XL, XC, CD, CM.
  *   - Repeated symbols simply add.
- *   - The subtraction rule is purely local — compare each symbol with the next.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The subtraction rule is purely local — compare each symbol with the next.
  *
  * COMPLEXITY
  *   Naive:  Hard-coding every two-character pair works but is verbose and error-prone.
- *   Target: O(n) time, O(1) space — sum each symbol's value, subtracting instead of adding whenever a symbol is smaller than the one after it.
+ *   Target: O(n) time, O(1) space — sum each symbol's value, subtracting instead of adding
+ *           whenever a symbol is smaller than the one after it.
  * ----------------------------------------------------------------------
  */
 

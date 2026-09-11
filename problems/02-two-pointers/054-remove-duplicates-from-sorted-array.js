@@ -11,6 +11,7 @@
  *   1 <= nums.length <= 3 * 10^4
  *   -100 <= nums[i] <= 100
  *   nums is sorted in non-decreasing order.
+ *   You must do it in place with O(1) extra memory.
  *
  * EXAMPLES
  *   removeDuplicates([1, 1, 2])           ->  2, nums starts [1, 2, _]
@@ -20,11 +21,13 @@
  * EDGE CASES
  *   - A single element.
  *   - All elements identical — the answer is 1.
- *   - Returning a new array does not satisfy the in-place requirement.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n) time, O(n) space — build a fresh array of uniques, which the constraint forbids.
- *   Target: O(n) time, O(1) space — a slow write pointer and a fast read pointer; write only when the value differs from the last written one.
+ *   Target: O(n) time, O(1) space — a slow write pointer and a fast read pointer; write only when
+ *           the value differs from the last written one.
  * ----------------------------------------------------------------------
  */
 

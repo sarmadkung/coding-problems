@@ -17,11 +17,16 @@
  * EDGE CASES
  *   - x = 0 and x = 1 return themselves.
  *   - The result is TRUNCATED, never rounded up.
- *   - mid * mid can overflow in fixed-width languages — compare with mid <= x / mid instead.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. mid * mid can overflow in fixed-width languages — compare with mid <= x / mid instead.
  *
  * COMPLEXITY
  *   Naive:  O(sqrt(x)) time — increment a counter until its square exceeds x.
- *   Target: O(log x) time — binary search over [0, x] for the largest integer whose square does not exceed x. (Newton's method converges even faster.)
+ *   Target: O(log x) time — binary search over [0, x] for the largest integer whose square does
+ *           not exceed x. (Newton's method converges even faster.)
  * ----------------------------------------------------------------------
  */
 

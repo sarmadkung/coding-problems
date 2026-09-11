@@ -21,9 +21,12 @@
  *   - Negative n means the reciprocal.
  *   - n = -2^31 overflows when negated — widen it first.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n) time — multiply x by itself n times. With n = 2^31 that never finishes.
- *   Target: O(log n) time — fast exponentiation by squaring: x^n = (x^(n/2))^2, times x when n is odd.
+ *   Target: O(log n) time — fast exponentiation by squaring: x^n = (x^(n/2))^2, times x when n is
+ *           odd.
  * ----------------------------------------------------------------------
  */
 

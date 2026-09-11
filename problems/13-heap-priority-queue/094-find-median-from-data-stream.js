@@ -12,6 +12,11 @@
  *   findMedian is only called after at least one addNum.
  *   At most 5 * 10^4 calls are made.
  *
+ * API
+ *   new MedianFinder()             initialize an empty stream
+ *   addNum(num)         -> void    add num to the stream
+ *   findMedian()        -> number  return the median of everything added so far
+ *
  * EXAMPLES
  *   const mf = new MedianFinder();
  *   mf.addNum(1); mf.addNum(2);
@@ -21,11 +26,16 @@
  * EDGE CASES
  *   - An even count averages the two middle values and may return a non-integer.
  *   - A single element is its own median.
- *   - Re-sorting on every insert is far too slow at 5 * 10^4 calls.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Re-sorting on every insert is far too slow at 5 * 10^4 calls.
  *
  * COMPLEXITY
  *   Naive:  O(n log n) per query — keep an array and sort it on each findMedian call.
- *   Target: O(log n) insert, O(1) query — two heaps: a max-heap for the lower half and a min-heap for the upper, kept balanced within one element.
+ *   Target: O(log n) insert, O(1) query — two heaps: a max-heap for the lower half and a min-heap
+ *           for the upper, kept balanced within one element.
  * ----------------------------------------------------------------------
  */
 

@@ -13,6 +13,12 @@
  *   Timestamps for a given key are strictly increasing across set calls.
  *   At most 2 * 10^5 calls are made.
  *
+ * API
+ *   new TimeMap()                          initialize an empty store
+ *   set(key, value, timestamp)  -> void    store value for key at the given timestamp
+ *   get(key, timestamp)         -> string  return the value at the largest stored timestamp <=
+ *                                          timestamp, or "" if there is none
+ *
  * EXAMPLES
  *   const tm = new TimeMap();
  *   tm.set("foo", "bar", 1);
@@ -23,11 +29,16 @@
  * EDGE CASES
  *   - A query before any set for that key returns the empty string.
  *   - An unknown key returns the empty string.
- *   - Timestamps arrive already sorted per key — exploit that.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Timestamps arrive already sorted per key — exploit that.
  *
  * COMPLEXITY
  *   Naive:  O(n) per get — scan the whole history for the key.
- *   Target: O(log n) per get — store each key's history as a sorted array and binary search for the rightmost timestamp <= the query.
+ *   Target: O(log n) per get — store each key's history as a sorted array and binary search for
+ *           the rightmost timestamp <= the query.
  * ----------------------------------------------------------------------
  */
 

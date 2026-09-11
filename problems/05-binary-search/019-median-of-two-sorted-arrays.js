@@ -19,11 +19,17 @@
  * EDGE CASES
  *   - Either array may be empty.
  *   - Even total length averages the two middle values.
- *   - Always binary-search the SHORTER array to keep the index maths in range.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Always binary-search the SHORTER array to keep the index math in range.
  *
  * COMPLEXITY
- *   Naive:  O(m + n) time — merge both arrays and index the middle. Fails the required complexity.
- *   Target: O(log(min(m, n))) time, O(1) space — binary search for the partition where every left element <= every right element.
+ *   Naive:  O(m + n) time — merge both arrays and index the middle. Fails the required
+ *           complexity.
+ *   Target: O(log(min(m, n))) time, O(1) space — binary search for the partition where every left
+ *           element <= every right element.
  * ----------------------------------------------------------------------
  */
 

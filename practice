@@ -25,6 +25,7 @@ const { execFileSync } = require('child_process');
 
 const ROOT = __dirname;
 const PROBLEMS = path.join(ROOT, 'problems');
+const STRUCT = require('./problems/_lib/structures');
 const TESTS = path.join(ROOT, 'tests');
 const STUB = '// TODO: your solution here';
 
@@ -42,6 +43,7 @@ const cyan = c('36');
 function listProblems() {
   const out = [];
   for (const folder of fs.readdirSync(PROBLEMS).sort()) {
+    if (folder.startsWith('_')) continue; // shared helpers, not problems
     const dir = path.join(PROBLEMS, folder);
     if (!fs.statSync(dir).isDirectory()) continue;
     for (const file of fs.readdirSync(dir).sort()) {
@@ -73,6 +75,45 @@ function loadTest(id) {
   const hit = fs.readdirSync(TESTS).find((f) => f.startsWith(id + '-') && f.endsWith('.json'));
   if (!hit) return null;
   return JSON.parse(fs.readFileSync(path.join(TESTS, hit), 'utf8'));
+}
+
+/**
+ * Node-shaped inputs and outputs.
+ *
+ * A test case is plain JSON, but a tree or linked-list problem must receive a
+ * real node object — that is what the platforms hand you. A spec declares the
+ * shape per argument with `inTypes`, and for the return value with `outType`:
+ *
+ *   { "fn": "maxDepth", "inTypes": ["tree"], "cases": [...] }
+ *   { "fn": "reverseList", "inTypes": ["list"], "outType": "list", ... }
+ *
+ * Types: "tree" level-order array, "list" value array, "cycleList" [values, pos],
+ *        "node" a single node compared by its `val`, null/absent passes through.
+ */
+function hydrate(value, type) {
+  switch (type) {
+    case 'tree':
+      return STRUCT.buildTree(value);
+    case 'list':
+      return STRUCT.buildList(value);
+    case 'cycleList':
+      return STRUCT.buildCycleList(value[0], value[1]);
+    default:
+      return value;
+  }
+}
+
+function dehydrate(value, type) {
+  switch (type) {
+    case 'tree':
+      return STRUCT.treeToArray(value);
+    case 'list':
+      return STRUCT.listToArray(value);
+    case 'node':
+      return value === null || value === undefined ? null : value.val;
+    default:
+      return value;
+  }
 }
 
 // ---------------------------------------------------------------- comparison
@@ -169,13 +210,18 @@ function runCases(problem, spec) {
     return [{ ok: false, label: spec.fn, error: `${spec.fn} is not exported from the file` }];
   }
 
+  const inTypes = spec.inTypes || [];
   for (const tc of spec.cases) {
-    const args = JSON.parse(JSON.stringify(tc.in)); // fresh copy: in-place solutions mutate
+    const raw = JSON.parse(JSON.stringify(tc.in)); // fresh copy: in-place solutions mutate
+    const args = raw.map((v, i) => hydrate(v, inTypes[i]));
     try {
       let got = fn(...args);
       // Problems that mutate an argument instead of returning ("result": "arg0")
       if (spec.result && /^arg(\d+)$/.test(spec.result)) {
-        got = args[parseInt(spec.result.slice(3), 10)];
+        const i = parseInt(spec.result.slice(3), 10);
+        got = dehydrate(args[i], inTypes[i]);
+      } else {
+        got = dehydrate(got, spec.outType);
       }
       const ok = matches(got, tc.out, spec.compare);
       results.push({ ok, label: callLabel(spec.fn, tc.in), actual: got, expected: tc.out });

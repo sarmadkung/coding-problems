@@ -19,12 +19,18 @@
  *
  * EDGE CASES
  *   - n = 0 means the answer is simply the task count.
- *   - Several tasks tied for the most frequent shrink the idle time.
  *   - The answer is never below the total number of tasks.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Several tasks tied for the most frequent shrink the idle time.
+ *
  * COMPLEXITY
- *   Naive:  Simulating interval by interval with a scan for the best available task is O(total * 26).
- *   Target: O(n) time — either a max-heap with a cooldown queue, or the closed form: max(tasks.length, (maxFreq - 1) * (n + 1) + countOfMaxFreq).
+ *   Naive:  Simulating interval by interval with a scan for the best available task is O(total *
+ *           26).
+ *   Target: O(n) time — either a max-heap with a cooldown queue, or the closed form:
+ *           max(tasks.length, (maxFreq - 1) * (n + 1) + countOfMaxFreq).
  * ----------------------------------------------------------------------
  */
 

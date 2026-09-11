@@ -21,9 +21,12 @@
  *   - Repeated characters in t must each be covered.
  *   - Window characters need not be contiguous in t.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — check every substring against t's character counts.
- *   Target: O(n + m) time — expand a window to satisfy the counts, then contract from the left while it stays valid.
+ *   Target: O(n + m) time — expand a window to satisfy the counts, then contract from the left
+ *           while it stays valid.
  * ----------------------------------------------------------------------
  */
 

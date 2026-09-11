@@ -21,9 +21,12 @@
  *   - One asteroid may destroy several in a chain.
  *   - Equal sizes destroy BOTH.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Repeatedly scanning the array for a colliding pair until stable is O(n^2).
- *   Target: O(n) time, O(n) space — a stack: on a negative asteroid, pop while the top is a smaller positive, and only push if it survives.
+ *   Target: O(n) time, O(n) space — a stack: on a negative asteroid, pop while the top is a
+ *           smaller positive, and only push if it survives.
  * ----------------------------------------------------------------------
  */
 

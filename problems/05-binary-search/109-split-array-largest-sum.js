@@ -5,7 +5,7 @@
  * PROBLEM
  *   Given an array `nums` and an integer `k`, split the array into k non-empty contiguous
  *   subarrays so that the LARGEST subarray sum is as small as possible.
- *   Return that minimised largest sum.
+ *   Return that minimized largest sum.
  *
  * CONSTRAINTS
  *   1 <= nums.length <= 1000
@@ -20,11 +20,16 @@
  * EDGE CASES
  *   - k equal to the array length makes the answer the maximum element.
  *   - k = 1 makes the answer the total sum.
- *   - The answer always lies between max(nums) and sum(nums).
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The answer always lies between max(nums) and sum(nums).
  *
  * COMPLEXITY
  *   Naive:  O(n^k) time — try every possible set of split points.
- *   Target: O(n log(sum)) time — binary search the ANSWER: for a candidate cap, greedily count how many subarrays it needs, and shrink or grow the cap accordingly.
+ *   Target: O(n log(sum)) time — binary search the ANSWER: for a candidate cap, greedily count
+ *           how many subarrays it needs, and shrink or grow the cap accordingly.
  * ----------------------------------------------------------------------
  */
 

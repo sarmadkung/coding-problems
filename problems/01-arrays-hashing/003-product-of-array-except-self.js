@@ -19,11 +19,17 @@
  * EDGE CASES
  *   - A single zero — every slot except its own becomes 0.
  *   - Two or more zeros — the whole answer is 0.
- *   - Division is banned, so you cannot divide the total product.
+ *
+ * FOLLOW-UP
+ *   - Can you solve the problem in O(1) extra space complexity? (The output array does not count
+ *     as extra space.)
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — recompute the product for each index.
- *   Target: O(n) time, O(1) extra space (output excluded) — a prefix pass then a suffix pass, accumulating into the result array.
+ *   Target: O(n) time, O(1) extra space (output excluded) — a prefix pass then a suffix pass,
+ *           accumulating into the result array.
  * ----------------------------------------------------------------------
  */
 

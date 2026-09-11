@@ -16,13 +16,20 @@
  *   combinationSum2([2, 5, 2, 1, 2], 5)   ->  [[1,2,2], [5]]
  *
  * EDGE CASES
- *   - Each element is usable once, but equal VALUES may legitimately appear twice (as [1,1,6] shows).
- *   - Skipping duplicates at the same depth prevents duplicate combinations.
+ *   - Each element is usable once, but equal VALUES may legitimately appear twice (as [1,1,6]
+ *     shows).
  *   - No solution returns an empty array.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Skipping duplicates at the same depth prevents duplicate combinations.
+ *
  * COMPLEXITY
- *   Naive:  Enumerating all subsets and filtering by sum is O(2^n) with a costly de-duplication pass.
- *   Target: Backtracking on a sorted array: advance the index by one each level (single use) and skip a value equal to its predecessor within the same loop.
+ *   Naive:  Enumerating all subsets and filtering by sum is O(2^n) with a costly de-duplication
+ *           pass.
+ *   Target: Backtracking on a sorted array: advance the index by one each level (single use) and
+ *           skip a value equal to its predecessor within the same loop.
  * ----------------------------------------------------------------------
  */
 

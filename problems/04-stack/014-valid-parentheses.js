@@ -21,6 +21,8 @@
  *   - A closing bracket with an empty stack is invalid.
  *   - A non-empty stack at the end is invalid.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — repeatedly strip out adjacent matching pairs.
  *   Target: O(n) time, O(n) space — push openers onto a stack and pop-match on every closer.

@@ -1,0 +1,12 @@
+{
+  "fn": "maxDepth",
+  "inTypes": ["tree"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[3, 9, 20, null, null, 15, 7]], "out": 3 },
+    { "in": [[1, null, 2]], "out": 2 },
+    { "in": [[]], "out": 0 },
+    { "in": [[1]], "out": 1 },
+    { "in": [[1, 2, null, 3, null, 4, null]], "out": 4 }
+  ]
+}

@@ -18,11 +18,17 @@
  * EDGE CASES
  *   - Intervals touching at an endpoint merge.
  *   - One interval fully inside another.
- *   - The input is NOT sorted — sort by start first.
+ *   - The input is not sorted.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Sort by start, then sweep once, extending the current interval while it overlaps.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — repeatedly scan for any overlapping pair until none remain.
- *   Target: O(n log n) time — sort by start, then sweep, extending the current interval whenever the next start is <= the current end.
+ *   Target: O(n log n) time — sort by start, then sweep, extending the current interval whenever
+ *           the next start is <= the current end.
  * ----------------------------------------------------------------------
  */
 

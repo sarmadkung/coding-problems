@@ -23,9 +23,12 @@
  *   - Cars that merge exactly AT the target still count as one fleet.
  *   - Cars behind can never overtake — only catch up.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — simulate the positions over time and detect merges step by step.
- *   Target: O(n log n) time — sort by position descending, compute each car's arrival time, and count how many times a new maximum arrival time appears.
+ *   Target: O(n log n) time — sort by position descending, compute each car's arrival time, and
+ *           count how many times a new maximum arrival time appears.
  * ----------------------------------------------------------------------
  */
 

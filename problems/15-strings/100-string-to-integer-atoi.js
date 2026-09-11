@@ -22,9 +22,12 @@
  *   - At most one sign character, and it must come before the digits.
  *   - Out-of-range values clamp to the 32-bit bound rather than wrapping.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  parseInt gets most cases right but does not clamp to the 32-bit range.
- *   Target: O(n) time, O(1) space — a small state machine: whitespace, then sign, then digits, clamping as you accumulate.
+ *   Target: O(n) time, O(1) space — a small state machine: whitespace, then sign, then digits,
+ *           clamping as you accumulate.
  * ----------------------------------------------------------------------
  */
 

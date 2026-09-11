@@ -12,6 +12,12 @@
  *   0 <= key <= 10^4, 0 <= value <= 10^5
  *   At most 2 * 10^5 calls to get and put.
  *
+ * API
+ *   new LRUCache(capacity)             initialize the cache with a positive capacity
+ *   get(key)                -> number  return the value for key, or -1 if it is absent
+ *   put(key, value)         -> void    insert or update key; evict the least recently used key if
+ *                                      over capacity
+ *
  * EXAMPLES
  *   const c = new LRUCache(2);
  *   c.put(1, 1); c.put(2, 2); c.get(1)  ->  1
@@ -23,9 +29,12 @@
  *   - Updating an existing key also refreshes it and must not grow the size.
  *   - Capacity of 1.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n) per operation — an array scanned for the oldest entry.
- *   Target: O(1) per operation — a hash map to nodes of a doubly linked list (or exploit JS Map insertion order).
+ *   Target: O(1) per operation — a hash map to nodes of a doubly linked list (or exploit JS Map
+ *           insertion order).
  * ----------------------------------------------------------------------
  */
 

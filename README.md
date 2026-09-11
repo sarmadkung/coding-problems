@@ -150,6 +150,14 @@ A problem file looks like this:
  * EDGE CASES
  *   - Duplicate values that form the answer ([3,3]).
  *
+ * FOLLOW-UP
+ *   - Can you come up with an algorithm that is less than O(n^2) time complexity?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. ...
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — test every pair with nested loops.
  *   Target: O(n) time, O(n) space — one pass with a hash map.
@@ -163,9 +171,25 @@ function twoSum(nums, target) {
 module.exports = { twoSum };
 ```
 
-The **Naive** and **Target** lines are the part worth reading before you start.
-The naive approach is usually the one you will reach for first; the header tells
-you why it is not good enough, so you aim at the right solution from the outset.
+**Everything above the spoiler bar is what a platform would show you**, and it is
+deliberately all you get: the statement, the constraints, worked examples, the
+input edge cases you have to survive, and the platform's own follow-up question.
+Deciding *which* complexity is achievable is half the exercise, so the target is
+not stated up front.
+
+**Below the bar are the answers** — the approach hints, and the naive and target
+complexities. Read them when you are stuck, or afterwards to check you aimed at
+the right solution. The perf case still enforces the target either way, so you
+find out whether you hit it without having to look.
+
+Some problems carry two extra sections above the bar:
+
+- **INPUT FORMAT** — on tree, linked-list and graph problems, spelling out that
+  your function receives a real node object and that the array in the examples is
+  only how the platforms *print* it.
+- **API** — on design problems (`LRUCache`, `MinStack`, `Trie`, …), the exact
+  method signatures, return types and return contracts, as a platform specifies
+  them.
 
 ---
 
@@ -230,6 +254,7 @@ so a slow solution reports a failure instead of hanging your terminal.
 ```
 practice              the test runner and analytics tool
 problems/             163 problems in 22 topic folders
+problems/_lib/        TreeNode and ListNode, and the array <-> node serializers
 tests/                test cases as JSON data, plus the large-input perf cases
 PROBLEMS.md           full index by topic          (generated)
 EASY|MEDIUM|HARD.md   indexes by difficulty        (generated)
@@ -249,6 +274,32 @@ Test cases are stored as plain **data**, not code:
 
 That is deliberate. The same JSON can drive a Go, Python or Rust runner later
 without a single test case being rewritten.
+
+Tree and linked-list problems declare the node shape, and the runner builds real
+nodes from the arrays before calling you — the same translation the platforms do:
+
+```json
+{
+  "fn": "maxDepth",
+  "inTypes": ["tree"],
+  "cases": [{ "in": [[3, 9, 20, null, null, 15, 7]], "out": 3 }]
+}
+```
+
+```json
+{
+  "fn": "reverseList",
+  "inTypes": ["list"],
+  "outType": "list",
+  "cases": [{ "in": [[1, 2, 3]], "out": [3, 2, 1] }]
+}
+```
+
+`inTypes` names the shape of each argument and `outType` the shape of the return
+value. The types are `tree` (level-order array, `null` for a missing child),
+`list` (values in order), `cycleList` (`[values, pos]`, where `pos` is the index
+the tail points back to, or -1), and `node` (a single node, compared by its
+`val`). Anything else is passed through as plain JSON.
 
 ---
 

@@ -12,6 +12,10 @@
  *   1 <= Node.val <= 10^5
  *   The lists retain their original structure.
  *
+ * INPUT FORMAT
+ *   `head` is a ListNode object, not an array. The arrays in EXAMPLES list the node values in
+ *   order; the test runner links them into real nodes before calling your function.
+ *
  * EXAMPLES
  *   listA = 4 -> 1 -> 8 -> 4 -> 5, listB = 5 -> 6 -> 1 -> 8 -> 4 -> 5
  *     getIntersectionNode(listA, listB)  ->  the node holding 8
@@ -22,10 +26,27 @@
  *   - Equal values do not imply intersection; compare node references.
  *   - No intersection must return null, not a value.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  O(m * n) time — compare every node of A against every node of B. O(n) space if you use a visited Set.
- *   Target: O(m + n) time, O(1) space — walk both lists, and on reaching the end switch to the other list's head; the pointers meet at the intersection (or both hit null).
+ *   Naive:  O(m * n) time — compare every node of A against every node of B. O(n) space if you
+ *           use a visited Set.
+ *   Target: O(m + n) time, O(1) space — walk both lists, and on reaching the end switch to the
+ *           other list's head; the pointers meet at the intersection (or both hit null).
  * ----------------------------------------------------------------------
+ */
+
+const { ListNode } = require('../_lib/structures');
+
+/**
+ * Definition for a singly linked list node — available here exactly as a platform provides it:
+ *
+ *   class ListNode {
+ *     constructor(val = 0, next = null) {
+ *       this.val = val;
+ *       this.next = next;
+ *     }
+ *   }
  */
 
 function getIntersectionNode(headA, headB) {

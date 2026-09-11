@@ -21,9 +21,12 @@
  *   - [0] becomes [1].
  *   - Converting to a Number overflows for 100 digits.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Joining to a number, adding 1, and splitting back loses precision beyond 15 digits.
- *   Target: O(n) time — walk from the last digit: a digit below 9 increments and returns; a 9 becomes 0 and carries. If the loop ends still carrying, prepend a 1.
+ *   Target: O(n) time — walk from the last digit: a digit below 9 increments and returns; a 9
+ *           becomes 0 and carries. If the loop ends still carrying, prepend a 1.
  * ----------------------------------------------------------------------
  */
 

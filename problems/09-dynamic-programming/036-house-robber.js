@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - A single house.
  *   - Two houses — take the larger.
- *   - Alternating houses is not always optimal: [2,1,1,2] gives 4.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Alternating houses is not always optimal: [2,1,1,2] gives 4.
  *
  * COMPLEXITY
  *   Naive:  O(2^n) time — try every subset and reject adjacent picks.
- *   Target: O(n) time, O(1) space — dp[i] = max(dp[i-1], dp[i-2] + nums[i]), kept in two rolling variables.
+ *   Target: O(n) time, O(1) space — dp[i] = max(dp[i-1], dp[i-2] + nums[i]), kept in two rolling
+ *           variables.
  * ----------------------------------------------------------------------
  */
 

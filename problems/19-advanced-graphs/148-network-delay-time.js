@@ -22,9 +22,12 @@
  *   - The answer is the MAXIMUM of all shortest paths, not their sum.
  *   - Edges are directed — [u,v,w] does not imply [v,u,w].
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  A plain BFS ignores edge weights and gives the wrong answer on weighted graphs.
- *   Target: O(E log V) time — Dijkstra from k with a min-heap, then return the largest finalised distance (or -1 if any node was never reached).
+ *   Target: O(E log V) time — Dijkstra from k with a min-heap, then return the largest finalised
+ *           distance (or -1 if any node was never reached).
  * ----------------------------------------------------------------------
  */
 

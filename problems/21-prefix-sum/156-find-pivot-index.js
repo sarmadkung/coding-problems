@@ -21,9 +21,12 @@
  *   - The last index is valid the same way.
  *   - Return the LEFTMOST qualifying index.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — recompute both side sums at every index.
- *   Target: O(n) time, O(1) space — one pass with a running left sum, comparing it against (total - left - nums[i]).
+ *   Target: O(n) time, O(1) space — one pass with a running left sum, comparing it against (total
+ *           - left - nums[i]).
  * ----------------------------------------------------------------------
  */
 

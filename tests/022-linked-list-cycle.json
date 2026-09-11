@@ -1,0 +1,13 @@
+{
+  "fn": "hasCycle",
+  "inTypes": ["cycleList"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[[3, 2, 0, -4], 1]], "out": true },
+    { "in": [[[1, 2], 0]], "out": true },
+    { "in": [[[1], -1]], "out": false },
+    { "in": [[[1, 2, 3], -1]], "out": false },
+    { "in": [[[], -1]], "out": false },
+    { "in": [[[1], 0]], "out": true }
+  ]
+}

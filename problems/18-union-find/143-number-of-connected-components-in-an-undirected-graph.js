@@ -21,9 +21,13 @@
  *   - Isolated nodes still count.
  *   - The graph may be disconnected in several places at once.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  Running a fresh search from every node without tracking visits re-walks components repeatedly.
- *   Target: O(E * a(N)) with union-find — start the count at n and decrement on each successful union. DFS/BFS over unvisited nodes is O(V + E) and equally valid.
+ *   Naive:  Running a fresh search from every node without tracking visits re-walks components
+ *           repeatedly.
+ *   Target: O(E * a(N)) with union-find — start the count at n and decrement on each successful
+ *           union. DFS/BFS over unvisited nodes is O(V + E) and equally valid.
  * ----------------------------------------------------------------------
  */
 

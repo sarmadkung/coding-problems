@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - An odd total sum is immediately false.
  *   - A single element cannot be split.
- *   - This is subset-sum for total/2 — a 0/1 knapsack in disguise.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. This is subset-sum for total/2 — a 0/1 knapsack in disguise.
  *
  * COMPLEXITY
  *   Naive:  O(2^n) time — enumerate every subset and compare sums.
- *   Target: O(n * sum) time, O(sum) space — a boolean DP over reachable sums up to total/2, iterating the inner loop DOWNWARD so each number is used once.
+ *   Target: O(n * sum) time, O(sum) space — a boolean DP over reachable sums up to total/2,
+ *           iterating the inner loop DOWNWARD so each number is used once.
  * ----------------------------------------------------------------------
  */
 

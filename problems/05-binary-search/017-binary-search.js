@@ -19,7 +19,12 @@
  * EDGE CASES
  *   - Target smaller than every element, or larger than every element.
  *   - Single-element array.
- *   - Compute the midpoint as low + ((high - low) >> 1) to avoid overflow in fixed-width languages.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Compute the midpoint as low + ((high - low) >> 1) to avoid overflow in fixed-width
+ *      languages.
  *
  * COMPLEXITY
  *   Naive:  O(n) time — a linear scan. Correct, but violates the required complexity.

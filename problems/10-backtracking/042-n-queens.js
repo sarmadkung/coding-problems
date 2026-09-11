@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - n = 2 and n = 3 have no solutions.
  *   - n = 1 has exactly one.
- *   - Both diagonals must be checked: row-col and row+col identify them.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Both diagonals must be checked: row-col and row+col identify them.
  *
  * COMPLEXITY
  *   Naive:  O(n^n) time — try every square for every queen and validate at the end.
- *   Target: Backtracking with column and two diagonal sets, pruning invalid placements immediately — roughly O(n!) with heavy pruning.
+ *   Target: Backtracking with column and two diagonal sets, pruning invalid placements
+ *           immediately — roughly O(n!) with heavy pruning.
  * ----------------------------------------------------------------------
  */
 

@@ -17,12 +17,18 @@
  *
  * EDGE CASES
  *   - A grid of all water returns 0.
- *   - Diagonal neighbours are NOT connected.
- *   - Mark cells visited or the flood fill recurses forever.
+ *   - Diagonal neighbors are NOT connected.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Mark cells visited or the flood fill recurses forever.
  *
  * COMPLEXITY
- *   Naive:  Re-exploring islands without marking visited cells double-counts and may not terminate.
- *   Target: O(m * n) time — flood-fill from each unvisited land cell, returning the cell count, and keep the maximum.
+ *   Naive:  Re-exploring islands without marking visited cells double-counts and may not
+ *           terminate.
+ *   Target: O(m * n) time — flood-fill from each unvisited land cell, returning the cell count,
+ *           and keep the maximum.
  * ----------------------------------------------------------------------
  */
 

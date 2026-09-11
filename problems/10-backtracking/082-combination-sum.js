@@ -20,12 +20,19 @@
  *
  * EDGE CASES
  *   - Candidates may repeat within one combination.
- *   - [2,2,3] and [2,3,2] are the SAME combination — pass a start index to avoid permutations.
+ *   - [2,2,3] and [2,3,2] are the SAME combination.
  *   - No valid combination returns an empty array.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Pass a start index down the recursion so candidates are never revisited out of order.
+ *
  * COMPLEXITY
- *   Naive:  Recursing over all candidates at every level generates permutations, then needs de-duplication.
- *   Target: Backtracking with a start index and a remaining target, pruning as soon as remaining goes negative.
+ *   Naive:  Recursing over all candidates at every level generates permutations, then needs de-
+ *           duplication.
+ *   Target: Backtracking with a start index and a remaining target, pruning as soon as remaining
+ *           goes negative.
  * ----------------------------------------------------------------------
  */
 

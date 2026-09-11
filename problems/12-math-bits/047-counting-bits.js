@@ -17,7 +17,11 @@
  * EDGE CASES
  *   - n = 0 returns [0].
  *   - The result has n + 1 entries, not n.
- *   - Popcounting each number separately is O(n log n) — DP gives O(n).
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Popcounting each number separately is O(n log n) — DP gives O(n).
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — count the bits of each number independently.

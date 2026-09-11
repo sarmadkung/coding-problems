@@ -3,8 +3,8 @@
  * Difficulty: Medium   ·   Topic: Two Pointers
  * ----------------------------------------------------------------------
  * PROBLEM
- *   Given an array `nums` with n objects coloured 0 (red), 1 (white) or 2 (blue), sort
- *   them IN PLACE so equal colours are adjacent in the order 0, 1, 2.
+ *   Given an array `nums` with n objects colored 0 (red), 1 (white) or 2 (blue), sort
+ *   them IN PLACE so equal colors are adjacent in the order 0, 1, 2.
  *   You may not use a library sort, and should do it in one pass.
  *
  * CONSTRAINTS
@@ -17,13 +17,19 @@
  *   sortColors([0])                 ->  [0]
  *
  * EDGE CASES
- *   - An array of a single colour.
- *   - After swapping a 2 into place, do NOT advance the cursor — recheck the new value.
+ *   - An array of a single color.
  *   - Already-sorted input.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. After swapping a 2 into place, do NOT advance the cursor — recheck the new value.
+ *
  * COMPLEXITY
- *   Naive:  O(n) two-pass counting sort — count each colour, then overwrite. Correct, but two passes.
- *   Target: O(n) time, O(1) space, one pass — the Dutch National Flag algorithm with low/mid/high pointers.
+ *   Naive:  O(n) two-pass counting sort — count each color, then overwrite. Correct, but two
+ *           passes.
+ *   Target: O(n) time, O(1) space, one pass — the Dutch National Flag algorithm with low/mid/high
+ *           pointers.
  * ----------------------------------------------------------------------
  */
 

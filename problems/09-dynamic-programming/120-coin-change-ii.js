@@ -21,11 +21,17 @@
  * EDGE CASES
  *   - Amount 0 has exactly one combination — take nothing.
  *   - Order does NOT matter; counting permutations is the classic wrong answer.
- *   - Loop over COINS on the outside and amounts inside to avoid permutations.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Loop over COINS on the outside and amounts inside to avoid permutations.
  *
  * COMPLEXITY
- *   Naive:  O(amount^coins) time — recurse over every sequence of coin choices, which counts permutations.
- *   Target: O(coins * amount) time, O(amount) space — a 1-D DP where the coin loop is outermost, so each combination is counted once.
+ *   Naive:  O(amount^coins) time — recurse over every sequence of coin choices, which counts
+ *           permutations.
+ *   Target: O(coins * amount) time, O(amount) space — a 1-D DP where the coin loop is outermost,
+ *           so each combination is counted once.
  * ----------------------------------------------------------------------
  */
 

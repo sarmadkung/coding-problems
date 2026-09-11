@@ -17,13 +17,22 @@
  *   rotate([1, 2], k = 3)            ->  [2, 1]  // k exceeds the length
  *
  * EDGE CASES
- *   - k may be larger than the array length — reduce it with k %= n first.
+ *   - k may be larger than the array length.
  *   - k = 0 leaves the array untouched.
+ *
+ * FOLLOW-UP
  *   - An extra array is O(n) space and misses the target.
+ *   - Could you do it in-place with O(1) extra space?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Reduce k with k %= n before doing any work.
  *
  * COMPLEXITY
  *   Naive:  O(n * k) time — rotate by one position, k times.
- *   Target: O(n) time, O(1) space — the triple reversal trick: reverse the whole array, then reverse the first k, then reverse the rest.
+ *   Target: O(n) time, O(1) space — the triple reversal trick: reverse the whole array, then
+ *           reverse the first k, then reverse the rest.
  * ----------------------------------------------------------------------
  */
 

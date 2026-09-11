@@ -4,7 +4,7 @@
  * ----------------------------------------------------------------------
  * PROBLEM
  *   Given an m x n board of 1 (live) and 0 (dead) cells, compute the next state under
- *   Conway's rules: a live cell with fewer than 2 or more than 3 live neighbours dies, a
+ *   Conway's rules: a live cell with fewer than 2 or more than 3 live neighbors dies, a
  *   live cell with 2 or 3 survives, and a dead cell with exactly 3 becomes live.
  *   All cells update SIMULTANEOUSLY, and you should do it in place.
  *
@@ -19,13 +19,20 @@
  *   gameOfLife([[1, 1], [1, 0]])  ->  [[1, 1], [1, 1]]
  *
  * EDGE CASES
- *   - Updates are simultaneous — writing directly corrupts later neighbour counts.
- *   - Cells on the border have fewer than 8 neighbours.
- *   - Neighbours include all 8 directions, diagonals included.
+ *   - Updates are simultaneous — writing directly corrupts later neighbor counts.
+ *   - Cells on the border have fewer than 8 neighbors.
+ *   - Neighbors include all 8 directions, diagonals included.
+ *
+ * FOLLOW-UP
+ *   - Could you solve it in-place? Remember that the board needs to be updated simultaneously.
+ *   - The board is theoretically infinite. How would you handle the live cells at the border?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
- *   Naive:  O(m * n) extra space — copy the board and read neighbours from the copy.
- *   Target: O(m * n) time, O(1) space — encode both states in each cell (e.g. 2 means was-dead-now-live), then normalise in a second pass.
+ *   Naive:  O(m * n) extra space — copy the board and read neighbors from the copy.
+ *   Target: O(m * n) time, O(1) space — encode both states in each cell (e.g. 2 means was-dead-
+ *           now-live), then normalise in a second pass.
  * ----------------------------------------------------------------------
  */
 

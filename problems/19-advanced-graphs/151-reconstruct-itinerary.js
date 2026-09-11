@@ -21,11 +21,18 @@
  * EDGE CASES
  *   - EVERY ticket must be used exactly once.
  *   - Duplicate tickets between the same pair are allowed.
- *   - Greedily taking the lexically smallest next airport can strand you — the route may need backtracking.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Greedily taking the lexically smallest next airport can strand you — the route may need
+ *      backtracking.
  *
  * COMPLEXITY
  *   Naive:  Backtracking over every permutation of tickets is factorial.
- *   Target: O(E log E) time — Hierholzer's algorithm for an Eulerian path: visit destinations in sorted order, and append an airport to the result only once it has no unused tickets left, then reverse.
+ *   Target: O(E log E) time — Hierholzer's algorithm for an Eulerian path: visit destinations in
+ *           sorted order, and append an airport to the result only once it has no unused tickets
+ *           left, then reverse.
  * ----------------------------------------------------------------------
  */
 

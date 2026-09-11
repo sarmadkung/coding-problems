@@ -16,12 +16,21 @@
  *
  * EDGE CASES
  *   - Zero has weight 0.
- *   - In JS, bitwise operators coerce to SIGNED 32-bit — use >>> for the shift.
+ *   - In JS, bitwise operators coerce to a SIGNED 32-bit integer.
  *   - All-ones input gives 32.
+ *
+ * FOLLOW-UP
+ *   - If this function is called many times, how would you optimize it?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Use the unsigned shift >>> so the sign bit does not propagate.
  *
  * COMPLEXITY
  *   Naive:  O(32) time — shift through all 32 positions regardless of how few bits are set.
- *   Target: O(number of set bits) time — n &= (n - 1) clears the lowest set bit each iteration, so the loop runs only as many times as there are 1s.
+ *   Target: O(number of set bits) time — n &= (n - 1) clears the lowest set bit each iteration,
+ *           so the loop runs only as many times as there are 1s.
  * ----------------------------------------------------------------------
  */
 

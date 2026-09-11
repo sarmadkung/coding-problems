@@ -15,12 +15,17 @@
  *
  * EDGE CASES
  *   - Negative operands must work — two's complement handles this naturally.
- *   - a ^ b is the sum without carries; (a & b) << 1 is the carry.
- *   - Loop until the carry becomes zero.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. a ^ b is the sum without carries; (a & b) << 1 is the carry.
+ *   2. Loop until the carry becomes zero.
  *
  * COMPLEXITY
  *   Naive:  There is no simpler correct approach — the constraint is the whole exercise.
- *   Target: O(1) time (at most 32 iterations) — repeatedly combine the XOR sum with the shifted AND carry until no carry remains.
+ *   Target: O(1) time (at most 32 iterations) — repeatedly combine the XOR sum with the shifted
+ *           AND carry until no carry remains.
  * ----------------------------------------------------------------------
  */
 

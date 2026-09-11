@@ -18,13 +18,18 @@
  *   wordBreak("catsandog", ["cats","dog","sand","and","cat"])  ->  false
  *
  * EDGE CASES
- *   - Greedy longest-match fails: "catsandog" needs backtracking.
  *   - Words may be reused any number of times.
- *   - Dictionary words longer than s can be skipped.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Greedy longest-match fails: "catsandog" needs backtracking.
+ *   2. Dictionary words longer than s can be skipped.
  *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse on every split point without memoisation.
- *   Target: O(n^2 * m) time, O(n) space — dp[i] is true if some j < i has dp[j] true and s[j..i) is in the dictionary.
+ *   Target: O(n^2 * m) time, O(n) space — dp[i] is true if some j < i has dp[j] true and s[j..i)
+ *           is in the dictionary.
  * ----------------------------------------------------------------------
  */
 

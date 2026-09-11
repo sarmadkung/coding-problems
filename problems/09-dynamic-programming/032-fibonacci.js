@@ -16,12 +16,19 @@
  *
  * EDGE CASES
  *   - n = 0 and n = 1 are the base cases.
- *   - Large n loses precision in 64-bit floats — consider BigInt.
- *   - Deep naive recursion can blow the stack.
+ *   - Large n loses precision in 64-bit floats.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Use BigInt if you need exact values for large n.
+ *   2. Deep naive recursion can blow the stack.
  *
  * COMPLEXITY
- *   Naive:  O(2^n) time — plain recursion, recomputing the same subproblems exponentially. Try fib(45) and watch it hang.
- *   Target: O(n) time, O(1) space — iterate keeping only the last two values. (O(log n) is possible via matrix exponentiation.)
+ *   Naive:  O(2^n) time — plain recursion, recomputing the same subproblems exponentially. Try
+ *           fib(45) and watch it hang.
+ *   Target: O(n) time, O(1) space — iterate keeping only the last two values. (O(log n) is
+ *           possible via matrix exponentiation.)
  * ----------------------------------------------------------------------
  */
 

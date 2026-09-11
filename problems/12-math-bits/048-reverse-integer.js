@@ -21,9 +21,12 @@
  *   - Negative numbers keep their sign.
  *   - Overflow must be detected BEFORE it happens, not after.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Reversing the string form and parsing it ignores the overflow requirement.
- *   Target: O(log x) time, O(1) space — pop digits with %10 and push with *10, checking against the 32-bit bound before each push.
+ *   Target: O(log x) time, O(1) space — pop digits with %10 and push with *10, checking against
+ *           the 32-bit bound before each push.
  * ----------------------------------------------------------------------
  */
 

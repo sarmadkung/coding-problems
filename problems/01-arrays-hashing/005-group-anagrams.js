@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - The empty string is its own group.
  *   - Single-character strings.
- *   - Words of different lengths can never be anagrams.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Words of different lengths can never be anagrams.
  *
  * COMPLEXITY
  *   Naive:  O(n^2 * k) time — compare each string against every group.
- *   Target: O(n * k) time — key each string by a 26-slot character count (or its sorted form) in a hash map.
+ *   Target: O(n * k) time — key each string by a 26-slot character count (or its sorted form) in
+ *           a hash map.
  * ----------------------------------------------------------------------
  */
 

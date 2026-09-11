@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - Several edges may lie on the cycle — return the LAST one in input order.
  *   - Nodes are 1-indexed, not 0-indexed.
- *   - Processing the edges in order makes 'last' fall out naturally.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Processing the edges in order makes 'last' fall out naturally.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — remove each edge in turn and test whether the rest forms a tree.
- *   Target: O(n * a(n)) time — union-find in input order: the first edge whose endpoints already share a root is the answer.
+ *   Target: O(n * a(n)) time — union-find in input order: the first edge whose endpoints already
+ *           share a root is the answer.
  * ----------------------------------------------------------------------
  */
 
