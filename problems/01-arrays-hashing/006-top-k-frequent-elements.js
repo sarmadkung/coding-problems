@@ -20,9 +20,12 @@
  *   - All elements identical.
  *   - Negative values are valid keys.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n log n) time — count, then sort every distinct value by frequency.
- *   Target: O(n) time — bucket sort by frequency (a frequency can never exceed n), or a size-k heap for O(n log k).
+ *   Target: O(n) time — bucket sort by frequency (a frequency can never exceed n), or a size-k
+ *           heap for O(n log k).
  * ----------------------------------------------------------------------
  */
 

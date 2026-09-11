@@ -21,11 +21,16 @@
  * EDGE CASES
  *   - endWord absent from wordList makes it impossible — return 0.
  *   - The count INCLUDES both the begin and end words.
- *   - Comparing every pair of words to build edges is O(n^2 * L).
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Comparing every pair of words to build edges is O(n^2 * L).
  *
  * COMPLEXITY
  *   Naive:  DFS explores paths that are not shortest and can blow up exponentially.
- *   Target: O(n * L * 26) time — BFS from beginWord, generating neighbours by substituting each of the 26 letters at each position and checking a Set.
+ *   Target: O(n * L * 26) time — BFS from beginWord, generating neighbors by substituting each
+ *           of the 26 letters at each position and checking a Set.
  * ----------------------------------------------------------------------
  */
 

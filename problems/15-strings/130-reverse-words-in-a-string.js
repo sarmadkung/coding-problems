@@ -21,9 +21,12 @@
  *   - Multiple spaces between words collapse into one.
  *   - Word ORDER reverses; the letters inside each word do not.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Splitting naively on a single space produces empty strings that must be filtered.
- *   Target: O(n) time — split on runs of whitespace, reverse the list, and join with single spaces. (O(1) space in place: reverse the whole string, then each word.)
+ *   Target: O(n) time — split on runs of whitespace, reverse the list, and join with single
+ *           spaces. (O(1) space in place: reverse the whole string, then each word.)
  * ----------------------------------------------------------------------
  */
 

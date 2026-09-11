@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - An empty board is valid.
  *   - Only filled cells are checked; the board need not be solvable.
- *   - Box index is (row / 3) * 3 + (col / 3) — the classic slip.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Box index is (row / 3) * 3 + (col / 3) — the classic slip.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) per constraint with three separate full passes over the board.
- *   Target: O(1) time (the board is fixed at 81 cells) — a single pass maintaining 9 row sets, 9 column sets and 9 box sets.
+ *   Target: O(1) time (the board is fixed at 81 cells) — a single pass maintaining 9 row sets, 9
+ *           column sets and 9 box sets.
  * ----------------------------------------------------------------------
  */
 

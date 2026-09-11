@@ -9,6 +9,7 @@
  * CONSTRAINTS
  *   1 <= nums.length <= 10^4
  *   -2^31 <= nums[i] <= 2^31 - 1
+ *   You must do it in place, without making a copy of the array.
  *
  * EXAMPLES
  *   moveZeroes([0, 1, 0, 3, 12])  ->  [1, 3, 12, 0, 0]
@@ -18,11 +19,16 @@
  * EDGE CASES
  *   - An array of all zeroes, or with no zeroes.
  *   - The order of the non-zero elements must be preserved.
- *   - Building a new array violates the in-place requirement.
+ *
+ * FOLLOW-UP
+ *   - Could you minimize the total number of operations done?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — repeatedly find a zero and shift everything after it left by one.
- *   Target: O(n) time, O(1) space — a write pointer for the next non-zero slot; after one pass, fill the tail with zeroes.
+ *   Target: O(n) time, O(1) space — a write pointer for the next non-zero slot; after one pass,
+ *           fill the tail with zeroes.
  * ----------------------------------------------------------------------
  */
 

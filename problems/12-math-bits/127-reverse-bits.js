@@ -15,12 +15,21 @@
  *
  * EDGE CASES
  *   - Leading zeros matter — always process exactly 32 bits.
- *   - In JS, bitwise operations are signed; finish with >>> 0 to get an unsigned result.
- *   - Follow-up: how would you optimise for many repeated calls? (byte-level lookup table)
+ *   - In JS, bitwise operations are signed.
+ *
+ * FOLLOW-UP
+ *   - Follow-up: how would you optimize for many repeated calls? (byte-level lookup table)
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Finish with >>> 0 to reinterpret the result as unsigned.
  *
  * COMPLEXITY
- *   Naive:  Converting to a binary string, reversing it, and parsing back works but allocates on every call.
- *   Target: O(32) time, O(1) space — shift the result left and push in the input's lowest bit, 32 times.
+ *   Naive:  Converting to a binary string, reversing it, and parsing back works but allocates on
+ *           every call.
+ *   Target: O(32) time, O(1) space — shift the result left and push in the input's lowest bit, 32
+ *           times.
  * ----------------------------------------------------------------------
  */
 

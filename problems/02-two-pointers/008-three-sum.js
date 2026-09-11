@@ -21,9 +21,12 @@
  *   - Fewer than three elements.
  *   - All zeros.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^3) time — three nested loops plus a de-duplication pass.
- *   Target: O(n^2) time, O(1) extra space — sort, then for each index run a two-pointer scan, skipping repeated values at every level.
+ *   Target: O(n^2) time, O(1) extra space — sort, then for each index run a two-pointer scan,
+ *           skipping repeated values at every level.
  * ----------------------------------------------------------------------
  */
 

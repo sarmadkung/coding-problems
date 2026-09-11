@@ -13,6 +13,11 @@
  *   -10^5 <= matrix[i][j] <= 10^5
  *   At most 10^4 calls to sumRegion.
  *
+ * API
+ *   new NumMatrix(matrix)                         initialize the object with the integer matrix
+ *   sumRegion(row1, col1, row2, col2)  -> number  return the sum of the rectangle with those
+ *                                                 corners, inclusive
+ *
  * EXAMPLES
  *   const nm = new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5]]);
  *   nm.sumRegion(1, 1, 2, 2)  ->  11
@@ -20,12 +25,17 @@
  *
  * EDGE CASES
  *   - A single-cell rectangle where row1 = row2 and col1 = col2.
- *   - Inclusion-exclusion double-subtracts the overlapping corner — add it back.
- *   - Pad the prefix grid with a zero row and column to avoid boundary checks.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Inclusion-exclusion double-subtracts the overlapping corner — add it back.
+ *   2. Pad the prefix grid with a zero row and column to avoid boundary checks.
  *
  * COMPLEXITY
  *   Naive:  O(m * n) per query — sum the rectangle cell by cell.
- *   Target: O(m * n) preprocessing, O(1) per query — a 2D prefix sum, then sum = BR - TR - BL + TL by inclusion-exclusion.
+ *   Target: O(m * n) preprocessing, O(1) per query — a 2D prefix sum, then sum = BR - TR - BL +
+ *           TL by inclusion-exclusion.
  * ----------------------------------------------------------------------
  */
 

@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - Duplicates count separately — this is positional, not distinct.
  *   - k = 1 is the maximum; k = n is the minimum.
+ *
+ * FOLLOW-UP
  *   - Sorting works but is not the intended complexity.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — sort descending and index k - 1.
- *   Target: O(n log k) with a size-k min-heap, or O(n) average with Quickselect (partition and recurse into one side only).
+ *   Target: O(n log k) with a size-k min-heap, or O(n) average with Quickselect (partition and
+ *           recurse into one side only).
  * ----------------------------------------------------------------------
  */
 

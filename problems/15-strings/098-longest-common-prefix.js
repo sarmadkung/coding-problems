@@ -21,9 +21,12 @@
  *   - A single string is its own prefix.
  *   - The prefix can never exceed the shortest string's length.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n * m) but wasteful — compare all strings fully before truncating.
- *   Target: O(total characters) time — scan character positions across all strings, stopping at the first mismatch or the shortest string's end.
+ *   Target: O(total characters) time — scan character positions across all strings, stopping at
+ *           the first mismatch or the shortest string's end.
  * ----------------------------------------------------------------------
  */
 

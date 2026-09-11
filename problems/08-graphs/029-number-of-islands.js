@@ -17,12 +17,17 @@
  *
  * EDGE CASES
  *   - A grid of all water, or all land.
- *   - Diagonal neighbours do NOT connect.
- *   - Mark visited cells or the traversal loops forever.
+ *   - Diagonal neighbors do NOT connect.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Mark visited cells or the traversal loops forever.
  *
  * COMPLEXITY
  *   Naive:  Repeated scans without marking visited cells revisit the same land endlessly.
- *   Target: O(m * n) time — scan every cell; on unvisited land, flood-fill (DFS or BFS) the whole island and count 1.
+ *   Target: O(m * n) time — scan every cell; on unvisited land, flood-fill (DFS or BFS) the whole
+ *           island and count 1.
  * ----------------------------------------------------------------------
  */
 

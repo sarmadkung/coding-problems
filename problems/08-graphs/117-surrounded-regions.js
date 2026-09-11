@@ -19,11 +19,17 @@
  * EDGE CASES
  *   - Any region connected to the border survives, however large.
  *   - A 1x1 board is entirely border.
- *   - Flipping first and fixing later is far harder than marking survivors first.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Flipping first and fixing later is far harder than marking survivors first.
  *
  * COMPLEXITY
- *   Naive:  Checking each region for border contact separately re-walks the same cells repeatedly.
- *   Target: O(m * n) time — invert the problem: flood-fill from every 'O' ON the border to mark survivors, then flip all unmarked 'O' cells.
+ *   Naive:  Checking each region for border contact separately re-walks the same cells
+ *           repeatedly.
+ *   Target: O(m * n) time — invert the problem: flood-fill from every 'O' ON the border to mark
+ *           survivors, then flip all unmarked 'O' cells.
  * ----------------------------------------------------------------------
  */
 

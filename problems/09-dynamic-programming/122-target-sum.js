@@ -21,9 +21,12 @@
  *   - A target beyond the total sum is unreachable.
  *   - Every element must get a sign; none may be skipped.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — try both signs at every index without memoisation.
- *   Target: O(n * sum) time — memoise on (index, runningSum), or transform it into a subset-sum: find subsets totalling (sum + target) / 2.
+ *   Target: O(n * sum) time — memoise on (index, runningSum), or transform it into a subset-sum:
+ *           find subsets totalling (sum + target) / 2.
  * ----------------------------------------------------------------------
  */
 

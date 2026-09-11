@@ -18,12 +18,17 @@
  *
  * EDGE CASES
  *   - Zeros reset the running product.
- *   - Two negatives multiply to a positive — you must track the MINIMUM too.
  *   - A single negative element is its own answer.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Two negatives multiply to a positive — you must track the MINIMUM too.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — multiply out every subarray.
- *   Target: O(n) time, O(1) space — Kadane's variant carrying both the running max and min, swapping them on a negative value.
+ *   Target: O(n) time, O(1) space — Kadane's variant carrying both the running max and min,
+ *           swapping them on a negative value.
  * ----------------------------------------------------------------------
  */
 

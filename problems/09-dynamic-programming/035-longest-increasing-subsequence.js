@@ -20,9 +20,12 @@
  *   - Strictly decreasing input — also 1.
  *   - Subsequence, not substring: elements may be skipped.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — enumerate every subsequence.
- *   Target: O(n^2) DP where dp[i] is the best LIS ending at i; O(n log n) with patience sorting plus binary search.
+ *   Target: O(n^2) DP where dp[i] is the best LIS ending at i; O(n log n) with patience sorting
+ *           plus binary search.
  * ----------------------------------------------------------------------
  */
 

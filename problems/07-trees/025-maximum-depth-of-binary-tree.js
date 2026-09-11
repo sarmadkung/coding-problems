@@ -10,6 +10,11 @@
  *   The tree holds 0 to 10^4 nodes.
  *   -100 <= Node.val <= 100
  *
+ * INPUT FORMAT
+ *   `root` is a TreeNode object, not an array. The arrays in EXAMPLES are the level-order
+ *   serialization the platforms print — breadth-first, with `null` for a missing child. The
+ *   test runner builds a real tree from that array before calling your function.
+ *
  * EXAMPLES
  *   maxDepth([3, 9, 20, null, null, 15, 7])  ->  3
  *   maxDepth([1, null, 2])                   ->  2
@@ -18,12 +23,31 @@
  * EDGE CASES
  *   - Empty tree returns 0, not 1.
  *   - A single node has depth 1.
- *   - A degenerate tree of 10^4 nodes can overflow the recursion stack — consider an iterative BFS.
+ *   - A degenerate (skewed) tree of 10^4 nodes can exhaust the recursion stack.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. An iterative BFS avoids the recursion depth entirely.
  *
  * COMPLEXITY
  *   Naive:  None — a full traversal is required either way.
  *   Target: O(n) time, O(h) space — 1 + max(depth(left), depth(right)), or a level-counting BFS.
  * ----------------------------------------------------------------------
+ */
+
+const { TreeNode } = require('../_lib/structures');
+
+/**
+ * Definition for a binary tree node — available here exactly as a platform provides it:
+ *
+ *   class TreeNode {
+ *     constructor(val = 0, left = null, right = null) {
+ *       this.val = val;
+ *       this.left = left;
+ *       this.right = right;
+ *     }
+ *   }
  */
 
 function maxDepth(root) {

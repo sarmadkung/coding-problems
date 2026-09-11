@@ -22,9 +22,13 @@
  *   - The cheapest overall route may exceed the stop limit and be invalid.
  *   - An unreachable destination returns -1.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  Plain Dijkstra can discard a costlier path that uses fewer stops and would have been the only valid one.
- *   Target: O(k * E) time — Bellman-Ford relaxed exactly k + 1 times over a snapshot of the previous round's costs (or BFS by levels).
+ *   Naive:  Plain Dijkstra can discard a costlier path that uses fewer stops and would have been
+ *           the only valid one.
+ *   Target: O(k * E) time — Bellman-Ford relaxed exactly k + 1 times over a snapshot of the
+ *           previous round's costs (or BFS by levels).
  * ----------------------------------------------------------------------
  */
 

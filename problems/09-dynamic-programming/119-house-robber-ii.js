@@ -20,9 +20,13 @@
  *   - Two houses — take the larger.
  *   - The first and last houses can never BOTH be robbed.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  O(2^n) time — enumerate every subset and reject adjacent picks, now including the wrap-around.
- *   Target: O(n) time, O(1) space — run the linear House Robber twice, once excluding the last house and once excluding the first, and take the better.
+ *   Naive:  O(2^n) time — enumerate every subset and reject adjacent picks, now including the
+ *           wrap-around.
+ *   Target: O(n) time, O(1) space — run the linear House Robber twice, once excluding the last
+ *           house and once excluding the first, and take the better.
  * ----------------------------------------------------------------------
  */
 

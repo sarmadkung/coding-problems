@@ -20,9 +20,12 @@
  *   - All characters identical.
  *   - A substring is contiguous — a subsequence is not.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — check every substring for uniqueness.
- *   Target: O(n) time, O(min(n, charset)) space — sliding window with a map of last-seen indices, jumping the left edge forward on a repeat.
+ *   Target: O(n) time, O(min(n, charset)) space — sliding window with a map of last-seen indices,
+ *           jumping the left edge forward on a repeat.
  * ----------------------------------------------------------------------
  */
 

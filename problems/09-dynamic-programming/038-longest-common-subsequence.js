@@ -20,9 +20,12 @@
  *   - Identical strings.
  *   - Subsequence, not substring — characters need not be adjacent.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse on both strings without memoisation.
- *   Target: O(m * n) time, O(min(m, n)) space — a DP grid where a character match extends the diagonal, otherwise take the better of the two neighbours.
+ *   Target: O(m * n) time, O(min(m, n)) space — a DP grid where a character match extends the
+ *           diagonal, otherwise take the better of the two neighbors.
  * ----------------------------------------------------------------------
  */
 

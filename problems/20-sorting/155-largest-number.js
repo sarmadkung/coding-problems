@@ -17,12 +17,17 @@
  *
  * EDGE CASES
  *   - All zeros must produce "0", not a string of zeroes.
- *   - Sorting numerically descending is WRONG: [3, 30] gives 330, not 303.
  *   - The result may exceed the safe integer range — keep it a string.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Sorting numerically descending is WRONG: [3, 30] gives 330, not 303.
  *
  * COMPLEXITY
  *   Naive:  Trying every permutation is O(n!) and infeasible past a handful of numbers.
- *   Target: O(n log n) time — sort with the comparator (a + b) vs (b + a) on the string forms, then join and strip the all-zero case.
+ *   Target: O(n log n) time — sort with the comparator (a + b) vs (b + a) on the string forms,
+ *           then join and strip the all-zero case.
  * ----------------------------------------------------------------------
  */
 

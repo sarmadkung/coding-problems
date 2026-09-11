@@ -20,9 +20,12 @@
  *   - Leading zeros must be stripped from the result.
  *   - The product of an m- and an n-digit number has at most m + n digits.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Repeated string addition (adding num1 to itself num2 times) is astronomically slow.
- *   Target: O(m * n) time — schoolbook multiplication into an (m + n) digit array, where digit i of num1 and j of num2 land at position i + j + 1, then carry.
+ *   Target: O(m * n) time — schoolbook multiplication into an (m + n) digit array, where digit i
+ *           of num1 and j of num2 land at position i + j + 1, then carry.
  * ----------------------------------------------------------------------
  */
 

@@ -18,11 +18,17 @@
  * EDGE CASES
  *   - Duplicates must be preserved, not collapsed.
  *   - Already-sorted or reverse-sorted input.
- *   - Naive quicksort degrades to O(n^2) on sorted input — pivot choice matters.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Naive quicksort degrades to O(n^2) on sorted input — pivot choice matters.
  *
  * COMPLEXITY
- *   Naive:  O(n^2) time — bubble, selection or insertion sort. Fine to write once for understanding, too slow at n = 5 * 10^4.
- *   Target: O(n log n) time — merge sort (O(n) space, stable, predictable) or heapsort (O(1) space). This is the problem for actually IMPLEMENTING a sort.
+ *   Naive:  O(n^2) time — bubble, selection or insertion sort. Fine to write once for
+ *           understanding, too slow at n = 5 * 10^4.
+ *   Target: O(n log n) time — merge sort (O(n) space, stable, predictable) or heapsort (O(1)
+ *           space). This is the problem for actually IMPLEMENTING a sort.
  * ----------------------------------------------------------------------
  */
 

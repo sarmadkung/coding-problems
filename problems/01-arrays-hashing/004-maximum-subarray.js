@@ -18,11 +18,20 @@
  * EDGE CASES
  *   - All numbers negative — the answer is the single largest element, not 0.
  *   - Single element.
- *   - Do not initialise the running max to 0.
+ *
+ * FOLLOW-UP
+ *   - If you have figured out the O(n) solution, try coding another solution using the divide and
+ *     conquer approach.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Do not initialize the running max to 0.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — sum every subarray.
- *   Target: O(n) time, O(1) space — Kadane's algorithm: at each index keep the best sum ending here.
+ *   Target: O(n) time, O(1) space — Kadane's algorithm: at each index keep the best sum ending
+ *           here.
  * ----------------------------------------------------------------------
  */
 

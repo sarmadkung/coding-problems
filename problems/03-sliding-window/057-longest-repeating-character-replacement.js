@@ -19,12 +19,17 @@
  *
  * EDGE CASES
  *   - k = 0 means the longest run of one repeated character.
- *   - A window is valid when (length - count of its most frequent char) <= k.
  *   - k may exceed the string length.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. A window is valid when (length - count of its most frequent char) <= k.
  *
  * COMPLEXITY
  *   Naive:  O(n^2 * 26) time — test every substring against every target letter.
- *   Target: O(n) time, O(26) space — a sliding window tracking character counts and the max count seen, shrinking whenever the window turns invalid.
+ *   Target: O(n) time, O(26) space — a sliding window tracking character counts and the max count
+ *           seen, shrinking whenever the window turns invalid.
  * ----------------------------------------------------------------------
  */
 

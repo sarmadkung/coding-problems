@@ -20,11 +20,20 @@
  * EDGE CASES
  *   - m = 0 means nums1 holds only spare room.
  *   - n = 0 leaves nums1 unchanged.
- *   - Merging forwards overwrites values you have not read yet.
+ *
+ * FOLLOW-UP
+ *   - Can you come up with an algorithm that runs in O(m + n) time?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Merging forwards overwrites values you have not read yet.
  *
  * COMPLEXITY
- *   Naive:  O((m + n) log(m + n)) time — concatenate then sort, throwing away the sorted structure.
- *   Target: O(m + n) time, O(1) space — fill from the BACK, comparing the tails of both arrays, so no unread value is ever overwritten.
+ *   Naive:  O((m + n) log(m + n)) time — concatenate then sort, throwing away the sorted
+ *           structure.
+ *   Target: O(m + n) time, O(1) space — fill from the BACK, comparing the tails of both arrays,
+ *           so no unread value is ever overwritten.
  * ----------------------------------------------------------------------
  */
 

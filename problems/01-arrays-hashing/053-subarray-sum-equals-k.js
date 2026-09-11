@@ -17,13 +17,18 @@
  *   subarraySum([1, -1, 0], 0)    ->  3
  *
  * EDGE CASES
- *   - Negative numbers mean a sliding window does NOT work here.
  *   - Zeros create extra valid subarrays.
- *   - Seed the prefix-count map with {0: 1} for subarrays starting at index 0.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Negative numbers mean a sliding window does NOT work here.
+ *   2. Seed the prefix-count map with {0: 1} for subarrays starting at index 0.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time — sum every subarray with a running total.
- *   Target: O(n) time, O(n) space — a prefix-sum frequency map: at each index add the count of previously seen `prefix - k`.
+ *   Target: O(n) time, O(n) space — a prefix-sum frequency map: at each index add the count of
+ *           previously seen `prefix - k`.
  * ----------------------------------------------------------------------
  */
 

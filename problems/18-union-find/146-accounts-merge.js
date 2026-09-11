@@ -21,9 +21,13 @@
  *   - Merging is transitive: A shares with B, B with C, so all three merge.
  *   - Output emails must be sorted; the account order need not be.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  O(n^2) time — compare every pair of accounts for a shared email and merge repeatedly until stable.
- *   Target: O(n * k * log) time — union-find keyed by email (or DFS over an email graph), then group emails by root and sort each group.
+ *   Naive:  O(n^2) time — compare every pair of accounts for a shared email and merge repeatedly
+ *           until stable.
+ *   Target: O(n * k * log) time — union-find keyed by email (or DFS over an email graph), then
+ *           group emails by root and sort each group.
  * ----------------------------------------------------------------------
  */
 

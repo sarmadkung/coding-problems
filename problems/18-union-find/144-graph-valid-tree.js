@@ -17,13 +17,19 @@
  *   validTree(2, [])  ->  false  // disconnected
  *
  * EDGE CASES
- *   - A tree on n nodes has EXACTLY n - 1 edges — check this first and reject fast.
+ *   - A tree on n nodes has EXACTLY n - 1 edges.
  *   - Correct edge count is not sufficient; it must also be connected.
  *   - A single node with no edges is a valid tree.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Reject on the edge count first, then verify connectivity with union-find or one traversal.
+ *
  * COMPLEXITY
  *   Naive:  Checking connectivity and cycles with two independent passes duplicates work.
- *   Target: O(E * a(N)) with union-find — reject if any union joins two nodes already in the same set, then confirm exactly one set remains.
+ *   Target: O(E * a(N)) with union-find — reject if any union joins two nodes already in the same
+ *           set, then confirm exactly one set remains.
  * ----------------------------------------------------------------------
  */
 

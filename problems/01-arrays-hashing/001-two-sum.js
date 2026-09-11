@@ -22,9 +22,15 @@
  *   - Negative numbers.
  *   - The answer is never `[i, i]` — an element cannot be reused.
  *
+ * FOLLOW-UP
+ *   - Can you come up with an algorithm that is less than O(n^2) time complexity?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time, O(1) space — test every pair with nested loops.
- *   Target: O(n) time, O(n) space — one pass, storing `value -> index` in a hash map and looking up `target - value`.
+ *   Target: O(n) time, O(n) space — one pass, storing `value -> index` in a hash map and looking
+ *           up `target - value`.
  * ----------------------------------------------------------------------
  */
 

@@ -18,7 +18,11 @@
  * EDGE CASES
  *   - Single-element array — always false.
  *   - All elements identical.
- *   - Must not mutate the caller's array if you sort — copy first.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Must not mutate the caller's array if you sort — copy first.
  *
  * COMPLEXITY
  *   Naive:  O(n^2) time, O(1) space — compare every pair.

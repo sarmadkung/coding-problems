@@ -17,13 +17,20 @@
  *   convert("AB", 1)              ->  "AB"   // one row is unchanged
  *
  * EDGE CASES
- *   - numRows = 1 returns the input unchanged — beware a division by zero in formula-based solutions.
+ *   - numRows = 1 returns the input unchanged.
  *   - numRows >= s.length also returns the input unchanged.
  *   - The direction flips at the top AND bottom rows.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. A formula-based solution divides by (2 * numRows - 2), which is 0 when numRows is 1 —
+ *      special-case it.
+ *
  * COMPLEXITY
  *   Naive:  Physically building a numRows x n character matrix wastes O(n * numRows) space.
- *   Target: O(n) time, O(n) space — append each character to a per-row buffer, flipping the row direction at the first and last row, then concatenate the rows.
+ *   Target: O(n) time, O(n) space — append each character to a per-row buffer, flipping the row
+ *           direction at the first and last row, then concatenate the rows.
  * ----------------------------------------------------------------------
  */
 

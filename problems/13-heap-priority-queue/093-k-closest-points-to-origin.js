@@ -17,12 +17,17 @@
  *
  * EDGE CASES
  *   - k equal to the point count returns everything.
- *   - Comparing SQUARED distances avoids the square root entirely.
  *   - Negative coordinates are fine — squaring handles the sign.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Comparing SQUARED distances avoids the square root entirely.
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — sort every point by distance when only k are needed.
- *   Target: O(n log k) with a size-k max-heap, or O(n) average with Quickselect on squared distance.
+ *   Target: O(n log k) with a size-k max-heap, or O(n) average with Quickselect on squared
+ *           distance.
  * ----------------------------------------------------------------------
  */
 

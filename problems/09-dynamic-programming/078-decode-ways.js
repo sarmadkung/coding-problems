@@ -21,9 +21,12 @@
  *   - Two-digit codes must be between 10 and 26 inclusive.
  *   - A string starting with '0' decodes zero ways.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse on taking one or two digits without memoisation.
- *   Target: O(n) time, O(1) space — dp[i] = dp[i-1] (if the single digit is valid) + dp[i-2] (if the pair is 10..26).
+ *   Target: O(n) time, O(1) space — dp[i] = dp[i-1] (if the single digit is valid) + dp[i-2] (if
+ *           the pair is 10..26).
  * ----------------------------------------------------------------------
  */
 

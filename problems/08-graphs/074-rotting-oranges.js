@@ -18,12 +18,17 @@
  *
  * EDGE CASES
  *   - No fresh oranges at the start returns 0, not -1.
- *   - A fresh orange with no rotten neighbour ever returns -1.
- *   - Rotting spreads simultaneously — this is multi-source BFS, not one source at a time.
+ *   - A fresh orange with no rotten neighbor ever returns -1.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Rotting spreads simultaneously — this is multi-source BFS, not one source at a time.
  *
  * COMPLEXITY
  *   Naive:  Running a separate BFS per rotten orange overcounts the elapsed time.
- *   Target: O(m * n) time — multi-source BFS seeding the queue with EVERY rotten orange, counting levels as minutes.
+ *   Target: O(m * n) time — multi-source BFS seeding the queue with EVERY rotten orange, counting
+ *           levels as minutes.
  * ----------------------------------------------------------------------
  */
 

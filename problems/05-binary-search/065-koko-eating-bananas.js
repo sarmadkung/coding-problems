@@ -22,9 +22,13 @@
  *   - Hours for one pile are ceil(pile / k) — she never mixes piles in an hour.
  *   - k is at least 1 and at most max(piles).
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  O(max(piles) * n) time — try every speed from 1 upward. With piles up to 10^9 this never finishes.
- *   Target: O(n log(max piles)) time — binary search the ANSWER over k in [1, max(piles)], testing feasibility at each step.
+ *   Naive:  O(max(piles) * n) time — try every speed from 1 upward. With piles up to 10^9 this
+ *           never finishes.
+ *   Target: O(n log(max piles)) time — binary search the ANSWER over k in [1, max(piles)],
+ *           testing feasibility at each step.
  * ----------------------------------------------------------------------
  */
 

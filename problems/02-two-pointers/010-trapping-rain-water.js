@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - Monotonic arrays trap zero water.
  *   - Leading and trailing zeros.
- *   - Water above bar i is min(maxLeft, maxRight) - height[i], floored at 0.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Water above bar i is min(maxLeft, maxRight) - height[i], floored at 0.
  *
  * COMPLEXITY
- *   Naive:  O(n^2) time — for each bar scan left and right for its tallest neighbour.
- *   Target: O(n) time, O(1) space — two pointers tracking `leftMax` and `rightMax`, always advancing the smaller side.
+ *   Naive:  O(n^2) time — for each bar scan left and right for its tallest neighbor.
+ *   Target: O(n) time, O(1) space — two pointers tracking `leftMax` and `rightMax`, always
+ *           advancing the smaller side.
  * ----------------------------------------------------------------------
  */
 

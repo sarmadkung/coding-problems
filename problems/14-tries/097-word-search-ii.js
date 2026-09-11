@@ -20,12 +20,18 @@
  *
  * EDGE CASES
  *   - The result must contain no duplicates even if a word is findable twice.
- *   - With 3 * 10^4 words, running Word Search once per word is far too slow.
- *   - Prune trie branches once fully consumed to keep later searches fast.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. With 3 * 10^4 words, running Word Search once per word is far too slow.
+ *   2. Prune trie branches once fully consumed to keep later searches fast.
  *
  * COMPLEXITY
- *   Naive:  O(words * m * n * 4^L) — running the single-word search independently for each word times out.
- *   Target: Build a trie of ALL words, then DFS the board ONCE, walking the trie in step and abandoning a path the moment no trie node matches.
+ *   Naive:  O(words * m * n * 4^L) — running the single-word search independently for each word
+ *           times out.
+ *   Target: Build a trie of ALL words, then DFS the board ONCE, walking the trie in step and
+ *           abandoning a path the moment no trie node matches.
  * ----------------------------------------------------------------------
  */
 

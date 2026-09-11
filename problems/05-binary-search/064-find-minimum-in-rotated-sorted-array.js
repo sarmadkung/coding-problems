@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - A rotation of zero — the minimum is the first element.
  *   - A single element.
- *   - Compare mid against the RIGHT end, not the left, to decide which half to keep.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Compare mid against the RIGHT end, not the left, to decide which half to keep.
  *
  * COMPLEXITY
  *   Naive:  O(n) time — a linear scan, ignoring the sorted structure.
- *   Target: O(log n) time, O(1) space — binary search: if nums[mid] > nums[high] the minimum is to the right, otherwise mid may be it.
+ *   Target: O(log n) time, O(1) space — binary search: if nums[mid] > nums[high] the minimum is
+ *           to the right, otherwise mid may be it.
  * ----------------------------------------------------------------------
  */
 

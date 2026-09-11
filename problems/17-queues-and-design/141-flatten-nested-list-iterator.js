@@ -11,6 +11,11 @@
  *   1 <= nestedList.length <= 500
  *   Integer values are in the range [-10^6, 10^6].
  *
+ * API
+ *   new NestedIterator(nestedList)              initialize the iterator over a nested list
+ *   next()                          -> number   return the next integer in the flattened order
+ *   hasNext()                       -> boolean  return true if an integer remains
+ *
  * EXAMPLES
  *   const it = new NestedIterator([[1, 1], 2, [1, 1]]);
  *     iterating gives  ->  [1, 1, 2, 1, 1]
@@ -21,9 +26,13 @@
  *   - Nesting can be arbitrarily deep.
  *   - hasNext() may need to descend through several empty lists before answering.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
- *   Naive:  Flattening everything eagerly in the constructor is simple but defeats the purpose of an iterator and costs O(n) memory up front.
- *   Target: O(1) amortised per next() — a stack of iterators or reversed elements, unwrapping lists lazily only when hasNext() is called.
+ *   Naive:  Flattening everything eagerly in the constructor is simple but defeats the purpose of
+ *           an iterator and costs O(n) memory up front.
+ *   Target: O(1) amortized per next() — a stack of iterators or reversed elements, unwrapping
+ *           lists lazily only when hasNext() is called.
  * ----------------------------------------------------------------------
  */
 

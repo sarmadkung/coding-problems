@@ -16,12 +16,17 @@
  *
  * EDGE CASES
  *   - n = 1 and n = 2 are the base cases.
- *   - This is the Fibonacci sequence in disguise.
  *   - Order matters: 1+2 and 2+1 are different ways.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. This is the Fibonacci sequence in disguise.
  *
  * COMPLEXITY
  *   Naive:  O(2^n) time — recurse over every possible move sequence.
- *   Target: O(n) time, O(1) space — ways(n) = ways(n-1) + ways(n-2), carried in two rolling variables.
+ *   Target: O(n) time, O(1) space — ways(n) = ways(n-1) + ways(n-2), carried in two rolling
+ *           variables.
  * ----------------------------------------------------------------------
  */
 

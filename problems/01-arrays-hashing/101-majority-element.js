@@ -19,11 +19,16 @@
  * EDGE CASES
  *   - A single element is trivially the majority.
  *   - 'More than n/2' is strict — exactly half does not qualify.
- *   - The guarantee that one exists is what makes the O(1)-space trick safe.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The guarantee that one exists is what makes the O(1)-space trick safe.
  *
  * COMPLEXITY
  *   Naive:  O(n) time, O(n) space — count every value in a hash map and take the largest count.
- *   Target: O(n) time, O(1) space — Boyer-Moore voting: keep a candidate and a counter, resetting the candidate whenever the counter hits zero.
+ *   Target: O(n) time, O(1) space — Boyer-Moore voting: keep a candidate and a counter, resetting
+ *           the candidate whenever the counter hits zero.
  * ----------------------------------------------------------------------
  */
 

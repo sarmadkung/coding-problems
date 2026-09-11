@@ -20,9 +20,12 @@
  *   - Exactly two lines.
  *   - Area is min(h[l], h[r]) * (r - l), not the sum.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — evaluate every pair of lines.
- *   Target: O(n) time, O(1) space — two pointers at the ends, always moving the shorter line inward.
+ *   Target: O(n) time, O(1) space — two pointers at the ends, always moving the shorter line
+ *           inward.
  * ----------------------------------------------------------------------
  */
 

@@ -20,9 +20,12 @@
  *   - 7 (pqrs) and 9 (wxyz) map to four letters, the rest to three.
  *   - 1 and 0 never appear in the input.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  There is no polynomial approach — the output itself is up to 4^n entries.
- *   Target: O(4^n * n) time — backtracking over one digit per level, appending each mapped letter.
+ *   Target: O(4^n * n) time — backtracking over one digit per level, appending each mapped
+ *           letter.
  * ----------------------------------------------------------------------
  */
 

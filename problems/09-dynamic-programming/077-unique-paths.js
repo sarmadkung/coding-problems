@@ -17,12 +17,17 @@
  *
  * EDGE CASES
  *   - A single row or column has exactly one path.
- *   - The first row and first column are all 1s in the DP grid.
- *   - There is a closed form: C(m + n - 2, m - 1).
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The first row and first column are all 1s in the DP grid.
+ *   2. There is a closed form: C(m + n - 2, m - 1).
  *
  * COMPLEXITY
  *   Naive:  O(2^(m+n)) time — recurse on both moves without memoisation.
- *   Target: O(m * n) time, O(n) space — dp[i][j] = dp[i-1][j] + dp[i][j-1], reducible to a single rolling row.
+ *   Target: O(m * n) time, O(n) space — dp[i][j] = dp[i-1][j] + dp[i][j-1], reducible to a single
+ *           rolling row.
  * ----------------------------------------------------------------------
  */
 

@@ -4,7 +4,7 @@
  * ----------------------------------------------------------------------
  * PROBLEM
  *   Given an m x n grid of characters and a string `word`, return true if the word can be
- *   built from sequentially adjacent cells (horizontal or vertical neighbours).
+ *   built from sequentially adjacent cells (horizontal or vertical neighbors).
  *   The same cell may not be used more than once.
  *
  * CONSTRAINTS
@@ -19,13 +19,19 @@
  *   exist([["A"]], "A")                  ->  true
  *
  * EDGE CASES
- *   - A cell cannot be reused within one path — mark and UNMARK it as you backtrack.
+ *   - A cell cannot be reused within one path.
  *   - Diagonal moves are not allowed.
  *   - A word longer than the cell count is immediately false.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Mark a cell as used before recursing and UNMARK it on the way out.
+ *
  * COMPLEXITY
  *   Naive:  Trying every cell sequence without pruning is factorial in the grid size.
- *   Target: O(m * n * 4^L) time — DFS from every matching start cell, marking visited cells and restoring them on the way out.
+ *   Target: O(m * n * 4^L) time — DFS from every matching start cell, marking visited cells and
+ *           restoring them on the way out.
  * ----------------------------------------------------------------------
  */
 

@@ -18,13 +18,18 @@
  *   searchMatrix([[1]], 1)  ->  true
  *
  * EDGE CASES
- *   - The whole matrix is one sorted sequence — that is what enables a single binary search.
  *   - A target smaller or larger than everything.
  *   - A 1x1 matrix.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. The whole matrix is one sorted sequence — that is what enables a single binary search.
+ *
  * COMPLEXITY
  *   Naive:  O(m * n) time — scan every cell, ignoring the sorted structure.
- *   Target: O(log(m * n)) time — binary search the matrix as a flat array, mapping index i to (row = i / n, col = i % n).
+ *   Target: O(log(m * n)) time — binary search the matrix as a flat array, mapping index i to
+ *           (row = i / n, col = i % n).
  * ----------------------------------------------------------------------
  */
 

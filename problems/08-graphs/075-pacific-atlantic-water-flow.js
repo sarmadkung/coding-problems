@@ -4,7 +4,7 @@
  * ----------------------------------------------------------------------
  * PROBLEM
  *   Given an m x n matrix of cell heights, the Pacific touches the top and left edges and
- *   the Atlantic the bottom and right edges. Water flows from a cell to a neighbour of
+ *   the Atlantic the bottom and right edges. Water flows from a cell to a neighbor of
  *   equal or lower height. Return all cells from which water can reach BOTH oceans.
  *
  * CONSTRAINTS
@@ -20,11 +20,16 @@
  * EDGE CASES
  *   - A 1x1 grid reaches both oceans.
  *   - Equal heights still allow flow.
- *   - Searching from every cell is wasteful — invert the problem.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Searching from every cell is wasteful — invert the problem.
  *
  * COMPLEXITY
  *   Naive:  O((m*n)^2) time — run a search from each cell to see which oceans it reaches.
- *   Target: O(m * n) time — search INWARD from each ocean's edge cells (uphill or level), then intersect the two reachable sets.
+ *   Target: O(m * n) time — search INWARD from each ocean's edge cells (uphill or level), then
+ *           intersect the two reachable sets.
  * ----------------------------------------------------------------------
  */
 

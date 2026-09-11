@@ -22,9 +22,12 @@
  *   - Disconnected components — check every node as a start.
  *   - A self-loop [a, a] is an immediate cycle.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Naive DFS without memoising finished nodes re-explores paths exponentially.
- *   Target: O(V + E) time — cycle detection with three-colour DFS, or Kahn's topological sort counting the nodes it emits.
+ *   Target: O(V + E) time — cycle detection with three-color DFS, or Kahn's topological sort
+ *           counting the nodes it emits.
  * ----------------------------------------------------------------------
  */
 

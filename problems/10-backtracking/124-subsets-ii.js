@@ -16,12 +16,18 @@
  *
  * EDGE CASES
  *   - Duplicates in the input must not produce duplicate subsets.
- *   - Sort first so equal values sit adjacent and can be skipped.
  *   - The result count is below 2^n whenever duplicates exist.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Sort first so equal values sit adjacent and can be skipped.
+ *
  * COMPLEXITY
- *   Naive:  Generating all 2^n subsets and de-duplicating via string keys works but wastes time and memory.
- *   Target: O(n * 2^n) time — sort, then backtrack skipping any value equal to its predecessor at the same recursion depth.
+ *   Naive:  Generating all 2^n subsets and de-duplicating via string keys works but wastes time
+ *           and memory.
+ *   Target: O(n * 2^n) time — sort, then backtrack skipping any value equal to its predecessor at
+ *           the same recursion depth.
  * ----------------------------------------------------------------------
  */
 

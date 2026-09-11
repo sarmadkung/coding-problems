@@ -22,9 +22,12 @@
  *   - Courses with no prerequisites can appear anywhere valid.
  *   - Several orderings may be correct; any one is accepted.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Trying permutations and validating each is factorial in numCourses.
- *   Target: O(V + E) time — topological sort: Kahn's algorithm on in-degrees, or DFS post-order reversed. A result shorter than numCourses proves a cycle.
+ *   Target: O(V + E) time — topological sort: Kahn's algorithm on in-degrees, or DFS post-order
+ *           reversed. A result shorter than numCourses proves a cycle.
  * ----------------------------------------------------------------------
  */
 

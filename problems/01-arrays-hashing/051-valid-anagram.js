@@ -16,9 +16,15 @@
  *   isAnagram("a", "ab")             ->  false  // different lengths
  *
  * EDGE CASES
- *   - Different lengths can be rejected immediately.
  *   - Character COUNTS must match, not just the set of characters.
+ *
+ * FOLLOW-UP
  *   - Follow-up: what changes for Unicode input?
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Different lengths can be rejected immediately.
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — sort both strings and compare.

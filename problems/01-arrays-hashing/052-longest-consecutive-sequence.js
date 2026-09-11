@@ -10,6 +10,7 @@
  * CONSTRAINTS
  *   0 <= nums.length <= 10^5
  *   -10^9 <= nums[i] <= 10^9
+ *   Your solution must run in O(n) time.
  *
  * EXAMPLES
  *   longestConsecutive([100, 4, 200, 1, 3, 2])  ->  4   // [1,2,3,4]
@@ -19,11 +20,13 @@
  * EDGE CASES
  *   - Empty array returns 0.
  *   - Duplicates must not inflate the count.
- *   - Sorting is O(n log n) and violates the required complexity.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n log n) time — sort and scan for runs. Correct, but misses the target.
- *   Target: O(n) time, O(n) space — put everything in a Set, and only start counting from x when x-1 is absent, so each run is walked once.
+ *   Target: O(n) time, O(n) space — put everything in a Set, and only start counting from x when
+ *           x-1 is absent, so each run is walked once.
  * ----------------------------------------------------------------------
  */
 

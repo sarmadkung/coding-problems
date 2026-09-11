@@ -20,6 +20,8 @@
  *   - Identical strings cost 0.
  *   - All three operations cost exactly 1.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(3^n) time — recurse over every operation at every position.
  *   Target: O(m * n) time and space (reducible to O(min(m, n))) — the Levenshtein DP grid.

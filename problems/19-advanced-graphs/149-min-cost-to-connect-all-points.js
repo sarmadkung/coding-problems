@@ -22,9 +22,12 @@
  *   - Manhattan distance is |x1 - x2| + |y1 - y2|, not Euclidean.
  *   - The graph is complete — every pair is a candidate edge.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  Enumerating spanning trees is astronomically expensive.
- *   Target: Minimum spanning tree — Prim's with a heap is O(n^2 log n) here (the graph is dense), or Kruskal's with union-find over all O(n^2) edges.
+ *   Target: Minimum spanning tree — Prim's with a heap is O(n^2 log n) here (the graph is dense),
+ *           or Kruskal's with union-find over all O(n^2) edges.
  * ----------------------------------------------------------------------
  */
 

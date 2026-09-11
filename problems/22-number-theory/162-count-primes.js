@@ -16,11 +16,17 @@
  * EDGE CASES
  *   - n = 0, 1 and 2 all return 0.
  *   - The bound is STRICT — n itself is never counted.
- *   - Start the sieve's inner loop at i * i, since smaller multiples are already marked.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Start the sieve's inner loop at i * i, since smaller multiples are already marked.
  *
  * COMPLEXITY
- *   Naive:  O(n * sqrt(n)) time — test each number for primality by trial division. Too slow at n = 5 * 10^6.
- *   Target: O(n log log n) time, O(n) space — the Sieve of Eratosthenes, marking multiples of each prime starting from its square.
+ *   Naive:  O(n * sqrt(n)) time — test each number for primality by trial division. Too slow at n
+ *           = 5 * 10^6.
+ *   Target: O(n log log n) time, O(n) space — the Sieve of Eratosthenes, marking multiples of
+ *           each prime starting from its square.
  * ----------------------------------------------------------------------
  */
 

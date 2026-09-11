@@ -17,11 +17,16 @@
  * EDGE CASES
  *   - Single characters are always palindromes, so a partitioning always exists.
  *   - Cuts must cover the whole string with no gaps.
- *   - Re-checking palindromes at every step is the main cost.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Re-checking palindromes at every step is the main cost.
  *
  * COMPLEXITY
  *   Naive:  O(n * 2^n) time — generate every partitioning and validate each part afterwards.
- *   Target: Backtracking that only recurses when the current prefix is already a palindrome, optionally with an O(n^2) precomputed palindrome table.
+ *   Target: Backtracking that only recurses when the current prefix is already a palindrome,
+ *           optionally with an O(n^2) precomputed palindrome table.
  * ----------------------------------------------------------------------
  */
 

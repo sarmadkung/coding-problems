@@ -20,11 +20,16 @@
  * EDGE CASES
  *   - Rotation of zero — the array is plainly sorted.
  *   - Target at the pivot itself.
- *   - One half is always sorted; identify which before deciding where to recurse.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. One half is always sorted; identify which before deciding where to recurse.
  *
  * COMPLEXITY
  *   Naive:  O(n) time — a linear scan, which ignores the sorted structure.
- *   Target: O(log n) time — modified binary search: determine the sorted half, then test whether the target lies inside it.
+ *   Target: O(log n) time — modified binary search: determine the sorted half, then test whether
+ *           the target lies inside it.
  * ----------------------------------------------------------------------
  */
 

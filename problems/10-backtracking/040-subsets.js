@@ -18,11 +18,16 @@
  * EDGE CASES
  *   - The empty subset is always included.
  *   - There are exactly 2^n subsets.
- *   - Push a COPY of the running path, not the mutable array itself.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Push a COPY of the running path, not the mutable array itself.
  *
  * COMPLEXITY
  *   Naive:  There is no polynomial solution — the output alone is 2^n.
- *   Target: O(n * 2^n) time — backtracking (include/exclude at each index), or iterate the bitmask 0..2^n - 1.
+ *   Target: O(n * 2^n) time — backtracking (include/exclude at each index), or iterate the
+ *           bitmask 0..2^n - 1.
  * ----------------------------------------------------------------------
  */
 

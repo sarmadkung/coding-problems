@@ -23,9 +23,12 @@
  *   - The tank starts empty and may never go negative mid-journey.
  *   - The route wraps around the end of the array.
  *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
  * COMPLEXITY
  *   Naive:  O(n^2) time — simulate a full circuit from every possible starting station.
- *   Target: O(n) time, O(1) space — one pass: if the running tank goes negative at i, no station up to i can be the start, so restart from i + 1.
+ *   Target: O(n) time, O(1) space — one pass: if the running tank goes negative at i, no station
+ *           up to i can be the start, so restart from i + 1.
  * ----------------------------------------------------------------------
  */
 

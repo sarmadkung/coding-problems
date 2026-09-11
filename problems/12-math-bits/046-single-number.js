@@ -10,6 +10,7 @@
  *   1 <= nums.length <= 3 * 10^4
  *   -3 * 10^4 <= nums[i] <= 3 * 10^4
  *   Every element appears twice except one.
+ *   You must use only constant extra space.
  *
  * EXAMPLES
  *   singleNumber([2, 2, 1])        ->  1
@@ -19,7 +20,8 @@
  * EDGE CASES
  *   - A single-element array.
  *   - Negative numbers.
- *   - A hash map is O(n) space and violates the constraint.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
  *
  * COMPLEXITY
  *   Naive:  O(n) time but O(n) space — count occurrences in a map.

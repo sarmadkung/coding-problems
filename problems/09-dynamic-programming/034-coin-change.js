@@ -20,11 +20,17 @@
  * EDGE CASES
  *   - Amount 0 needs 0 coins.
  *   - An unreachable amount returns -1, not Infinity.
- *   - Greedy — always taking the largest coin — is WRONG: coins=[1,3,4], amount=6 gives 3 coins, not the optimal 2.
+ *
+ * -------------------------- SPOILERS BELOW --------------------------
+ *
+ * HINTS
+ *   1. Greedy — always taking the largest coin — is WRONG: coins=[1,3,4], amount=6 gives 3 coins,
+ *      not the optimal 2.
  *
  * COMPLEXITY
  *   Naive:  O(amount^coins) time — recurse over every combination.
- *   Target: O(amount * coins) time, O(amount) space — bottom-up DP where dp[a] = 1 + min(dp[a - c]) over all coins c.
+ *   Target: O(amount * coins) time, O(amount) space — bottom-up DP where dp[a] = 1 + min(dp[a -
+ *           c]) over all coins c.
  * ----------------------------------------------------------------------
  */
 
