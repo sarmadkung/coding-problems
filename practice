@@ -11,6 +11,8 @@
  *   ./practice list --easy      filter by difficulty (--easy/--medium/--hard)
  *   ./practice list --todo      only problems not yet attempted
  *   ./practice status           one-line progress summary
+ *   ./practice stats            full analytics: difficulty, topic, capability
+ *   ./practice readme           regenerate the README analytics + index files
  *
  * Exit code is 0 when nothing failed, 1 otherwise — so CI can call it.
  */
@@ -399,6 +401,341 @@ function cmdStatus() {
   console.log('');
 }
 
+// ---------------------------------------------------------------- analytics
+//
+// Everything below is DERIVED from the files on disk. A problem counts as solved
+// when its "// TODO: your solution here" stub is gone; it counts as verified when
+// it also passes its test cases. Nothing here is hand-maintained — regenerate the
+// markdown with `./practice readme`.
+
+const POINTS = { Easy: 1, Medium: 3, Hard: 5 };
+
+// Bands are on POINTS earned, not raw problem count, so 10 Hard problems weigh
+// more than 10 Easy ones.
+const LEVELS = [
+  [0, 'Getting started'],
+  [3, 'Beginner'],
+  [12, 'Developing'],
+  [30, 'Intermediate'],
+  [55, 'Advanced'],
+  [80, 'Expert'],
+];
+
+function bar(pct, width = 20) {
+  const filled = Math.max(0, Math.min(width, Math.round((pct / 100) * width)));
+  return '█'.repeat(filled) + '░'.repeat(width - filled);
+}
+
+const pctOf = (a, b) => (b ? (a / b) * 100 : 0);
+
+function computeStats() {
+  const problems = listProblems();
+  const diff = {};
+  const topics = new Map();
+  let earned = 0;
+  let possible = 0;
+  let solved = 0;
+
+  for (const p of problems) {
+    const pts = POINTS[p.difficulty] || 1;
+    possible += pts;
+    if (p.attempted) {
+      earned += pts;
+      solved++;
+    }
+    if (!diff[p.difficulty]) diff[p.difficulty] = { total: 0, solved: 0 };
+    diff[p.difficulty].total++;
+    if (p.attempted) diff[p.difficulty].solved++;
+
+    if (!topics.has(p.topic)) topics.set(p.topic, { total: 0, solved: 0, folder: p.folder });
+    const t = topics.get(p.topic);
+    t.total++;
+    if (p.attempted) t.solved++;
+  }
+
+  const pct = pctOf(earned, possible);
+  let level = LEVELS[0][1];
+  for (const [min, name] of LEVELS) if (pct >= min) level = name;
+
+  return { problems, diff, topics, earned, possible, solved, pct, level };
+}
+
+// Runs the actual test suites for solved problems that have them.
+function verifyAll(problems) {
+  let verified = 0;
+  let failing = 0;
+  let withTests = 0;
+  let untested = 0;
+  for (const p of problems) {
+    if (!loadTest(p.id)) {
+      if (p.attempted) untested++;
+      continue;
+    }
+    withTests++;
+    if (!p.attempted) continue;
+    const r = checkOne(p, { quiet: true });
+    if (r.state === 'pass') verified++;
+    else if (r.state === 'fail') failing++;
+  }
+  return { verified, failing, withTests, untested };
+}
+
+// What to attempt next: prefer topics already in progress, then easiest first.
+function suggestNext(stats, n = 5) {
+  const rank = { Easy: 0, Medium: 1, Hard: 2 };
+  return stats.problems
+    .filter((p) => !p.attempted)
+    .sort((a, b) => {
+      const aStarted = stats.topics.get(a.topic).solved > 0 ? 0 : 1;
+      const bStarted = stats.topics.get(b.topic).solved > 0 ? 0 : 1;
+      if (aStarted !== bStarted) return aStarted - bStarted;
+      if (rank[a.difficulty] !== rank[b.difficulty]) return rank[a.difficulty] - rank[b.difficulty];
+      return a.num - b.num;
+    })
+    .slice(0, n);
+}
+
+function renderAnalytics(stats, ver) {
+  const L = [];
+  const overall = pctOf(stats.solved, stats.problems.length);
+
+  L.push('### Overall');
+  L.push('');
+  L.push('| | |');
+  L.push('|---|---|');
+  L.push(`| **Solved** | ${stats.solved} of ${stats.problems.length} (${overall.toFixed(0)}%) |`);
+  L.push(`| **Remaining** | ${stats.problems.length - stats.solved} |`);
+  L.push(`| **Verified passing** | ${ver.verified}${ver.failing ? ` (${ver.failing} failing)` : ''} |`);
+  L.push(`| **Progress** | \`${bar(overall, 28)}\` |`);
+  L.push('');
+
+  L.push('### By difficulty');
+  L.push('');
+  L.push('| Level | Solved | Total | Progress |');
+  L.push('|-------|--------|-------|----------|');
+  for (const d of ['Easy', 'Medium', 'Hard']) {
+    const s = stats.diff[d];
+    if (!s) continue;
+    const p = pctOf(s.solved, s.total);
+    L.push(`| ${d} | ${s.solved} | ${s.total} | \`${bar(p)}\` ${p.toFixed(0)}% |`);
+  }
+  L.push('');
+
+  L.push('### By topic');
+  L.push('');
+  L.push('| Topic | Solved | Total | Progress |');
+  L.push('|-------|--------|-------|----------|');
+  const sorted = [...stats.topics.entries()].sort((a, b) => {
+    const pa = pctOf(a[1].solved, a[1].total);
+    const pb = pctOf(b[1].solved, b[1].total);
+    if (pb !== pa) return pb - pa;
+    return a[1].folder < b[1].folder ? -1 : 1;
+  });
+  for (const [topic, s] of sorted) {
+    const p = pctOf(s.solved, s.total);
+    L.push(`| ${topic} | ${s.solved} | ${s.total} | \`${bar(p)}\` ${p.toFixed(0)}% |`);
+  }
+  L.push('');
+
+  // ---- capability read-out
+  L.push('### Capability read-out');
+  L.push('');
+  L.push(
+    `Weighted score counts Easy as ${POINTS.Easy}, Medium as ${POINTS.Medium}, Hard as ${POINTS.Hard}, ` +
+      'so depth counts for more than volume.'
+  );
+  L.push('');
+  L.push(`**${stats.earned} / ${stats.possible} points — ${stats.level}**`);
+  L.push('');
+  L.push(`\`${bar(stats.pct, 28)}\` ${stats.pct.toFixed(1)}%`);
+  L.push('');
+
+  const strong = sorted.filter(([, s]) => pctOf(s.solved, s.total) >= 60);
+  const started = sorted.filter(([, s]) => s.solved > 0 && pctOf(s.solved, s.total) < 60);
+  const untouched = sorted.filter(([, s]) => s.solved === 0);
+
+  if (strong.length) {
+    L.push(`**Strong** (60%+ solved) — ${strong.map(([t]) => t).join(', ')}`);
+    L.push('');
+  }
+  if (started.length) {
+    L.push(`**In progress** — ${started.map(([t, s]) => `${t} (${s.solved}/${s.total})`).join(', ')}`);
+    L.push('');
+  }
+  if (untouched.length) {
+    L.push(`**Not started** — ${untouched.map(([t]) => t).join(', ')}`);
+    L.push('');
+  }
+  if (ver.untested) {
+    L.push(
+      `> ${ver.untested} solved problem${ver.untested === 1 ? '' : 's'} ` +
+        `${ver.untested === 1 ? 'has' : 'have'} no test cases yet, so ${ver.untested === 1 ? 'it is' : 'they are'} ` +
+        'counted as solved but not verified.'
+    );
+    L.push('');
+  }
+
+  const next = suggestNext(stats);
+  if (next.length) {
+    L.push('### Suggested next');
+    L.push('');
+    L.push('Topics already in progress first, then easiest available.');
+    L.push('');
+    L.push('| # | Problem | Difficulty | Topic |');
+    L.push('|---|---------|------------|-------|');
+    for (const p of next) {
+      L.push(`| ${p.id} | [${p.title}](${p.rel}) | ${p.difficulty} | ${p.topic} |`);
+    }
+    L.push('');
+  }
+
+  L.push(`<sub>Generated by \`./practice readme\` — do not edit this section by hand.</sub>`);
+  return L.join('\n');
+}
+
+// ---------------------------------------------------------------- generated files
+function writeIndexes(stats) {
+  const entries = stats.problems;
+
+  const BLURB = {
+    Easy:
+      'Start here. These build the core reflexes — hash maps, two pointers, a stack, a\n' +
+      'single clean pass — that every harder problem is assembled from.',
+    Medium:
+      'The bulk of technical interviews live here. Each one asks you to RECOGNISE a\n' +
+      'pattern (sliding window, binary search on the answer, DP over subproblems,\n' +
+      'topological sort) rather than invent something new.',
+    Hard:
+      'Multi-step problems that combine two or more patterns, or demand a non-obvious\n' +
+      'insight. Do not start here — but do come back, because these are where the\n' +
+      'complexity reasoning really pays off.',
+  };
+
+  for (const d of ['Easy', 'Medium', 'Hard']) {
+    const sel = entries.filter((e) => e.difficulty === d);
+    const done = sel.filter((e) => e.attempted).length;
+    const L = [
+      `# ${d} Problems`,
+      '',
+      `${done} of ${sel.length} solved.`,
+      '',
+      BLURB[d],
+      '',
+      '| | # | Problem | Topic |',
+      '|---|---|---------|-------|',
+    ];
+    for (const e of sel) {
+      L.push(`| ${e.attempted ? '✅' : '⬜'} | ${e.id} | [${e.title}](${e.rel}) | ${e.topic} |`);
+    }
+    L.push('');
+    L.push('---');
+    L.push('');
+    L.push(
+      '[All problems](PROBLEMS.md) · [README](README.md) · ' +
+        ['Easy', 'Medium', 'Hard']
+          .filter((x) => x !== d)
+          .map((x) => `[${x}](${x.toUpperCase()}.md)`)
+          .join(' · ')
+    );
+    L.push('');
+    fs.writeFileSync(path.join(ROOT, `${d.toUpperCase()}.md`), L.join('\n'));
+  }
+
+  // Full listing, grouped by topic.
+  const L = [
+    '# All Problems',
+    '',
+    `${stats.solved} of ${entries.length} solved. ✅ means the stub has been replaced.`,
+    '',
+    'By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)',
+    '',
+  ];
+  let folder = null;
+  for (const e of entries.slice().sort((a, b) => (a.folder === b.folder ? a.num - b.num : a.folder < b.folder ? -1 : 1))) {
+    if (e.folder !== folder) {
+      folder = e.folder;
+      const t = stats.topics.get(e.topic);
+      L.push('');
+      L.push(`## ${e.topic}  <sub>${t.solved}/${t.total}</sub>`);
+      L.push('');
+      L.push('| | # | Problem | Difficulty |');
+      L.push('|---|---|---------|------------|');
+    }
+    L.push(`| ${e.attempted ? '✅' : '⬜'} | ${e.id} | [${e.title}](${e.rel}) | ${e.difficulty} |`);
+  }
+  L.push('');
+  fs.writeFileSync(path.join(ROOT, 'PROBLEMS.md'), L.join('\n'));
+}
+
+function cmdReadme() {
+  const stats = computeStats();
+  process.stdout.write('  running test suites for solved problems… ');
+  const ver = verifyAll(stats.problems);
+  process.stdout.write('done\n');
+
+  const block = renderAnalytics(stats, ver);
+  const readmePath = path.join(ROOT, 'README.md');
+  const src = fs.readFileSync(readmePath, 'utf8');
+  const START = '<!-- ANALYTICS:START -->';
+  const END = '<!-- ANALYTICS:END -->';
+  if (!src.includes(START) || !src.includes(END)) {
+    console.error(red(`README.md is missing the ${START} / ${END} markers.`));
+    process.exit(1);
+  }
+  const out =
+    src.slice(0, src.indexOf(START) + START.length) +
+    '\n\n' +
+    block +
+    '\n\n' +
+    src.slice(src.indexOf(END));
+  fs.writeFileSync(readmePath, out);
+  writeIndexes(stats);
+
+  console.log('');
+  console.log(`  ${green('✓')} README.md analytics updated`);
+  console.log(`  ${green('✓')} PROBLEMS.md, EASY.md, MEDIUM.md, HARD.md rebuilt`);
+  console.log('');
+  console.log(
+    `  ${stats.solved}/${stats.problems.length} solved · ${ver.verified} verified · ${stats.earned}/${stats.possible} points · ${bold(stats.level)}`
+  );
+  console.log('');
+}
+
+function cmdStats() {
+  const stats = computeStats();
+  const ver = verifyAll(stats.problems);
+  const overall = pctOf(stats.solved, stats.problems.length);
+
+  console.log('');
+  console.log(`  ${bold('Progress')}   ${stats.solved}/${stats.problems.length} solved ${dim(`(${overall.toFixed(0)}%)`)}`);
+  console.log('');
+  for (const d of ['Easy', 'Medium', 'Hard']) {
+    const s = stats.diff[d];
+    if (!s) continue;
+    const p = pctOf(s.solved, s.total);
+    console.log(`    ${d.padEnd(8)} ${green(bar(p, 24).slice(0, Math.round((p / 100) * 24)))}${dim('░'.repeat(24 - Math.round((p / 100) * 24)))}  ${s.solved}/${s.total}`);
+  }
+  console.log('');
+  console.log(`  ${bold('By topic')}`);
+  console.log('');
+  const sorted = [...stats.topics.entries()].sort((a, b) => pctOf(b[1].solved, b[1].total) - pctOf(a[1].solved, a[1].total));
+  for (const [topic, s] of sorted) {
+    const p = pctOf(s.solved, s.total);
+    const filled = Math.round((p / 100) * 16);
+    console.log(`    ${topic.padEnd(24).slice(0, 24)} ${green('█'.repeat(filled))}${dim('░'.repeat(16 - filled))}  ${String(s.solved).padStart(2)}/${s.total}`);
+  }
+  console.log('');
+  console.log(`  ${bold('Score')}  ${stats.earned}/${stats.possible} points ${dim('(Easy 1 · Medium 3 · Hard 5)')}  →  ${bold(green(stats.level))}`);
+  console.log(`  ${bold('Tests')}  ${ver.verified} verified passing${ver.failing ? red(` · ${ver.failing} failing`) : ''}${ver.untested ? dim(` · ${ver.untested} solved without tests`) : ''}`);
+  console.log('');
+  const next = suggestNext(stats, 3);
+  if (next.length) {
+    console.log(`  ${bold('Suggested next')}`);
+    for (const p of next) console.log(`    ${p.id}  ${p.title.padEnd(44).slice(0, 44)} ${dim(p.difficulty + ' · ' + p.topic)}`);
+    console.log('');
+  }
+}
+
 function usage() {
   console.log(`
   ${bold('practice')} — run your solutions against each problem's test cases
@@ -412,7 +749,9 @@ function usage() {
     ${cyan('./practice list --easy')}     filter by difficulty (--easy/--medium/--hard)
     ${cyan('./practice list --todo')}     only what you have not attempted yet
 
-    ${cyan('./practice status')}          progress summary
+    ${cyan('./practice status')}         progress summary
+    ${cyan('./practice stats')}          full analytics: difficulty, topics, capability
+    ${cyan('./practice readme')}         regenerate README analytics + all index files
 `);
 }
 
@@ -420,4 +759,6 @@ const [cmd, ...rest] = process.argv.slice(2);
 if (cmd === 'c' || cmd === 'check') cmdCheck(rest);
 else if (cmd === 'list') cmdList(rest);
 else if (cmd === 'status') cmdStatus();
+else if (cmd === 'stats') cmdStats();
+else if (cmd === 'readme') cmdReadme();
 else usage();
