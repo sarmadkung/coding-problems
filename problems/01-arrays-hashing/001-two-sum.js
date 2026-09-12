@@ -35,7 +35,28 @@
  */
 
 function twoSum(nums, target) {
-  // TODO: your solution here
+  // using hash map
+  // create map to store the traversed values
+  let seen = new Map();
+
+  // loop through whole array
+  for (index=0;index<nums.length;index++){
+    const current= nums[index];
+
+    // Main logic is here, we will check if the current number subtracted from target what we need and we check if that exist in map, 
+    // if exist then return current and map index otherwise store that value and index into map
+    let needed = target - current
+
+    if(seen.has(needed)){
+      return [seen.get(needed),index]
+    } else{
+      seen.set(current,index)
+    }
+
+  }
+
+
+  
 }
 
 module.exports = { twoSum };
