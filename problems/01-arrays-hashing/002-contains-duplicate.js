@@ -31,7 +31,19 @@
  */
 
 function containsDuplicate(nums) {
-  // TODO: your solution here
+  let store = new Map()
+  for (index= 0;index<nums.length;index++)
+  {
+    const current = nums[index];
+    if(store.has(current)){
+      const count = store.get(current);
+      store.set(current,count+1);
+      return true
+    } else {
+      store.set(current,1)
+    }
+  }
+  return false
 }
 
 module.exports = { containsDuplicate };
