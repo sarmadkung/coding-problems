@@ -33,7 +33,30 @@
  */
 
 function groupAnagrams(strs) {
-  // TODO: your solution here
+  // Sorting + Object using 
+  const groups = {}
+  for (let word of strs){
+    const sortedWord = word.split("").sort().join("");
+    if(groups[sortedWord]){
+      groups[sortedWord].push(word)
+    } else {
+      groups[sortedWord] = [word]
+    }
+  }
+  // return Object.values(groups)
+
+  // Sorting + Map
+  const groupMap = new Map()
+  for (let word of strs){
+    let sortedWord = word.split("").sort().join("");
+    if(!groupMap.has(sortedWord)){
+      groupMap.set(sortedWord,[word]);
+    } else {
+      console.log("Else case is here")
+      groupMap.get(sortedWord).push(word)
+    }
+  }
+  return [...groupMap.values()]
 }
 
 module.exports = { groupAnagrams };
