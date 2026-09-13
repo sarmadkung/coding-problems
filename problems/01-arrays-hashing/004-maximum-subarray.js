@@ -35,8 +35,28 @@
  * ----------------------------------------------------------------------
  */
 
+
 function maxSubArray(nums) {
-  // TODO: your solution here
+  let currentSubArray = [nums[0]];
+  let currentSum = nums[0];
+  let maxSum =nums[0]
+
+  for (i=1;i<nums.length;i++){
+      const currentNum = nums[i];
+      let isExistingSubArrayWithNewItemGreater =  currentSum + currentNum > currentNum
+      
+      if(isExistingSubArrayWithNewItemGreater){
+        currentSum+=currentNum;
+        currentSubArray.push(currentNum);
+      } else {
+        currentSubArray = [currentNum]
+        currentSum = currentNum
+      }
+
+      if (currentSum > maxSum) { maxSum = currentSum; }
+  }
+  return maxSum
+
 }
 
 module.exports = { maxSubArray };
