@@ -33,7 +33,13 @@
  */
 
 function isAnagram(s, t) {
-  // TODO: your solution here
+ let orderedT = t.split("").sort().join("")
+ let orderedS = s.split("").sort().join("")
+ 
+ if (orderedT === orderedS){
+  return true
+ }
+ return false
 }
 
 module.exports = { isAnagram };
