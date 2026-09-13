@@ -1,4 +1,4 @@
-# Coding Problems
+# Optimal Round
 
 **163 classic coding problems across 22 topics — solved by hand, verified by a test runner.**
 
@@ -11,8 +11,8 @@ right — and whether you were fast enough.
 Clone it and start:
 
 ```bash
-git clone https://github.com/sarmadkung/coding-problems
-cd coding-problems
+git clone https://github.com/sarmadkung/optimal-round
+cd optimal-round
 ./practice list --todo
 ```
 
