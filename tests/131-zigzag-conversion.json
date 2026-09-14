@@ -1,0 +1,14 @@
+{
+  "fn": "convert",
+  "compare": "exact",
+  "cases": [
+    { "in": ["PAYPALISHIRING", 3], "out": "PAHNAPLSIIGYIR" },
+    { "in": ["PAYPALISHIRING", 4], "out": "PINALSIGYAHRPI" },
+    { "in": ["AB", 1], "out": "AB" },
+    { "in": ["A", 1], "out": "A" },
+    { "in": ["ABC", 5], "out": "ABC" },
+    { "in": ["ABCD", 2], "out": "ACBD" },
+    { "in": ["ABCDE", 4], "out": "ABCED" },
+    { "in": ["a,b.c", 3], "out": "ac,.b" }
+  ]
+}

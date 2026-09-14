@@ -1,0 +1,13 @@
+{
+  "type": "class",
+  "cls": "WordDictionary",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [], "ops": ["addWord", "addWord", "addWord", "search", "search", "search", "search"], "args": [["bad"], ["dad"], ["mad"], ["pad"], ["bad"], [".ad"], ["b.."]], "out": [null, null, null, false, true, true, true] },
+    { "ctor": [], "ops": ["addWord", "search", "search", "search"], "args": [["abc"], ["..."], ["...."], [".."]], "out": [null, true, false, false] },
+    { "ctor": [], "ops": ["search"], "args": [["a"]], "out": [false] },
+    { "ctor": [], "ops": ["addWord", "search", "search"], "args": [["a"], ["."], ["a."]], "out": [null, true, false] },
+    { "ctor": [], "ops": ["addWord", "addWord", "search", "search", "search"], "args": [["at"], ["and"], ["a."], [".n."], ["..d."]], "out": [null, null, true, true, false] },
+    { "ctor": [], "ops": ["addWord", "addWord", "search", "search"], "args": [["ab"], ["ba"], [".b"], ["bb"]], "out": [null, null, true, false] }
+  ]
+}

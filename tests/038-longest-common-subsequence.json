@@ -1,0 +1,13 @@
+{
+  "fn": "longestCommonSubsequence",
+  "compare": "exact",
+  "cases": [
+    { "in": ["abcde", "ace"], "out": 3 },
+    { "in": ["abc", "abc"], "out": 3 },
+    { "in": ["abc", "def"], "out": 0 },
+    { "in": ["a", "a"], "out": 1 },
+    { "in": ["a", "b"], "out": 0 },
+    { "in": ["bsbininm", "jmjkbkjkv"], "out": 1 },
+    { "in": ["oxcpqrsvwf", "shmtulqrypy"], "out": 2 }
+  ]
+}

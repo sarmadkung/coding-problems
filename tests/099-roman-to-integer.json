@@ -1,0 +1,16 @@
+{
+  "fn": "romanToInt",
+  "compare": "exact",
+  "cases": [
+    { "in": ["III"], "out": 3 },
+    { "in": ["LVIII"], "out": 58 },
+    { "in": ["MCMXCIV"], "out": 1994 },
+    { "in": ["IV"], "out": 4 },
+    { "in": ["IX"], "out": 9 },
+    { "in": ["XL"], "out": 40 },
+    { "in": ["CD"], "out": 400 },
+    { "in": ["MMMCMXCIX"], "out": 3999 },
+    { "in": ["I"], "out": 1 },
+    { "in": ["XXVII"], "out": 27 }
+  ]
+}

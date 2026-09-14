@@ -1,0 +1,13 @@
+{
+  "fn": "findWords",
+  "compare": "unordered",
+  "cases": [
+    { "in": [[["o", "a"], ["e", "t"]], ["oa", "oat", "ae"]], "out": ["oa", "oat"] },
+    { "in": [[["a"]], ["a"]], "out": ["a"] },
+    { "in": [[["a"]], ["b"]], "out": [] },
+    { "in": [[["o", "a", "a", "n"], ["e", "t", "a", "e"], ["i", "h", "k", "r"], ["i", "f", "l", "v"]], ["oath", "pea", "eat", "rain"]], "out": ["oath", "eat"] },
+    { "in": [[["a", "b"], ["a", "a"]], ["aba", "baa", "bab", "aaab", "aaa", "aaaa", "aaba"]], "out": ["aba", "baa", "aaab", "aaa", "aaba"] },
+    { "in": [[["a", "a"]], ["aaa", "aa"]], "out": ["aa"] },
+    { "in": [[["a", "b"], ["c", "d"]], ["abdc", "abcd", "acdb", "ab"]], "out": ["abdc", "acdb", "ab"] }
+  ]
+}

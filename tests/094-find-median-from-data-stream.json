@@ -1,0 +1,15 @@
+{
+  "type": "class",
+  "cls": "MedianFinder",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [], "ops": ["addNum", "addNum", "findMedian", "addNum", "findMedian"], "args": [[1], [2], [], [3], []], "out": [null, null, 1.5, null, 2] },
+    { "ctor": [], "ops": ["addNum", "findMedian"], "args": [[-100000], []], "out": [null, -100000] },
+    { "ctor": [], "ops": ["addNum", "addNum", "findMedian"], "args": [[1], [4], []], "out": [null, null, 2.5] },
+    { "ctor": [], "ops": ["addNum", "addNum", "addNum", "addNum", "findMedian", "addNum", "findMedian"], "args": [[5], [3], [8], [1], [], [9], []], "out": [null, null, null, null, 4, null, 5] },
+    { "ctor": [], "ops": ["addNum", "findMedian", "addNum", "findMedian", "addNum", "findMedian", "addNum", "findMedian", "addNum", "findMedian"], "args": [[6], [], [10], [], [2], [], [6], [], [5], []], "out": [null, 6, null, 8, null, 6, null, 6, null, 6] },
+    { "ctor": [], "ops": ["addNum", "addNum", "findMedian", "addNum", "findMedian"], "args": [[-1], [-2], [], [-3], []], "out": [null, null, -1.5, null, -2] },
+    { "ctor": [], "ops": ["addNum", "addNum", "addNum", "findMedian"], "args": [[7], [7], [7], []], "out": [null, null, null, 7] },
+    { "ctor": [], "ops": ["addNum", "addNum", "findMedian"], "args": [[100000], [-100000], []], "out": [null, null, 0] }
+  ]
+}

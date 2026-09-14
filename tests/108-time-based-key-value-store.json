@@ -1,0 +1,12 @@
+{
+  "type": "class",
+  "cls": "TimeMap",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [], "ops": ["set", "get", "get", "get"], "args": [["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", 0]], "out": [null, "bar", "bar", ""] },
+    { "ctor": [], "ops": ["set", "get", "get", "set", "get", "get", "get"], "args": [["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5], ["foo", 3]], "out": [null, "bar", "bar", null, "bar2", "bar2", "bar"] },
+    { "ctor": [], "ops": ["get", "set", "get"], "args": [["a", 5], ["a", "x", 10], ["a", 9]], "out": ["", null, ""] },
+    { "ctor": [], "ops": ["set", "get", "get"], "args": [["a", "x", 1], ["b", 1], ["a", 10000000]], "out": [null, "", "x"] },
+    { "ctor": [], "ops": ["set", "set", "set", "get", "get", "get"], "args": [["k", "v1", 10], ["k", "v2", 20], ["j", "w", 15], ["k", 15], ["j", 20], ["k", 20]], "out": [null, null, null, "v1", "w", "v2"] }
+  ]
+}

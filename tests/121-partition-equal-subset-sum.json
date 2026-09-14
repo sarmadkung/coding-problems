@@ -1,0 +1,14 @@
+{
+  "fn": "canPartition",
+  "compare": "exact",
+  "cases": [
+    { "in": [[1, 5, 11, 5]], "out": true },
+    { "in": [[1, 2, 3, 5]], "out": false },
+    { "in": [[1, 1]], "out": true },
+    { "in": [[1, 2, 4]], "out": false },
+    { "in": [[7]], "out": false },
+    { "in": [[2, 2, 3, 5]], "out": false },
+    { "in": [[3, 3, 3, 4, 5]], "out": true },
+    { "in": [[100, 100, 100, 100, 100, 100, 100, 100]], "out": true }
+  ]
+}

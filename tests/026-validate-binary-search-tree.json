@@ -1,0 +1,17 @@
+{
+  "fn": "isValidBST",
+  "inTypes": ["tree"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[2, 1, 3]], "out": true },
+    { "in": [[5, 1, 4, null, null, 3, 6]], "out": false },
+    { "in": [[1, 1]], "out": false },
+    { "in": [[2, 2, 2]], "out": false },
+    { "in": [[1, null, 1]], "out": false },
+    { "in": [[2147483647]], "out": true },
+    { "in": [[-2147483648, null, 2147483647]], "out": true },
+    { "in": [[5, 4, 6, null, null, 3, 7]], "out": false },
+    { "in": [[1]], "out": true },
+    { "in": [[3, 1, 5, 0, 2, 4, 6]], "out": true }
+  ]
+}

@@ -33,7 +33,22 @@
  */
 
 function moveZeroes(nums) {
-  // TODO: your solution here
+  // Two pointers technique
+  // initialize 2 pointer, slow and fast
+  // slow var will hold the zero index
+  // fast va will hold the next non zero index
+
+  let slow = 0;
+  for (let fast=0;fast<nums.length;fast++){
+    // we check not equal to zero because fast will hold the nonzero
+    if(nums[fast] !==0) {
+        let temp = nums[slow];
+        nums[slow]= nums[fast];
+        nums[fast] = temp;
+        slow++
+    }
+  }
+  return nums
 }
 
 module.exports = { moveZeroes };

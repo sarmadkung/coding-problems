@@ -1,0 +1,14 @@
+{
+  "fn": "minDistance",
+  "compare": "exact",
+  "cases": [
+    { "in": ["horse", "ros"], "out": 3 },
+    { "in": ["intention", "execution"], "out": 5 },
+    { "in": ["", "abc"], "out": 3 },
+    { "in": ["abc", ""], "out": 3 },
+    { "in": ["", ""], "out": 0 },
+    { "in": ["same", "same"], "out": 0 },
+    { "in": ["a", "b"], "out": 1 },
+    { "in": ["kitten", "sitting"], "out": 3 }
+  ]
+}

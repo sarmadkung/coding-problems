@@ -1,0 +1,13 @@
+{
+  "fn": "diameterOfBinaryTree",
+  "inTypes": ["tree"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[1, 2, 3, 4, 5]], "out": 3 },
+    { "in": [[1, 2]], "out": 1 },
+    { "in": [[1]], "out": 0 },
+    { "in": [[1, 2, null, 3, 4, 5, null, null, 6, 7, null, null, 8]], "out": 6 },
+    { "in": [[1, null, 2, null, 3, null, 4]], "out": 3 },
+    { "in": [[4, -7, -3, null, null, -9, -3, 9, -7, -4, null, 6, null, -6, -6, null, null, 0, 6, 5, null, 9, null, null, -1, -4, null, null, null, -2]], "out": 8 }
+  ]
+}

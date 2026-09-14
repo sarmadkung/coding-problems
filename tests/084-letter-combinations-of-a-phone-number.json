@@ -1,0 +1,17 @@
+{
+  "fn": "letterCombinations",
+  "compare": "unordered",
+  "cases": [
+    { "in": ["23"], "out": ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"] },
+    { "in": [""], "out": [] },
+    { "in": ["2"], "out": ["a", "b", "c"] },
+    {
+      "in": ["79"],
+      "out": ["pw", "px", "py", "pz", "qw", "qx", "qy", "qz", "rw", "rx", "ry", "rz", "sw", "sx", "sy", "sz"]
+    },
+    {
+      "in": ["234"],
+      "out": ["adg", "adh", "adi", "aeg", "aeh", "aei", "afg", "afh", "afi", "bdg", "bdh", "bdi", "beg", "beh", "bei", "bfg", "bfh", "bfi", "cdg", "cdh", "cdi", "ceg", "ceh", "cei", "cfg", "cfh", "cfi"]
+    }
+  ]
+}

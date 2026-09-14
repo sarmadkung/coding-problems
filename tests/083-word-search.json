@@ -1,0 +1,20 @@
+{
+  "fn": "exist",
+  "compare": "exact",
+  "cases": [
+    { "in": [[["A", "B"], ["C", "D"]], "AB"], "out": true },
+    { "in": [[["A", "B"], ["C", "D"]], "ABD"], "out": true },
+    { "in": [[["A"]], "A"], "out": true },
+    { "in": [[["A", "B"], ["C", "D"]], "AD"], "out": false },
+    {
+      "in": [[["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]], "ABCB"],
+      "out": false
+    },
+    { "in": [[["A", "B"], ["C", "D"]], "ABDCA"], "out": false },
+    {
+      "in": [[["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]], "ABCCED"],
+      "out": true
+    },
+    { "in": [[["a", "a"]], "aaa"], "out": false }
+  ]
+}

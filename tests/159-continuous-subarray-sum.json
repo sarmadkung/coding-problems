@@ -1,0 +1,16 @@
+{
+  "fn": "checkSubarraySum",
+  "compare": "exact",
+  "cases": [
+    { "in": [[23, 2, 4, 6, 7], 6], "out": true },
+    { "in": [[23, 2, 6, 4, 7], 13], "out": false },
+    { "in": [[1, 0], 2], "out": false },
+    { "in": [[23, 2, 6, 4, 7], 6], "out": true },
+    { "in": [[0, 0], 1], "out": true },
+    { "in": [[6], 6], "out": false },
+    { "in": [[6, 1], 6], "out": false },
+    { "in": [[5, 0, 0, 0], 3], "out": true },
+    { "in": [[1, 2, 3], 5], "out": true },
+    { "in": [[1000000000, 1000000000], 2000000000], "out": true }
+  ]
+}

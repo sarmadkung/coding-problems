@@ -1,0 +1,13 @@
+{
+  "fn": "reverseWords",
+  "compare": "exact",
+  "cases": [
+    { "in": ["the sky is blue"], "out": "blue is sky the" },
+    { "in": ["  hello world  "], "out": "world hello" },
+    { "in": ["a good   example"], "out": "example good a" },
+    { "in": ["single"], "out": "single" },
+    { "in": ["   x   "], "out": "x" },
+    { "in": ["abc def"], "out": "def abc" },
+    { "in": ["Hello World2 9lives"], "out": "9lives World2 Hello" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fn": "accountsMerge",
+  "compare": "unordered",
+  "cases": [
+    { "in": [[["John", "a@m.com", "b@m.com"], ["John", "b@m.com", "c@m.com"], ["Mary", "m@m.com"]]], "out": [["John", "a@m.com", "b@m.com", "c@m.com"], ["Mary", "m@m.com"]] },
+    { "in": [[["John", "john@x.com"], ["John", "johnny@x.com"]]], "out": [["John", "john@x.com"], ["John", "johnny@x.com"]] },
+    { "in": [[["A", "a@x.com", "b@x.com"], ["A", "c@x.com", "d@x.com"], ["A", "b@x.com", "c@x.com"]]], "out": [["A", "a@x.com", "b@x.com", "c@x.com", "d@x.com"]] },
+    { "in": [[["Kim", "z@x.com", "y@x.com", "x@x.com"]]], "out": [["Kim", "x@x.com", "y@x.com", "z@x.com"]] },
+    { "in": [[["Bob", "b@x.com"], ["Ann", "a@x.com"], ["Bob", "b@x.com", "bb@x.com"], ["Cat", "c@x.com"], ["Cat", "cc@x.com", "c@x.com"]]], "out": [["Bob", "b@x.com", "bb@x.com"], ["Ann", "a@x.com"], ["Cat", "c@x.com", "cc@x.com"]] },
+    { "in": [[["Z", "q@x.com", "b@x.com"], ["Y", "p@x.com"], ["Z", "a@x.com", "q@x.com"]]], "out": [["Z", "a@x.com", "b@x.com", "q@x.com"], ["Y", "p@x.com"]] }
+  ]
+}

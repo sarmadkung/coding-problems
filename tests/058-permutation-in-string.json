@@ -1,0 +1,15 @@
+{
+  "fn": "checkInclusion",
+  "compare": "exact",
+  "cases": [
+    { "in": ["ab", "eidbaooo"], "out": true },
+    { "in": ["ab", "eidboaoo"], "out": false },
+    { "in": ["adc", "dcda"], "out": true },
+    { "in": ["abc", "ab"], "out": false },
+    { "in": ["ab", "axb"], "out": false },
+    { "in": ["aab", "abab"], "out": true },
+    { "in": ["aab", "baxaab"], "out": true },
+    { "in": ["a", "a"], "out": true },
+    { "in": ["hello", "ooolleoooleh"], "out": false }
+  ]
+}

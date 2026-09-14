@@ -1,0 +1,15 @@
+{
+  "fn": "isSameTree",
+  "inTypes": ["tree", "tree"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[1, 2, 3], [1, 2, 3]], "out": true },
+    { "in": [[1, 2], [1, null, 2]], "out": false },
+    { "in": [[], []], "out": true },
+    { "in": [[1], []], "out": false },
+    { "in": [[], [1]], "out": false },
+    { "in": [[1, 2, 1], [1, 1, 2]], "out": false },
+    { "in": [[1, 2, 3, 4], [1, 2, 3, null, 4]], "out": false },
+    { "in": [[5], [5]], "out": true }
+  ]
+}

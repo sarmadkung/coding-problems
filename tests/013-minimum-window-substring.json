@@ -1,0 +1,14 @@
+{
+  "fn": "minWindow",
+  "compare": "exact",
+  "cases": [
+    { "in": ["ADOBECODEBANC", "ABC"], "out": "BANC" },
+    { "in": ["a", "a"], "out": "a" },
+    { "in": ["a", "aa"], "out": "" },
+    { "in": ["ab", "abc"], "out": "" },
+    { "in": ["aaflslflsldkalskaaa", "aaa"], "out": "aaa" },
+    { "in": ["cabwefgewcwaefgcf", "cae"], "out": "cwae" },
+    { "in": ["aA", "A"], "out": "A" },
+    { "in": ["bba", "ab"], "out": "ba" }
+  ]
+}

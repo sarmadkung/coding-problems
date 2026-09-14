@@ -1,0 +1,13 @@
+{
+  "type": "class",
+  "cls": "Trie",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [], "ops": ["insert", "search", "search", "startsWith", "insert", "search"], "args": [["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]], "out": [null, true, false, true, null, true] },
+    { "ctor": [], "ops": ["search", "startsWith"], "args": [["a"], ["a"]], "out": [false, false] },
+    { "ctor": [], "ops": ["insert", "insert", "search", "startsWith"], "args": [["abc"], ["abc"], ["abc"], ["abcd"]], "out": [null, null, true, false] },
+    { "ctor": [], "ops": ["insert", "search", "startsWith", "startsWith", "search"], "args": [["a"], ["a"], ["a"], ["b"], ["aa"]], "out": [null, true, true, false, false] },
+    { "ctor": [], "ops": ["insert", "insert", "search", "search", "startsWith", "startsWith"], "args": [["car"], ["cart"], ["car"], ["ca"], ["cart"], ["carts"]], "out": [null, null, true, false, true, false] },
+    { "ctor": [], "ops": ["insert", "search", "startsWith"], "args": [["hello"], ["hell"], ["hellz"]], "out": [null, false, false] }
+  ]
+}

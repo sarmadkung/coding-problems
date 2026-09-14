@@ -1,0 +1,12 @@
+{
+  "fn": "partitionLabels",
+  "compare": "exact",
+  "cases": [
+    { "in": ["ababcbacadefegdehijhklij"], "out": [9, 7, 8] },
+    { "in": ["eccbbbbdec"], "out": [10] },
+    { "in": ["a"], "out": [1] },
+    { "in": ["abc"], "out": [1, 1, 1] },
+    { "in": ["abca"], "out": [4] },
+    { "in": ["aabbccd"], "out": [2, 2, 2, 1] }
+  ]
+}

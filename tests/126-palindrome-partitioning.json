@@ -1,0 +1,11 @@
+{
+  "fn": "partition",
+  "compare": "unordered",
+  "cases": [
+    { "in": ["aab"], "out": [["a", "a", "b"], ["aa", "b"]] },
+    { "in": ["a"], "out": [["a"]] },
+    { "in": ["aaa"], "out": [["a", "a", "a"], ["a", "aa"], ["aa", "a"], ["aaa"]] },
+    { "in": ["abc"], "out": [["a", "b", "c"]] },
+    { "in": ["abba"], "out": [["a", "b", "b", "a"], ["a", "bb", "a"], ["abba"]] }
+  ]
+}

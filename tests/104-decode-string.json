@@ -1,0 +1,14 @@
+{
+  "fn": "decodeString",
+  "compare": "exact",
+  "cases": [
+    { "in": ["3[a]2[bc]"], "out": "aaabcbc" },
+    { "in": ["3[a2[c]]"], "out": "accaccacc" },
+    { "in": ["2[abc]3[cd]ef"], "out": "abcabccdcdcdef" },
+    { "in": ["12[a]"], "out": "aaaaaaaaaaaa" },
+    { "in": ["abc"], "out": "abc" },
+    { "in": ["ab2[c]d"], "out": "abccd" },
+    { "in": ["2[2[2[a]]]"], "out": "aaaaaaaa" },
+    { "in": ["10[z]x"], "out": "zzzzzzzzzzx" }
+  ]
+}

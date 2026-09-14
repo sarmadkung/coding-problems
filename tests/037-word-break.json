@@ -1,0 +1,14 @@
+{
+  "fn": "wordBreak",
+  "compare": "exact",
+  "cases": [
+    { "in": ["leetcode", ["leet", "code"]], "out": true },
+    { "in": ["applepenapple", ["apple", "pen"]], "out": true },
+    { "in": ["catsandog", ["cats", "dog", "sand", "and", "cat"]], "out": false },
+    { "in": ["aaaaaaa", ["aaa", "aaaa"]], "out": true },
+    { "in": ["a", ["a"]], "out": true },
+    { "in": ["a", ["b"]], "out": false },
+    { "in": ["cars", ["car", "ca", "rs"]], "out": true },
+    { "in": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a", "aa", "aaa", "aaaa"]], "out": false }
+  ]
+}

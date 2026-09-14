@@ -1,0 +1,14 @@
+{
+  "fn": "longestPalindrome",
+  "compare": "exact",
+  "cases": [
+    { "in": ["cbbd"], "out": "bb" },
+    { "in": ["a"], "out": "a" },
+    { "in": ["bb"], "out": "bb" },
+    { "in": ["racecar"], "out": "racecar" },
+    { "in": ["forgeeksskeegfor"], "out": "geeksskeeg" },
+    { "in": ["abacdfgdcaba"], "out": "aba" },
+    { "in": ["aaaa"], "out": "aaaa" },
+    { "in": ["xabax"], "out": "xabax" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "fn": "characterReplacement",
+  "compare": "exact",
+  "cases": [
+    { "in": ["ABAB", 2], "out": 4 },
+    { "in": ["AABABBA", 1], "out": 4 },
+    { "in": ["A", 0], "out": 1 },
+    { "in": ["AABBBCC", 0], "out": 3 },
+    { "in": ["ABC", 3], "out": 3 },
+    { "in": ["ABCDE", 1], "out": 2 },
+    { "in": ["BAAAB", 2], "out": 5 },
+    { "in": ["AAAA", 2], "out": 4 }
+  ]
+}

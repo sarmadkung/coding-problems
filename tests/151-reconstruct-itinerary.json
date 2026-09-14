@@ -1,0 +1,12 @@
+{
+  "fn": "findItinerary",
+  "compare": "exact",
+  "cases": [
+    { "in": [[["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]], "out": ["JFK", "MUC", "LHR", "SFO", "SJC"] },
+    { "in": [[["JFK", "SFO"], ["JFK", "ATL"], ["SFO", "ATL"], ["ATL", "JFK"], ["ATL", "SFO"]]], "out": ["JFK", "ATL", "JFK", "SFO", "ATL", "SFO"] },
+    { "in": [[["JFK", "KUL"], ["JFK", "NRT"], ["NRT", "JFK"]]], "out": ["JFK", "NRT", "JFK", "KUL"] },
+    { "in": [[["JFK", "AAA"], ["AAA", "JFK"], ["JFK", "AAA"], ["AAA", "JFK"]]], "out": ["JFK", "AAA", "JFK", "AAA", "JFK"] },
+    { "in": [[["JFK", "ATL"]]], "out": ["JFK", "ATL"] },
+    { "in": [[["EZE", "AXA"], ["TIA", "ANU"], ["ANU", "JFK"], ["JFK", "ANU"], ["ANU", "EZE"], ["TIA", "ANU"], ["AXA", "TIA"], ["TIA", "JFK"], ["ANU", "TIA"], ["JFK", "TIA"]]], "out": ["JFK", "ANU", "EZE", "AXA", "TIA", "ANU", "JFK", "TIA", "ANU", "TIA", "JFK"] }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "fn": "isPalindrome",
+  "compare": "exact",
+  "cases": [
+    { "in": ["A man, a plan, a canal: Panama"], "out": true },
+    { "in": ["race a car"], "out": false },
+    { "in": [" "], "out": true },
+    { "in": [".,!?"], "out": true },
+    { "in": ["No lemon, no melon"], "out": true },
+    { "in": ["0P"], "out": false },
+    { "in": ["12321"], "out": true },
+    { "in": ["ab_a"], "out": true },
+    { "in": ["a"], "out": true }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "class",
+  "cls": "MinStack",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [], "ops": ["push", "push", "push", "getMin", "pop", "top", "getMin"], "args": [[-2], [0], [-3], [], [], [], []], "out": [null, null, null, -3, null, 0, -2] },
+    { "ctor": [], "ops": ["push", "top", "getMin"], "args": [[5], [], []], "out": [null, 5, 5] },
+    { "ctor": [], "ops": ["push", "push", "push", "pop", "getMin", "pop", "getMin"], "args": [[1], [1], [2], [], [], [], []], "out": [null, null, null, null, 1, null, 1] },
+    { "ctor": [], "ops": ["push", "push", "push", "getMin", "pop", "getMin", "top"], "args": [[3], [1], [1], [], [], [], []], "out": [null, null, null, 1, null, 1, 1] },
+    { "ctor": [], "ops": ["push", "push", "getMin", "pop", "getMin", "top"], "args": [[2147483647], [-2147483648], [], [], [], []], "out": [null, null, -2147483648, null, 2147483647, 2147483647] },
+    { "ctor": [], "ops": ["push", "push", "push", "getMin", "pop", "getMin", "pop", "getMin", "push", "getMin", "top"], "args": [[4], [2], [6], [], [], [], [], [], [-1], [], []], "out": [null, null, null, 2, null, 2, null, 4, null, -1, -1] }
+  ]
+}

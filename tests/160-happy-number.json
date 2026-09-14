@@ -1,0 +1,13 @@
+{
+  "fn": "isHappy",
+  "compare": "exact",
+  "cases": [
+    { "in": [19], "out": true },
+    { "in": [2], "out": false },
+    { "in": [1], "out": true },
+    { "in": [7], "out": true },
+    { "in": [4], "out": false },
+    { "in": [100], "out": true },
+    { "in": [2147483647], "out": false }
+  ]
+}

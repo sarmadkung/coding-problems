@@ -1,0 +1,14 @@
+{
+  "fn": "longestCommonPrefix",
+  "compare": "exact",
+  "cases": [
+    { "in": [["flower", "flow", "flight"]], "out": "fl" },
+    { "in": [["dog", "racecar", "car"]], "out": "" },
+    { "in": [["a"]], "out": "a" },
+    { "in": [["abc", "", "abd"]], "out": "" },
+    { "in": [[""]], "out": "" },
+    { "in": [["interview", "inter", "internet"]], "out": "inter" },
+    { "in": [["same", "same", "same"]], "out": "same" },
+    { "in": [["ab", "a"]], "out": "a" }
+  ]
+}

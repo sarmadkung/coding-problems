@@ -1,0 +1,13 @@
+{
+  "fn": "ladderLength",
+  "compare": "exact",
+  "cases": [
+    { "in": ["hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]], "out": 5 },
+    { "in": ["hit", "cog", ["hot", "dot", "dog", "lot", "log"]], "out": 0 },
+    { "in": ["a", "c", ["a", "b", "c"]], "out": 2 },
+    { "in": ["hot", "dog", ["hot", "dog"]], "out": 0 },
+    { "in": ["hit", "hot", ["hot"]], "out": 2 },
+    { "in": ["red", "tax", ["ted", "tex", "red", "tax", "tad", "den", "rex", "pee"]], "out": 4 },
+    { "in": ["abc", "abd", ["xyz", "abd"]], "out": 2 }
+  ]
+}

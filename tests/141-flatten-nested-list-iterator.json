@@ -1,0 +1,14 @@
+{
+  "type": "class",
+  "cls": "NestedIterator",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [[[1, 1], 2, [1, 1]]], "ops": ["hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"], "args": [[], [], [], [], [], [], [], [], [], [], []], "out": [true, 1, true, 1, true, 2, true, 1, true, 1, false] },
+    { "ctor": [[1, [4, [6]]]], "ops": ["hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"], "args": [[], [], [], [], [], [], []], "out": [true, 1, true, 4, true, 6, false] },
+    { "ctor": [[[]]], "ops": ["hasNext"], "args": [[]], "out": [false] },
+    { "ctor": [[[], [[]], 3, [[], []], []]], "ops": ["hasNext", "next", "hasNext"], "args": [[], [], []], "out": [true, 3, false] },
+    { "ctor": [[[[[[-1000000]]]], 1000000]], "ops": ["hasNext", "next", "hasNext", "next", "hasNext"], "args": [[], [], [], [], []], "out": [true, -1000000, true, 1000000, false] },
+    { "ctor": [[[], [[], [[]]], [0], [[], 7]]], "ops": ["hasNext", "hasNext", "next", "hasNext", "next", "hasNext"], "args": [[], [], [], [], [], []], "out": [true, true, 0, true, 7, false] },
+    { "ctor": [[5]], "ops": ["next", "hasNext"], "args": [[], []], "out": [5, false] }
+  ]
+}

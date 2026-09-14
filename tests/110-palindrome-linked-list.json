@@ -1,0 +1,15 @@
+{
+  "fn": "isPalindrome",
+  "inTypes": ["list"],
+  "compare": "exact",
+  "cases": [
+    { "in": [[1, 2, 2, 1]], "out": true },
+    { "in": [[1, 2]], "out": false },
+    { "in": [[1]], "out": true },
+    { "in": [[1, 2, 1]], "out": true },
+    { "in": [[1, 2, 3, 2, 1]], "out": true },
+    { "in": [[1, 2, 3, 1]], "out": false },
+    { "in": [[1, 1]], "out": true },
+    { "in": [[1, 0, 0]], "out": false }
+  ]
+}

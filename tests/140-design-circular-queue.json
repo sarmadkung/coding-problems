@@ -1,0 +1,12 @@
+{
+  "type": "class",
+  "cls": "MyCircularQueue",
+  "compare": "exact",
+  "cases": [
+    { "ctor": [3], "ops": ["enQueue", "enQueue", "enQueue", "enQueue", "Rear", "isFull", "deQueue", "enQueue", "Rear", "Front"], "args": [[1], [2], [3], [4], [], [], [], [4], [], []], "out": [true, true, true, false, 3, true, true, true, 4, 2] },
+    { "ctor": [2], "ops": ["Front", "Rear", "isEmpty", "deQueue", "isFull"], "args": [[], [], [], [], []], "out": [-1, -1, true, false, false] },
+    { "ctor": [1], "ops": ["enQueue", "isFull", "enQueue", "Front", "Rear", "deQueue", "isEmpty", "Front", "enQueue", "Rear"], "args": [[5], [], [6], [], [], [], [], [], [7], []], "out": [true, true, false, 5, 5, true, true, -1, true, 7] },
+    { "ctor": [3], "ops": ["enQueue", "enQueue", "deQueue", "deQueue", "enQueue", "enQueue", "enQueue", "isFull", "Front", "Rear", "deQueue", "Front"], "args": [[1], [2], [], [], [3], [4], [5], [], [], [], [], []], "out": [true, true, true, true, true, true, true, true, 3, 5, true, 4] },
+    { "ctor": [2], "ops": ["enQueue", "deQueue", "deQueue", "Front", "Rear", "enQueue", "Front"], "args": [[0], [], [], [], [], [1000], []], "out": [true, true, false, -1, -1, true, 1000] }
+  ]
+}
