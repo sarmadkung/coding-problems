@@ -33,7 +33,19 @@
  */
 
 function majorityElement(nums) {
-  // TODO: your solution here
+  let majority = new Map();
+  for (let i=0;i<nums.length;i++){
+    if(majority.has(nums[i])){
+      majority.set(nums[i],majority.get(nums[i])+1)
+    } else {
+      majority.set(nums[i],1)
+    }
+  }
+  for (let [num,count] of majority){
+     if(count >(nums.length/2)){
+      return num
+     }
+  }
 }
 
 module.exports = { majorityElement };
