@@ -1,0 +1,108 @@
+# Dutch National Flag
+
+> Sort an array of three kinds of values in one pass and O(1) memory, using three pointers.
+
+**Family:** Arrays · Two Pointers · Partitioning  
+**Complexity:** O(n) time · O(1) space  
+**Practice:** [056 Sort Colors](../../problems/02-two-pointers/056-sort-colors.js)
+
+---
+
+## The problem it solves
+
+Every value in the array belongs to one of **three groups**: "low", "middle" and "high". You want
+all the lows first, then the middles, then the highs, rearranged **in place**.
+
+A general sort costs O(n log n). Counting each group and overwriting the array is O(n) but needs
+two passes. Dutch National Flag (named by Edsger Dijkstra after the red, white and blue flag) does
+it in **one pass**, swapping values into place as it reads them.
+
+## The core idea
+
+Picture the array as a shelf being tidied from both ends at once. At any moment it is split into
+four zones:
+
+| Zone                  | Holds                         |
+|:----------------------|:------------------------------|
+| `[0, low)`            | lows, already in place        |
+| `[low, mid)`          | middles, already in place     |
+| `[mid, high]`         | **unknown**, not yet looked at |
+| `(high, end]`         | highs, already in place       |
+
+`mid` is the reader. Each step it looks at one unknown value and moves it into the right zone,
+shrinking the unknown zone by one. When the unknown zone is empty, the array is sorted.
+
+## Step by step
+
+Start with `low = 0`, `mid = 0`, `high = n − 1`. While `mid <= high`, look at `x = nums[mid]`:
+
+1. **If `x` is low**, swap it with `nums[low]`. Then `low += 1` and `mid += 1`.
+2. **If `x` is middle**, it is already in the middle zone: `mid += 1`.
+3. **If `x` is high**, swap it with `nums[high]`. Then `high -= 1`, but **do not move `mid`**.
+
+Why the difference between rules 1 and 3? The value swapped in from `low` came from the middle
+zone, which `mid` has already seen, so it is known to be a middle. The value swapped in from
+`high` came from the **unknown** zone, so `mid` must look at it before moving on.
+
+## Worked trace
+
+Array: `[1, 2, 0, 2, 1, 0]`, with 0 = low, 1 = middle, 2 = high.
+
+| Step | low, mid, high (before) | x | Rule                            | Array after          | low, mid, high (after) |
+|-----:|:------------------------|:-:|:--------------------------------|:---------------------|:-----------------------|
+| 1    | 0, 0, 5                 | 1 | middle → mid+1                  | `[1, 2, 0, 2, 1, 0]` | 0, 1, 5                |
+| 2    | 0, 1, 5                 | 2 | high → swap mid/high, high−1    | `[1, 0, 0, 2, 1, 2]` | 0, 1, 4                |
+| 3    | 0, 1, 4                 | 0 | low → swap low/mid, low+1, mid+1 | `[0, 1, 0, 2, 1, 2]` | 1, 2, 4                |
+| 4    | 1, 2, 4                 | 0 | low → swap low/mid, low+1, mid+1 | `[0, 0, 1, 2, 1, 2]` | 2, 3, 4                |
+| 5    | 2, 3, 4                 | 2 | high → swap mid/high, high−1    | `[0, 0, 1, 1, 2, 2]` | 2, 3, 3                |
+| 6    | 2, 3, 3                 | 1 | middle → mid+1                  | `[0, 0, 1, 1, 2, 2]` | 2, 4, 3                |
+
+`mid` (4) has passed `high` (3), so the unknown zone is empty. Result: **`[0, 0, 1, 1, 2, 2]`**. ✓
+
+Look at step 2: the `0` that arrived at index 1 was not skipped. `mid` stayed put and handled it
+in step 3.
+
+## Why it is correct
+
+The four zones described above are an **invariant**: true before the loop, and kept true by every
+rule.
+
+- Rule 1 grows the low zone by one and pushes a known middle one slot right. Zones stay valid.
+- Rule 2 grows the middle zone by one.
+- Rule 3 grows the high zone by one and brings an unseen value into `mid`, which is still unknown.
+
+Every step shrinks the unknown zone `[mid, high]` by exactly one, so the loop runs at most n times.
+When it ends the unknown zone is empty, and the three remaining zones are in order.
+
+## Partitioning around a pivot
+
+The "three groups" don't have to be the literal values 0, 1, 2. Any rule that sorts values into
+**less than / equal to / greater than** a pivot works the same way. This is the **three-way
+partition** used by quicksort variants to handle many duplicate keys: everything equal to the pivot
+lands in the middle zone and never needs to be sorted again.
+
+With only **two** groups you need just one boundary, which is the simpler "move all zeros" or
+"evens before odds" partition.
+
+## How to recognise it
+
+- Values fall into **exactly three** categories, and the order of categories is fixed.
+- The problem says **in place**, **one pass**, or forbids library sort.
+- Quicksort with lots of repeated values, or "partition around a pivot".
+
+## Common mistakes
+
+- **Advancing `mid` after swapping with `high`.** The incoming value is unseen and gets skipped.
+- **Looping while `mid < high`.** The last unknown value, where `mid == high`, never gets checked.
+- **Moving `low` without moving `mid` in rule 1.** When `low == mid`, `low` then overtakes `mid`
+  and the zones stop making sense.
+- **Counting and overwriting** when the problem asks for one pass. It is correct, but it is the
+  two-pass version.
+
+## Practice
+
+1. **[056 Sort Colors](../../problems/02-two-pointers/056-sort-colors.js)** (Medium): the
+   algorithm's namesake problem. The three colours are the three zones, and the array must be
+   sorted in place in one pass.
+
+Run it with `./practice c 056`.

@@ -257,6 +257,7 @@ so a slow solution reports a failure instead of hanging your terminal.
 practice              the test runner and analytics tool
 problems/             178 problems in 22 topic folders
 problems/_lib/        TreeNode and ListNode, and the array <-> node serializers
+algorithms/           23 named algorithms explained in words, each linked to practice problems
 tests/                test cases as JSON data, plus the large-input perf cases
 PROBLEMS.md           full index by topic          (generated)
 EASY|MEDIUM|HARD.md   indexes by difficulty        (generated)
