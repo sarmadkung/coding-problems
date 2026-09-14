@@ -237,7 +237,7 @@ preferring topics you have already started.
     PASS  4/4 cases · complexity target met
 ```
 
-That last line is the one that matters. Every problem has a **perf case** on a
+That last line is the one that matters. Problems carry a **perf case** on a
 large input with a time budget, because correctness alone will not tell you
 whether you wrote the solution the header asked for — the naive version passes
 all the small examples too. Write Two Sum with nested loops and you get this:
@@ -252,6 +252,13 @@ all the small examples too. Write Two Sum with nested loops and you get this:
 
 The perf case runs in a separate process and is killed at three times its budget,
 so a slow solution reports a failure instead of hanging your terminal.
+
+Perf cases measure **time only**. They catch a solution in the wrong complexity class
+(quadratic where linear was asked for), but not one that is fast and uses too much
+memory — so where the naive approach differs only in space (a hash map instead of
+Boyer-Moore voting, say), the header's Target line is on your honour. Perf cases
+currently cover Arrays & Hashing and Two Pointers; the other topics check
+correctness only.
 
 `./practice` exits non-zero on failure, so CI can run it.
 
