@@ -30,7 +30,26 @@
  */
 
 function isPalindrome(s) {
-  // TODO: your solution here
+  // Naive Technique
+  // let cleanedStr = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
+  // let reveredStr = cleanedStr.split("").reverse().join("");
+  // if(cleanedStr === reveredStr){
+  //   return true
+  // }
+  // return false
+
+  // Two Pointer
+
+  let cleanedStr = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
+  let last = cleanedStr.length-1;
+  for(let first = 0; first < cleanedStr.length; first++) {
+    if(cleanedStr[first] !== cleanedStr[last]) {
+      return false;
+    }
+    last--;
+  }
+  return true;
+
 }
 
 module.exports = { isPalindrome };
