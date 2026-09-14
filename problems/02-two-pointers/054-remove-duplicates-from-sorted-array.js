@@ -32,7 +32,17 @@
  */
 
 function removeDuplicates(nums) {
-  // TODO: your solution here
+  // Two Pointer
+  let slow = 0;
+  for (let fast=0;fast<nums.length;fast++){
+    if(nums[slow]!==nums[fast]){
+      slow++
+      let temp= nums[fast]
+      nums[fast] = nums[slow]
+      nums[slow] = temp
+    }
+  }
+  return slow+1
 }
 
 module.exports = { removeDuplicates };
