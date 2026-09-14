@@ -33,7 +33,24 @@
  */
 
 function containsNearbyDuplicate(nums, k) {
-  // TODO: your solution here
+
+  let seen = new Map();
+
+  for(let i=0;i<nums.length;i++){
+    let current= nums[i];
+    let isSeen = seen.has(current)
+    if(isSeen){
+      let previousIndex = seen.get(current);
+      if(i - previousIndex <= k){
+        return true
+      } else {
+        seen.set(current,i);
+      }
+    } else {
+      seen.set(current,i)
+    }
+  }
+  return false
 }
 
 module.exports = { containsNearbyDuplicate };

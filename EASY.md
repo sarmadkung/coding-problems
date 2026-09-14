@@ -1,6 +1,6 @@
 # Easy Problems
 
-7 of 49 solved.
+8 of 49 solved.
 
 Start here. These build the core reflexes — hash maps, two pointers, a stack, a
 single clean pass — that every harder problem is assembled from.
@@ -48,7 +48,7 @@ single clean pass — that every harder problem is assembled from.
 | ⬜ | 157 | [Range Sum Query - Immutable](problems/21-prefix-sum/157-range-sum-query-immutable.js) | Prefix Sum |
 | ⬜ | 160 | [Happy Number](problems/22-number-theory/160-happy-number.js) | Number Theory |
 | ⬜ | 161 | [Sqrt(x)](problems/22-number-theory/161-sqrtx.js) | Number Theory |
-| ⬜ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Arrays & Hashing |
+| ✅ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Arrays & Hashing |
 | ⬜ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Arrays & Hashing |
 | ⬜ | 166 | [Find All Numbers Disappeared in an Array](problems/01-arrays-hashing/166-find-all-numbers-disappeared-in-an-array.js) | Arrays & Hashing |
 | ⬜ | 170 | [Longest Palindrome](problems/01-arrays-hashing/170-longest-palindrome.js) | Arrays & Hashing |

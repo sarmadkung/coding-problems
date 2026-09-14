@@ -1,0 +1,5 @@
+#!/bin/sh
+# Regenerate the README analytics and index files so every commit carries
+# up-to-date progress. Enable once per clone:  git config core.hooksPath .githooks
+./practice readme >/dev/null || exit 1
+git add README.md PROBLEMS.md EASY.md MEDIUM.md HARD.md

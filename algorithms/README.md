@@ -6,6 +6,8 @@ algorithms, each explained in plain words, with 1–2 practice problems it solve
 The explanations have no solution code on purpose. Read the explanation, then solve the linked
 problem yourself and check it with `./practice c NNN`.
 
+Not sure which algorithm a problem needs? Start with the [problem-reading guide](../GUIDE.md).
+
 Every explainer has the same sections: the problem it solves, the core idea, step-by-step
 rules, a worked trace, why it is correct, how to recognise it, common mistakes, and practice.
 

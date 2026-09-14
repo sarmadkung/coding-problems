@@ -519,7 +519,15 @@ function verifyAll(problems) {
     }
     withTests++;
     if (!p.attempted) continue;
-    const r = checkOne(p, { quiet: true });
+    // Solutions often carry debug logging; keep it out of the analytics run.
+    const saved = { log: console.log, info: console.info, warn: console.warn };
+    console.log = console.info = console.warn = () => {};
+    let r;
+    try {
+      r = checkOne(p, { quiet: true });
+    } finally {
+      Object.assign(console, saved);
+    }
     if (r.state === 'pass') verified++;
     else if (r.state === 'fail') failing++;
   }

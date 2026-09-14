@@ -1,11 +1,11 @@
 # All Problems
 
-10 of 178 solved. ✅ means the stub has been replaced.
+11 of 178 solved. ✅ means the stub has been replaced.
 
 By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)
 
 
-## Arrays & Hashing  <sub>8/19</sub>
+## Arrays & Hashing  <sub>9/19</sub>
 
 | | # | Problem | Difficulty |
 |---|---|---------|------------|
@@ -21,7 +21,7 @@ By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)
 | ✅ | 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Easy |
 | ✅ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Easy |
 | ⬜ | 103 | [Rotate Array](problems/01-arrays-hashing/103-rotate-array.js) | Medium |
-| ⬜ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Easy |
+| ✅ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Easy |
 | ⬜ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Easy |
 | ⬜ | 166 | [Find All Numbers Disappeared in an Array](problems/01-arrays-hashing/166-find-all-numbers-disappeared-in-an-array.js) | Easy |
 | ⬜ | 167 | [Majority Element II](problems/01-arrays-hashing/167-majority-element-ii.js) | Medium |
