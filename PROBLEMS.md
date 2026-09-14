@@ -1,11 +1,11 @@
 # All Problems
 
-11 of 178 solved. ✅ means the stub has been replaced.
+12 of 178 solved. ✅ means the stub has been replaced.
 
 By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)
 
 
-## Arrays & Hashing  <sub>9/19</sub>
+## Arrays & Hashing  <sub>10/19</sub>
 
 | | # | Problem | Difficulty |
 |---|---|---------|------------|
@@ -22,7 +22,7 @@ By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)
 | ✅ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Easy |
 | ⬜ | 103 | [Rotate Array](problems/01-arrays-hashing/103-rotate-array.js) | Medium |
 | ✅ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Easy |
-| ⬜ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Easy |
+| ✅ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Easy |
 | ⬜ | 166 | [Find All Numbers Disappeared in an Array](problems/01-arrays-hashing/166-find-all-numbers-disappeared-in-an-array.js) | Easy |
 | ⬜ | 167 | [Majority Element II](problems/01-arrays-hashing/167-majority-element-ii.js) | Medium |
 | ⬜ | 168 | [Find All Duplicates in an Array](problems/01-arrays-hashing/168-find-all-duplicates-in-an-array.js) | Medium |

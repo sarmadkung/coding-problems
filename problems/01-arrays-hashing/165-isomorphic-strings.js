@@ -35,7 +35,36 @@
  */
 
 function isIsomorphic(s, t) {
-  // TODO: your solution here
+  // split into arrays
+  // create 2 maps because we need to check mapping 2 ways
+  // loop and check mapping 2 ways
+  const firstLetters= s.split("");
+  const secondLetters = t.split("");
+  const fMap = new Map();
+  const sMap = new Map();
+  for (let i=0;i<firstLetters.length;i++){
+    let fCurrent = firstLetters[i];
+    let sCurrent = secondLetters[i];
+    let isFExist = fMap.has(fCurrent);
+    let isSExist = sMap.has(sCurrent);
+    if(isFExist){
+      let recentSecondLetter = fMap.get(fCurrent);
+      if(recentSecondLetter !== sCurrent){
+        return false
+      }
+    } else if(isSExist) {
+      let recentFLetter = sMap.get(sCurrent);
+      if(recentFLetter !== fCurrent){
+        return false
+      }
+      
+    } else {
+      fMap.set(fCurrent,sCurrent)
+      sMap.set(sCurrent,fCurrent)
+    }
+    
+  }
+  return true
 }
 
 module.exports = { isIsomorphic };
