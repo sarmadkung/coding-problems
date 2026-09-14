@@ -1,0 +1,15 @@
+{
+  "fn": "longestPalindrome",
+  "compare": "exact",
+  "cases": [
+    { "in": ["abccccdd"], "out": 7 },
+    { "in": ["a"], "out": 1 },
+    { "in": ["Aa"], "out": 1 },
+    { "in": ["aaa"], "out": 3 },
+    { "in": ["abc"], "out": 1 },
+    { "in": ["aabb"], "out": 4 },
+    { "in": ["AAaaBBb"], "out": 7 },
+    { "in": ["ccc"], "out": 3 },
+    { "in": ["aaabbbccc"], "out": 7 }
+  ]
+}

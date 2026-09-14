@@ -1,0 +1,16 @@
+{
+  "fn": "isIsomorphic",
+  "compare": "exact",
+  "cases": [
+    { "in": ["egg", "add"], "out": true },
+    { "in": ["foo", "bar"], "out": false },
+    { "in": ["paper", "title"], "out": true },
+    { "in": ["badc", "baba"], "out": false },
+    { "in": ["a", "a"], "out": true },
+    { "in": ["ab", "aa"], "out": false },
+    { "in": ["13 1", "ab a"], "out": true },
+    { "in": ["abc", "xyz"], "out": true },
+    { "in": ["abba", "cddc"], "out": true },
+    { "in": ["abab", "cddc"], "out": false }
+  ]
+}

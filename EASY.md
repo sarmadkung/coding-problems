@@ -1,15 +1,15 @@
 # Easy Problems
 
-0 of 41 solved.
+7 of 49 solved.
 
 Start here. These build the core reflexes — hash maps, two pointers, a stack, a
 single clean pass — that every harder problem is assembled from.
 
 | | # | Problem | Topic |
 |---|---|---------|-------|
-| ⬜ | 001 | [Two Sum](problems/01-arrays-hashing/001-two-sum.js) | Arrays & Hashing |
-| ⬜ | 002 | [Contains Duplicate](problems/01-arrays-hashing/002-contains-duplicate.js) | Arrays & Hashing |
-| ⬜ | 007 | [Valid Palindrome](problems/02-two-pointers/007-valid-palindrome.js) | Two Pointers |
+| ✅ | 001 | [Two Sum](problems/01-arrays-hashing/001-two-sum.js) | Arrays & Hashing |
+| ✅ | 002 | [Contains Duplicate](problems/01-arrays-hashing/002-contains-duplicate.js) | Arrays & Hashing |
+| ✅ | 007 | [Valid Palindrome](problems/02-two-pointers/007-valid-palindrome.js) | Two Pointers |
 | ⬜ | 011 | [Best Time to Buy and Sell Stock](problems/03-sliding-window/011-best-time-to-buy-and-sell-stock.js) | Sliding Window |
 | ⬜ | 014 | [Valid Parentheses](problems/04-stack/014-valid-parentheses.js) | Stack |
 | ⬜ | 017 | [Binary Search](problems/05-binary-search/017-binary-search.js) | Binary Search |
@@ -22,8 +22,8 @@ single clean pass — that every harder problem is assembled from.
 | ⬜ | 033 | [Climbing Stairs](problems/09-dynamic-programming/033-climbing-stairs.js) | Dynamic Programming |
 | ⬜ | 046 | [Single Number](problems/12-math-bits/046-single-number.js) | Math & Bits |
 | ⬜ | 047 | [Counting Bits](problems/12-math-bits/047-counting-bits.js) | Math & Bits |
-| ⬜ | 051 | [Valid Anagram](problems/01-arrays-hashing/051-valid-anagram.js) | Arrays & Hashing |
-| ⬜ | 054 | [Remove Duplicates from Sorted Array](problems/02-two-pointers/054-remove-duplicates-from-sorted-array.js) | Two Pointers |
+| ✅ | 051 | [Valid Anagram](problems/01-arrays-hashing/051-valid-anagram.js) | Arrays & Hashing |
+| ✅ | 054 | [Remove Duplicates from Sorted Array](problems/02-two-pointers/054-remove-duplicates-from-sorted-array.js) | Two Pointers |
 | ⬜ | 060 | [Next Greater Element I](problems/04-stack/060-next-greater-element-i.js) | Stack |
 | ⬜ | 063 | [First Bad Version](problems/05-binary-search/063-first-bad-version.js) | Binary Search |
 | ⬜ | 069 | [Same Tree](problems/07-trees/069-same-tree.js) | Trees |
@@ -36,8 +36,8 @@ single clean pass — that every harder problem is assembled from.
 | ⬜ | 091 | [Last Stone Weight](problems/13-heap-priority-queue/091-last-stone-weight.js) | Heap / Priority Queue |
 | ⬜ | 098 | [Longest Common Prefix](problems/15-strings/098-longest-common-prefix.js) | Strings |
 | ⬜ | 099 | [Roman to Integer](problems/15-strings/099-roman-to-integer.js) | Strings |
-| ⬜ | 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Arrays & Hashing |
-| ⬜ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Arrays & Hashing |
+| ✅ | 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Arrays & Hashing |
+| ✅ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Arrays & Hashing |
 | ⬜ | 110 | [Palindrome Linked List](problems/06-linked-list/110-palindrome-linked-list.js) | Linked List |
 | ⬜ | 111 | [Intersection of Two Linked Lists](problems/06-linked-list/111-intersection-of-two-linked-lists.js) | Linked List |
 | ⬜ | 127 | [Reverse Bits](problems/12-math-bits/127-reverse-bits.js) | Math & Bits |
@@ -48,6 +48,14 @@ single clean pass — that every harder problem is assembled from.
 | ⬜ | 157 | [Range Sum Query - Immutable](problems/21-prefix-sum/157-range-sum-query-immutable.js) | Prefix Sum |
 | ⬜ | 160 | [Happy Number](problems/22-number-theory/160-happy-number.js) | Number Theory |
 | ⬜ | 161 | [Sqrt(x)](problems/22-number-theory/161-sqrtx.js) | Number Theory |
+| ⬜ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Arrays & Hashing |
+| ⬜ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Arrays & Hashing |
+| ⬜ | 166 | [Find All Numbers Disappeared in an Array](problems/01-arrays-hashing/166-find-all-numbers-disappeared-in-an-array.js) | Arrays & Hashing |
+| ⬜ | 170 | [Longest Palindrome](problems/01-arrays-hashing/170-longest-palindrome.js) | Arrays & Hashing |
+| ⬜ | 171 | [Valid Palindrome II](problems/02-two-pointers/171-valid-palindrome-ii.js) | Two Pointers |
+| ⬜ | 172 | [Squares of a Sorted Array](problems/02-two-pointers/172-squares-of-a-sorted-array.js) | Two Pointers |
+| ⬜ | 173 | [Is Subsequence](problems/02-two-pointers/173-is-subsequence.js) | Two Pointers |
+| ⬜ | 174 | [Reverse String](problems/02-two-pointers/174-reverse-string.js) | Two Pointers |
 
 ---
 

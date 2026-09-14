@@ -1,0 +1,17 @@
+{
+  "fn": "validPalindrome",
+  "compare": "exact",
+  "cases": [
+    { "in": ["aba"], "out": true },
+    { "in": ["abca"], "out": true },
+    { "in": ["abc"], "out": false },
+    { "in": ["a"], "out": true },
+    { "in": ["cuppucu"], "out": true },
+    { "in": ["ucuppuc"], "out": true },
+    { "in": ["deeee"], "out": true },
+    { "in": ["abcdba"], "out": true },
+    { "in": ["abccbxa"], "out": true },
+    { "in": ["eeccccbebaeeabebccceea"], "out": false },
+    { "in": ["ab"], "out": true }
+  ]
+}

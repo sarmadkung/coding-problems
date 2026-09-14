@@ -1,0 +1,16 @@
+{
+  "fn": "isSubsequence",
+  "compare": "exact",
+  "cases": [
+    { "in": ["abc", "ahbgdc"], "out": true },
+    { "in": ["axc", "ahbgdc"], "out": false },
+    { "in": ["", "abc"], "out": true },
+    { "in": ["", ""], "out": true },
+    { "in": ["a", ""], "out": false },
+    { "in": ["abcd", "abc"], "out": false },
+    { "in": ["ba", "abc"], "out": false },
+    { "in": ["aaa", "aa"], "out": false },
+    { "in": ["aaa", "baaab"], "out": true },
+    { "in": ["b", "abc"], "out": true }
+  ]
+}

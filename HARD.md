@@ -1,6 +1,6 @@
 # Hard Problems
 
-0 of 16 solved.
+0 of 17 solved.
 
 Multi-step problems that combine two or more patterns, or demand a non-obvious
 insight. Do not start here — but do come back, because these are where the
@@ -24,6 +24,7 @@ complexity reasoning really pays off.
 | ⬜ | 118 | [Word Ladder](problems/08-graphs/118-word-ladder.js) | Graphs |
 | ⬜ | 123 | [Burst Balloons](problems/09-dynamic-programming/123-burst-balloons.js) | Dynamic Programming |
 | ⬜ | 151 | [Reconstruct Itinerary](problems/19-advanced-graphs/151-reconstruct-itinerary.js) | Advanced Graphs |
+| ⬜ | 169 | [First Missing Positive](problems/01-arrays-hashing/169-first-missing-positive.js) | Arrays & Hashing |
 
 ---
 

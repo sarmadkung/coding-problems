@@ -1,38 +1,53 @@
 # All Problems
 
-0 of 163 solved. ✅ means the stub has been replaced.
+10 of 178 solved. ✅ means the stub has been replaced.
 
 By difficulty: [Easy](EASY.md) · [Medium](MEDIUM.md) · [Hard](HARD.md)
 
 
-## Arrays & Hashing  <sub>0/12</sub>
+## Arrays & Hashing  <sub>8/19</sub>
 
 | | # | Problem | Difficulty |
 |---|---|---------|------------|
-| ⬜ | 001 | [Two Sum](problems/01-arrays-hashing/001-two-sum.js) | Easy |
-| ⬜ | 002 | [Contains Duplicate](problems/01-arrays-hashing/002-contains-duplicate.js) | Easy |
-| ⬜ | 003 | [Product of Array Except Self](problems/01-arrays-hashing/003-product-of-array-except-self.js) | Medium |
-| ⬜ | 004 | [Maximum Subarray](problems/01-arrays-hashing/004-maximum-subarray.js) | Medium |
-| ⬜ | 005 | [Group Anagrams](problems/01-arrays-hashing/005-group-anagrams.js) | Medium |
+| ✅ | 001 | [Two Sum](problems/01-arrays-hashing/001-two-sum.js) | Easy |
+| ✅ | 002 | [Contains Duplicate](problems/01-arrays-hashing/002-contains-duplicate.js) | Easy |
+| ✅ | 003 | [Product of Array Except Self](problems/01-arrays-hashing/003-product-of-array-except-self.js) | Medium |
+| ✅ | 004 | [Maximum Subarray](problems/01-arrays-hashing/004-maximum-subarray.js) | Medium |
+| ✅ | 005 | [Group Anagrams](problems/01-arrays-hashing/005-group-anagrams.js) | Medium |
 | ⬜ | 006 | [Top K Frequent Elements](problems/01-arrays-hashing/006-top-k-frequent-elements.js) | Medium |
-| ⬜ | 051 | [Valid Anagram](problems/01-arrays-hashing/051-valid-anagram.js) | Easy |
+| ✅ | 051 | [Valid Anagram](problems/01-arrays-hashing/051-valid-anagram.js) | Easy |
 | ⬜ | 052 | [Longest Consecutive Sequence](problems/01-arrays-hashing/052-longest-consecutive-sequence.js) | Medium |
 | ⬜ | 053 | [Subarray Sum Equals K](problems/01-arrays-hashing/053-subarray-sum-equals-k.js) | Medium |
-| ⬜ | 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Easy |
-| ⬜ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Easy |
+| ✅ | 101 | [Majority Element](problems/01-arrays-hashing/101-majority-element.js) | Easy |
+| ✅ | 102 | [Move Zeroes](problems/01-arrays-hashing/102-move-zeroes.js) | Easy |
 | ⬜ | 103 | [Rotate Array](problems/01-arrays-hashing/103-rotate-array.js) | Medium |
+| ⬜ | 164 | [Contains Duplicate II](problems/01-arrays-hashing/164-contains-duplicate-ii.js) | Easy |
+| ⬜ | 165 | [Isomorphic Strings](problems/01-arrays-hashing/165-isomorphic-strings.js) | Easy |
+| ⬜ | 166 | [Find All Numbers Disappeared in an Array](problems/01-arrays-hashing/166-find-all-numbers-disappeared-in-an-array.js) | Easy |
+| ⬜ | 167 | [Majority Element II](problems/01-arrays-hashing/167-majority-element-ii.js) | Medium |
+| ⬜ | 168 | [Find All Duplicates in an Array](problems/01-arrays-hashing/168-find-all-duplicates-in-an-array.js) | Medium |
+| ⬜ | 169 | [First Missing Positive](problems/01-arrays-hashing/169-first-missing-positive.js) | Hard |
+| ⬜ | 170 | [Longest Palindrome](problems/01-arrays-hashing/170-longest-palindrome.js) | Easy |
 
-## Two Pointers  <sub>0/7</sub>
+## Two Pointers  <sub>2/15</sub>
 
 | | # | Problem | Difficulty |
 |---|---|---------|------------|
-| ⬜ | 007 | [Valid Palindrome](problems/02-two-pointers/007-valid-palindrome.js) | Easy |
+| ✅ | 007 | [Valid Palindrome](problems/02-two-pointers/007-valid-palindrome.js) | Easy |
 | ⬜ | 008 | [3Sum](problems/02-two-pointers/008-three-sum.js) | Medium |
 | ⬜ | 009 | [Container With Most Water](problems/02-two-pointers/009-container-with-most-water.js) | Medium |
 | ⬜ | 010 | [Trapping Rain Water](problems/02-two-pointers/010-trapping-rain-water.js) | Hard |
-| ⬜ | 054 | [Remove Duplicates from Sorted Array](problems/02-two-pointers/054-remove-duplicates-from-sorted-array.js) | Easy |
+| ✅ | 054 | [Remove Duplicates from Sorted Array](problems/02-two-pointers/054-remove-duplicates-from-sorted-array.js) | Easy |
 | ⬜ | 055 | [Two Sum II - Input Array Is Sorted](problems/02-two-pointers/055-two-sum-ii-input-array-is-sorted.js) | Medium |
 | ⬜ | 056 | [Sort Colors](problems/02-two-pointers/056-sort-colors.js) | Medium |
+| ⬜ | 171 | [Valid Palindrome II](problems/02-two-pointers/171-valid-palindrome-ii.js) | Easy |
+| ⬜ | 172 | [Squares of a Sorted Array](problems/02-two-pointers/172-squares-of-a-sorted-array.js) | Easy |
+| ⬜ | 173 | [Is Subsequence](problems/02-two-pointers/173-is-subsequence.js) | Easy |
+| ⬜ | 174 | [Reverse String](problems/02-two-pointers/174-reverse-string.js) | Easy |
+| ⬜ | 175 | [3Sum Closest](problems/02-two-pointers/175-three-sum-closest.js) | Medium |
+| ⬜ | 176 | [4Sum](problems/02-two-pointers/176-four-sum.js) | Medium |
+| ⬜ | 177 | [Boats to Save People](problems/02-two-pointers/177-boats-to-save-people.js) | Medium |
+| ⬜ | 178 | [Next Permutation](problems/02-two-pointers/178-next-permutation.js) | Medium |
 
 ## Sliding Window  <sub>0/6</sub>
 

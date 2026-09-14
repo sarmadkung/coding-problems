@@ -1,6 +1,6 @@
 # Medium Problems
 
-0 of 106 solved.
+3 of 112 solved.
 
 The bulk of technical interviews live here. Each one asks you to RECOGNISE a
 pattern (sliding window, binary search on the answer, DP over subproblems,
@@ -8,9 +8,9 @@ topological sort) rather than invent something new.
 
 | | # | Problem | Topic |
 |---|---|---------|-------|
-| ⬜ | 003 | [Product of Array Except Self](problems/01-arrays-hashing/003-product-of-array-except-self.js) | Arrays & Hashing |
-| ⬜ | 004 | [Maximum Subarray](problems/01-arrays-hashing/004-maximum-subarray.js) | Arrays & Hashing |
-| ⬜ | 005 | [Group Anagrams](problems/01-arrays-hashing/005-group-anagrams.js) | Arrays & Hashing |
+| ✅ | 003 | [Product of Array Except Self](problems/01-arrays-hashing/003-product-of-array-except-self.js) | Arrays & Hashing |
+| ✅ | 004 | [Maximum Subarray](problems/01-arrays-hashing/004-maximum-subarray.js) | Arrays & Hashing |
+| ✅ | 005 | [Group Anagrams](problems/01-arrays-hashing/005-group-anagrams.js) | Arrays & Hashing |
 | ⬜ | 006 | [Top K Frequent Elements](problems/01-arrays-hashing/006-top-k-frequent-elements.js) | Arrays & Hashing |
 | ⬜ | 008 | [3Sum](problems/02-two-pointers/008-three-sum.js) | Two Pointers |
 | ⬜ | 009 | [Container With Most Water](problems/02-two-pointers/009-container-with-most-water.js) | Two Pointers |
@@ -114,6 +114,12 @@ topological sort) rather than invent something new.
 | ⬜ | 159 | [Continuous Subarray Sum](problems/21-prefix-sum/159-continuous-subarray-sum.js) | Prefix Sum |
 | ⬜ | 162 | [Count Primes](problems/22-number-theory/162-count-primes.js) | Number Theory |
 | ⬜ | 163 | [Ugly Number II](problems/22-number-theory/163-ugly-number-ii.js) | Number Theory |
+| ⬜ | 167 | [Majority Element II](problems/01-arrays-hashing/167-majority-element-ii.js) | Arrays & Hashing |
+| ⬜ | 168 | [Find All Duplicates in an Array](problems/01-arrays-hashing/168-find-all-duplicates-in-an-array.js) | Arrays & Hashing |
+| ⬜ | 175 | [3Sum Closest](problems/02-two-pointers/175-three-sum-closest.js) | Two Pointers |
+| ⬜ | 176 | [4Sum](problems/02-two-pointers/176-four-sum.js) | Two Pointers |
+| ⬜ | 177 | [Boats to Save People](problems/02-two-pointers/177-boats-to-save-people.js) | Two Pointers |
+| ⬜ | 178 | [Next Permutation](problems/02-two-pointers/178-next-permutation.js) | Two Pointers |
 
 ---
 
