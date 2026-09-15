@@ -34,7 +34,19 @@
  */
 
 function findDisappearedNumbers(nums) {
-  // TODO: your solution here
+  // we well store every item into a set
+  // then we will check the missing indices from that set using nums array length
+  let allNums = new Set();
+  let missingNums = []
+  for (let i=0;i<nums.length;i++) {
+    allNums.add(nums[i])
+  }
+  for (let j=0; j<nums.length;j++){
+    if(!allNums.has(j+1)){
+      missingNums.push(j+1)
+    }
+  }
+  return missingNums
 }
 
 module.exports = { findDisappearedNumbers };

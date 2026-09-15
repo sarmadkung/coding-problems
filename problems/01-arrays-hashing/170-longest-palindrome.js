@@ -33,7 +33,34 @@
  */
 
 function longestPalindrome(s) {
-  // TODO: your solution here
+  let frequencyHash = new Map()
+  let sLetters = s.split("");
+  let longestPalindrome = 0
+  let hasOdd = false;
+  for (let i=0;i<sLetters.length;i++){
+    let current = sLetters[i];
+    if(frequencyHash.has(current)){
+      frequencyHash.set(current,frequencyHash.get(current)+1)
+    } else {
+      frequencyHash.set(current,1);
+    }
+  }
+  if(frequencyHash.size === 1){
+    return sLetters.length
+  }
+  for (let [char,frequency] of frequencyHash){
+    if(frequency %2 === 0){
+      longestPalindrome += frequency
+    } else {
+    longestPalindrome += frequency - 1;
+    hasOdd = true;
+    }
+  }
+  if (hasOdd) {
+    longestPalindrome += 1;
+  }
+
+  return longestPalindrome
 }
 
 module.exports = { longestPalindrome };
