@@ -32,8 +32,43 @@
  * ----------------------------------------------------------------------
  */
 
+
+function isPalindrome(s, left, right) {
+
+  while (left < right) {
+
+    if (s[left] !== s[right]) {
+      return false;
+    }
+
+    left++;
+    right--;
+  }
+
+  return true;
+}
+// The technique is commonly called Two Pointers with a Greedy/Branching Check—more specifically, 
+// for this problem: Two Pointers + At-Most-One Deletion
 function validPalindrome(s) {
-  // TODO: your solution here
+  let letters= s.split("");
+  let right =  letters.length -1
+  let left=0;
+
+  while(left<right){
+    let leftLetter = letters[left];
+    let rightLetter = letters[right];
+
+    if(leftLetter === rightLetter){
+      left++
+      right--
+      continue
+     }
+      return (
+      isPalindrome(s, left + 1, right) ||
+      isPalindrome(s, left, right - 1)
+    );
+  }
+  return true;
 }
 
 module.exports = { validPalindrome };
