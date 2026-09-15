@@ -55,9 +55,9 @@ for any push to `main` that skipped the hook.
 
 | | |
 |---|---|
-| **Solved** | 14 of 178 (8%) |
-| **Remaining** | 164 |
-| **Verified passing** | 14 |
+| **Solved** | 15 of 178 (8%) |
+| **Remaining** | 163 |
+| **Verified passing** | 15 |
 | **Progress** | `██░░░░░░░░░░░░░░░░░░░░░░░░░░` |
 
 ### By difficulty
@@ -65,7 +65,7 @@ for any push to `main` that skipped the hook.
 | Level | Solved | Total | Progress |
 |-------|--------|-------|----------|
 | Easy | 11 | 49 | `████░░░░░░░░░░░░░░░░` 22% |
-| Medium | 3 | 112 | `█░░░░░░░░░░░░░░░░░░░` 3% |
+| Medium | 4 | 112 | `█░░░░░░░░░░░░░░░░░░░` 4% |
 | Hard | 0 | 17 | `░░░░░░░░░░░░░░░░░░░░` 0% |
 
 ### By topic
@@ -73,7 +73,7 @@ for any push to `main` that skipped the hook.
 | Topic | Solved | Total | Progress |
 |-------|--------|-------|----------|
 | Arrays & Hashing | 12 | 19 | `█████████████░░░░░░░` 63% |
-| Two Pointers | 2 | 15 | `███░░░░░░░░░░░░░░░░░` 13% |
+| Two Pointers | 3 | 15 | `████░░░░░░░░░░░░░░░░` 20% |
 | Sliding Window | 0 | 6 | `░░░░░░░░░░░░░░░░░░░░` 0% |
 | Stack | 0 | 9 | `░░░░░░░░░░░░░░░░░░░░` 0% |
 | Binary Search | 0 | 9 | `░░░░░░░░░░░░░░░░░░░░` 0% |
@@ -99,13 +99,13 @@ for any push to `main` that skipped the hook.
 
 Weighted score counts Easy as 1, Medium as 3, Hard as 5, so depth counts for more than volume.
 
-**20 / 470 points — Beginner**
+**23 / 470 points — Beginner**
 
-`█░░░░░░░░░░░░░░░░░░░░░░░░░░░` 4.3%
+`█░░░░░░░░░░░░░░░░░░░░░░░░░░░` 4.9%
 
 **Strong** (60%+ solved) — Arrays & Hashing
 
-**In progress** — Two Pointers (2/15)
+**In progress** — Two Pointers (3/15)
 
 **Not started** — Sliding Window, Stack, Binary Search, Linked List, Trees, Graphs, Dynamic Programming, Backtracking, Intervals & Greedy, Math & Bits, Heap / Priority Queue, Tries, Strings, Matrix, Queues & Design, Union-Find, Advanced Graphs, Sorting, Prefix Sum, Number Theory
 

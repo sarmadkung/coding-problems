@@ -33,7 +33,26 @@
  */
 
 function twoSum(numbers, target) {
-  // TODO: your solution here
+// to sum using two pointer slow should be at start and fast should be at the end
+
+  let slow = 0
+  let fast = numbers.length-1;
+
+
+  while(slow<fast){
+    const currentSum = numbers[fast]+numbers[slow];
+
+    if(currentSum=== target){
+      return [slow+1,fast+1]
+    }
+    if(currentSum < target){
+      slow++
+    } else {
+      fast--
+    }
+  }
+
+
 }
 
 module.exports = { twoSum };

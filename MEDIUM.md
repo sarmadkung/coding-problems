@@ -1,6 +1,6 @@
 # Medium Problems
 
-3 of 112 solved.
+4 of 112 solved.
 
 The bulk of technical interviews live here. Each one asks you to RECOGNISE a
 pattern (sliding window, binary search on the answer, DP over subproblems,
@@ -39,7 +39,7 @@ topological sort) rather than invent something new.
 | ⬜ | 050 | [Rotate Image](problems/12-math-bits/050-rotate-image.js) | Math & Bits |
 | ⬜ | 052 | [Longest Consecutive Sequence](problems/01-arrays-hashing/052-longest-consecutive-sequence.js) | Arrays & Hashing |
 | ⬜ | 053 | [Subarray Sum Equals K](problems/01-arrays-hashing/053-subarray-sum-equals-k.js) | Arrays & Hashing |
-| ⬜ | 055 | [Two Sum II - Input Array Is Sorted](problems/02-two-pointers/055-two-sum-ii-input-array-is-sorted.js) | Two Pointers |
+| ✅ | 055 | [Two Sum II - Input Array Is Sorted](problems/02-two-pointers/055-two-sum-ii-input-array-is-sorted.js) | Two Pointers |
 | ⬜ | 056 | [Sort Colors](problems/02-two-pointers/056-sort-colors.js) | Two Pointers |
 | ⬜ | 057 | [Longest Repeating Character Replacement](problems/03-sliding-window/057-longest-repeating-character-replacement.js) | Sliding Window |
 | ⬜ | 058 | [Permutation in String](problems/03-sliding-window/058-permutation-in-string.js) | Sliding Window |
